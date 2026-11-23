@@ -20,7 +20,18 @@ export const routes: RouteObject[] = [
       page('search', 'S6', 'Search'),
       page('search/results', 'S7', 'Search results'),
       page('listings/:listingId', 'S8', 'Listing details'),
+      page('help', 'Help', 'Help & safety'),
       page('forbidden', '403', "You don't have access to this page"),
+
+      // Dev-only component gallery; excluded from production builds.
+      ...(import.meta.env.DEV
+        ? [
+            {
+              path: 'dev/ui',
+              lazy: () => import('./routes/UiKit').then((m) => ({ Component: m.UiKit })),
+            },
+          ]
+        : []),
 
       // Any signed-in user
       {
