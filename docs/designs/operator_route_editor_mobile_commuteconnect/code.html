@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-container": "#1c6e7b", "tertiary-fixed-dim": "#fdba50", "surface-bright": "#f7f9ff", "primary-container": "#173b57", "on-secondary": "#ffffff", "primary-fixed-dim": "#a9caec", "on-primary-container": "#84a5c6", "outline-variant": "#c2c7ce", "error": "#ba1a1a", "tertiary-fixed": "#ffddb1", "on-background": "#131d25", "on-tertiary-fixed": "#291800", "on-error-container": "#93000a", "surface-container": "#e5effb", "outline": "#73777e", "primary-fixed": "#cde5ff", "inverse-primary": "#a9caec", "secondary-container": "#a5eefd", "secondary-fixed-dim": "#89d2e0", "error-container": "#ffdad6", "on-error": "#ffffff", "on-surface": "#131d25", "secondary-fixed": "#a5eefd", "on-tertiary-container": "#d4962f", "surface-dim": "#d1dbe7", "surface-variant": "#d9e4f0", "secondary": "#116875", "on-surface-variant": "#42474d", "inverse-surface": "#27313b", "on-tertiary-fixed-variant": "#624000", "surface-container-high": "#dfe9f6", "surface-container-low": "#ecf4ff", "tertiary-container": "#4f3300", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#284966", "tertiary": "#331f00", "on-tertiary": "#ffffff", "on-primary": "#ffffff", "on-primary-fixed": "#001d32", "background": "#f7f9ff", "primary": "#00253e", "surface-container-highest": "#d9e4f0", "surface": "#f7f9ff", "on-secondary-fixed-variant": "#004e59", "inverse-on-surface": "#e7f2fe", "surface-tint": "#40617f", "on-secondary-fixed": "#001f25" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "margin": "2rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "space-md": "1rem" }, fontFamily: { "body-sm": ["Inter"], "label-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "body-lg": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Inter"], "currency-fare": ["Inter"], "headline-xl": ["Inter"], "headline-lg": ["Inter"], "label-lg": ["Inter"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-xl-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "currency-fare": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,59,87,0.05)] pt-safe"><div class="h-14 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><h1 class="font-title-md text-title-md text-primary tracking-tight truncate">Routes</h1><span class="inline-flex items-center justify-center text-[#26734D] bg-[#26734D]/10 rounded-full w-5 h-5 ml-space-xs flex-shrink-0" title="Verified TMCA Operator"><span class="material-symbols-outlined text-[14px]">verified</span></span></div><div class="flex items-center gap-space-sm flex-shrink-0"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors focus:outline-none" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-14 pb-20 bg-surface flex-1"><div class="flex flex-col w-full pb-28">
+<!-- Sub-header & Verification Status Bar -->
+<div class="px-margin-mobile pt-space-sm pb-space-xs flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<button aria-label="Back to Routes" class="inline-flex items-center gap-space-xs text-secondary hover:text-primary transition-colors py-1 focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="font-label-lg text-label-lg">Back to Routes</span>
+</button>
+<div class="inline-flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+<span>TMCA Dispatch • #GP-2024</span>
+</div>
+</div>
+<div class="mt-space-xs flex items-center justify-between gap-space-sm">
+<div class="min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-primary truncate tracking-tight">TMCA Line 104 Express</h2>
+</div>
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex-shrink-0">
+        Draft Changes
+      </span>
+</div>
+<!-- Compliance Pill -->
+<div class="mt-space-xs bg-secondary-container/40 p-space-xs px-space-sm rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[16px] text-on-secondary-container flex-shrink-0" style="font-variation-settings: 'FILL' 1;">shield</span>
+<p class="font-body-sm text-body-sm text-on-secondary-container truncate">
+        Operator Clearance Active — NLTA Valid to Nov 2026
+      </p>
+</div>
+</div>
+<!-- Interactive Section Nav Tabs (Scrollable Bar) -->
+<div class="sticky top-14 z-40 bg-surface/95 backdrop-blur-md py-space-xs px-margin-mobile shadow-[0_2px_6px_rgba(23,59,87,0.04)]">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1" id="section-nav">
+<button class="nav-pill active flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap shadow-sm transition-all" onclick="scrollToSection('sec-info')" type="button">
+<span class="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center text-[10px]">1</span>
+<span>Route Info</span>
+</button>
+<button class="nav-pill flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="scrollToSection('sec-sched')" type="button">
+<span class="w-4 h-4 rounded-full bg-on-surface-variant/15 flex items-center justify-center text-[10px]">2</span>
+<span>Schedule</span>
+</button>
+<button class="nav-pill flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="scrollToSection('sec-fare')" type="button">
+<span class="w-4 h-4 rounded-full bg-on-surface-variant/15 flex items-center justify-center text-[10px]">3</span>
+<span>Fare (ZAR)</span>
+</button>
+<button class="nav-pill flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="scrollToSection('sec-specs')" type="button">
+<span class="w-4 h-4 rounded-full bg-on-surface-variant/15 flex items-center justify-center text-[10px]">4</span>
+<span>Specs</span>
+</button>
+<button class="nav-pill flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="scrollToSection('sec-review')" type="button">
+<span class="material-symbols-outlined text-[14px]">preview</span>
+<span>Publish</span>
+</button>
+</div>
+</div>
+<!-- Form Content Stack -->
+<div class="px-margin-mobile flex flex-col gap-space-lg mt-space-md">
+<!-- Section 1: Route Information -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_3px_0_rgba(23,59,87,0.06)] flex flex-col gap-space-md transition-shadow hover:shadow-md" id="sec-info">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-md bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">1</span>
+<h3 class="font-title-md text-title-md text-primary font-semibold">Route Information</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">lock_reset</span> Geofenced
+        </span>
+</div>
+<!-- Route Name Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="route-name">Route Identity &amp; Display Name</label>
+<div class="relative flex items-center">
+<input class="w-full h-11 px-3 bg-surface-container-low rounded-lg text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/30 transition-all outline-none" id="route-name" placeholder="e.g. Line 104 Express" type="text" value="TMCA Line 104 Express"/>
+<span class="absolute right-3 material-symbols-outlined text-outline text-[18px]">directions_bus</span>
+</div>
+</div>
+<!-- Corridors: Origin Hub -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="origin-hub">Origin Departure Hub</label>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 h-11 rounded-lg">
+<span class="material-symbols-outlined text-[20px] text-secondary flex-shrink-0">trip_origin</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md outline-none" id="origin-hub" type="text" value="Tembisa Oakmoor Terminal (Bay 4)"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px] text-outline">info</span> Protected terminal zone perimeter
+        </span>
+</div>
+<!-- Corridors: Destination Hub -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="dest-hub">Destination Terminal</label>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 h-11 rounded-lg">
+<span class="material-symbols-outlined text-[20px] text-error flex-shrink-0">location_on</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md outline-none" id="dest-hub" type="text" value="Midrand Grand Central Gautrain Station"/>
+</div>
+</div>
+<!-- Intermediate Stops Accordion / List -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Waypoints &amp; Intermediate Stops</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 registered</span>
+</div>
+<div class="flex flex-col gap-2" id="stop-list">
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[18px]">drag_handle</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Allandale Rd Offramp zone</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1" title="Remove Stop" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[18px]">drag_handle</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Midrand Industrial Park</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1" title="Remove Stop" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<button class="h-10 mt-1 flex items-center justify-center gap-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors focus:ring-2 focus:ring-primary/20" type="button">
+<span class="material-symbols-outlined text-[16px]">add_location_alt</span>
+<span>+ Add Waypoint Stop</span>
+</button>
+</div>
+<!-- Route Description -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="route-desc">Corridor Operational Notes</label>
+<textarea class="w-full p-3 bg-surface-container-low rounded-lg text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/30 transition-all outline-none" id="route-desc" placeholder="Provide commuter notes, gate details, or interchange specifics..." rows="3">Direct corridor service via Allandale Rd. Direct transfer link to Gautrain North platform at Grand Central hub. High reliability during morning peak rush.</textarea>
+</div>
+</section>
+<!-- Section 2: Operating Schedule -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_3px_0_rgba(23,59,87,0.06)] flex flex-col gap-space-md" id="sec-sched">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-md bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">2</span>
+<h3 class="font-title-md text-title-md text-primary font-semibold">Operating Schedule</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary-container bg-primary-container px-2 py-0.5 rounded-full font-medium">SAST Active</span>
+</div>
+<!-- Days of Service -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">Service Operational Days</label>
+<div class="grid grid-cols-7 gap-1.5" id="day-selector">
+<button class="day-btn h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex flex-col items-center justify-center transition-transform active:scale-95 shadow-sm" type="button">
+<span>M</span>
+<span class="w-1 h-1 rounded-full bg-secondary-container mt-0.5"></span>
+</button>
+<button class="day-btn h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex flex-col items-center justify-center transition-transform active:scale-95 shadow-sm" type="button">
+<span>T</span>
+<span class="w-1 h-1 rounded-full bg-secondary-container mt-0.5"></span>
+</button>
+<button class="day-btn h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex flex-col items-center justify-center transition-transform active:scale-95 shadow-sm" type="button">
+<span>W</span>
+<span class="w-1 h-1 rounded-full bg-secondary-container mt-0.5"></span>
+</button>
+<button class="day-btn h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex flex-col items-center justify-center transition-transform active:scale-95 shadow-sm" type="button">
+<span>T</span>
+<span class="w-1 h-1 rounded-full bg-secondary-container mt-0.5"></span>
+</button>
+<button class="day-btn h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex flex-col items-center justify-center transition-transform active:scale-95 shadow-sm" type="button">
+<span>F</span>
+<span class="w-1 h-1 rounded-full bg-secondary-container mt-0.5"></span>
+</button>
+<button class="day-btn h-11 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-bold flex flex-col items-center justify-center transition-transform active:scale-95" type="button">
+<span>S</span>
+<span class="w-1 h-1 rounded-full bg-white/60 mt-0.5"></span>
+</button>
+<button class="day-btn h-11 rounded-lg bg-surface-container-high text-on-surface-variant font-label-md text-label-md font-normal flex flex-col items-center justify-center opacity-60" type="button">
+<span>S</span>
+<span class="w-1 h-1 rounded-full bg-transparent mt-0.5"></span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mon – Sat regular corridor routing (Sunday on standby)</p>
+</div>
+<!-- Cadence Selector Segmented Control -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">Dispatch Cadence Modality</label>
+<div class="grid grid-cols-2 p-1 bg-surface-container-high rounded-lg gap-1">
+<button class="h-9 rounded-md bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Frequency Headway</span>
+</button>
+<button class="h-9 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Fixed Timetable</span>
+</button>
+</div>
+</div>
+<!-- Frequency / Hours Info -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Peak Frequency</label>
+<div class="h-11 px-3 bg-surface-container-low rounded-lg flex items-center gap-1 text-on-surface font-body-md text-body-md">
+<span class="font-semibold text-secondary">Every 10–12m</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Active Hours</label>
+<div class="h-11 px-3 bg-surface-container-low rounded-lg flex items-center gap-1 text-on-surface font-body-md text-body-md truncate">
+<span>06:00 – 19:30</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Fare Structure -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_3px_0_rgba(23,59,87,0.06)] flex flex-col gap-space-md" id="sec-fare">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-md bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">3</span>
+<h3 class="font-title-md text-title-md text-primary font-semibold">Fare Structure</h3>
+</div>
+<span class="font-label-sm text-label-sm text-[#26734D] bg-[#26734D]/10 px-2 py-0.5 rounded-full font-semibold">Regulated</span>
+</div>
+<!-- Fare Type Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar">
+<button class="px-3.5 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold flex-shrink-0 shadow-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Fixed Fare</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex-shrink-0" type="button">
+          Stage-based (Zones)
+        </button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex-shrink-0" type="button">
+          Peak Tariff Dynamic
+        </button>
+</div>
+<!-- Rate Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="fare-rate">Standard Commuter Single Fare (ZAR)</label>
+<div class="relative flex items-center">
+<div class="absolute left-3 font-currency-fare text-currency-fare text-primary font-bold">R</div>
+<input class="w-full h-12 pl-9 pr-14 bg-surface-container-low rounded-lg font-currency-fare text-currency-fare text-primary font-bold outline-none focus:ring-2 focus:ring-secondary/30 transition-all" id="fare-rate" type="text" value="26.00"/>
+<span class="absolute right-3 font-label-sm text-label-sm text-on-surface-variant">ZAR / ride</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-[#26734D]">verified</span> Gazetted statutory corridor rate (GPRE Schedule B)
+        </p>
+</div>
+<!-- Accepted Payment Badges -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<label class="font-label-md text-label-md text-on-surface">Supported Payment Modalities</label>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+            Cash Accepted
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+            Contactless QR
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+            Transit Smartcard
+          </span>
+</div>
+</div>
+</section>
+<!-- Section 4: Vehicle & Service Specs -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_3px_0_rgba(23,59,87,0.06)] flex flex-col gap-space-md" id="sec-specs">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-md bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">4</span>
+<h3 class="font-title-md text-title-md text-primary font-semibold">Vehicle &amp; Service Specs</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Class 1 Minibus</span>
+</div>
+<!-- Vehicle Class Dropdown -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface" for="vehicle-class">Authorized Vehicle Class</label>
+<div class="relative flex items-center">
+<select class="w-full h-11 px-3 appearance-none bg-surface-container-low rounded-lg text-on-surface font-body-md text-body-md outline-none focus:ring-2 focus:ring-secondary/30" id="vehicle-class">
+<option selected="">15-Seater Minibus (Toyota Quantum SES)</option>
+<option>22-Seater Midibus (Mercedes Sprinter)</option>
+<option>35-Seater Commuter Shuttle Coach</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 pointer-events-none text-outline text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Specs Dual Stat Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-3 bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Passenger Capacity</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-1">15 Seats</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Licensed capacity</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fleet In Rotation</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold mt-1">14 Vehicles</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">TMCA Depot active</span>
+</div>
+</div>
+<!-- Feature Toggles -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Corridor Service Amenities</label>
+<div class="flex flex-col gap-2">
+<!-- Toggle 1 -->
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">ac_unit</span>
+<span class="font-body-md text-body-md text-on-surface">Climate Control (Aircon)</span>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</label>
+<!-- Toggle 2 -->
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">luggage</span>
+<span class="font-body-md text-body-md text-on-surface">Dedicated Luggage Space</span>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</label>
+<!-- Toggle 3 -->
+<label class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">sensors</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Live Telematics Tracking</span>
+<span class="font-label-sm text-label-sm text-[#26734D]">GPS Beacon Enabled</span>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-primary rounded cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</section>
+<!-- Section 5: Review & Live Commuter Preview -->
+<section class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_1px_3px_0_rgba(23,59,87,0.06)] flex flex-col gap-space-md" id="sec-review">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-md bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm font-bold">5</span>
+<h3 class="font-title-md text-title-md text-primary font-semibold">Commuter App Live Preview</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> Visualizer
+        </span>
+</div>
+<!-- Preview Listing Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low border-0 shadow-sm flex flex-col gap-3">
+<!-- Listing Top Bar -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#26734D]/10 text-[#26734D] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span> Verified Operator
+            </span>
+<span class="text-on-surface-variant text-[11px] font-label-sm">TMCA 104</span>
+</div>
+<div class="text-right">
+<span class="font-currency-fare text-currency-fare text-primary font-bold">R 26.00</span>
+</div>
+</div>
+<!-- Route Nodes -->
+<div class="flex items-start gap-2.5">
+<div class="flex flex-col items-center gap-0.5 pt-1">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="w-0.5 h-6 bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div>
+<p class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Tembisa Oakmoor Hub</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bay 4 Departure</p>
+</div>
+<div class="pt-1">
+<p class="font-title-md text-title-md text-on-surface font-semibold truncate leading-tight">Midrand Grand Central</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gautrain Connector Platform</p>
+</div>
+</div>
+</div>
+<!-- Meta Strip -->
+<div class="pt-2 mt-1 border-t-0 bg-surface-container/60 p-2 rounded-lg flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">update</span>
+<span>Every 10–12m</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#26734D]">airline_seat_recline_normal</span>
+<span>15 Seats</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">qr_code</span>
+<span>Smart Pay</span>
+</div>
+</div>
+</div>
+<!-- Compliance Summary Box -->
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#26734D] text-[20px]">task_alt</span>
+<span class="font-label-md text-label-md text-primary font-medium">Compliance Readiness</span>
+</div>
+<span class="font-label-md text-label-md text-[#26734D] font-bold">4 / 4 Complete</span>
+</div>
+<!-- Legal Declaration -->
+<label class="flex items-start gap-2.5 pt-1 cursor-pointer select-none">
+<input checked="" class="w-5 h-5 mt-0.5 accent-primary rounded cursor-pointer" id="legal-declaration" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          I declare this route revision adheres to the approved Gauteng Provincial Regulatory Entity (PRE) operating permit and gazetted tariff schedule.
+        </span>
+</label>
+</section>
+</div>
+<!-- Bottom Sticky Action Dock -->
+<div class="fixed bottom-16 left-0 right-0 z-40 bg-surface/90 backdrop-blur-xl px-margin-mobile py-space-sm shadow-[0_-4px_12px_rgba(23,59,87,0.08)]">
+<div class="flex items-center gap-space-sm max-w-lg mx-auto">
+<button class="h-12 px-4 rounded-lg bg-surface-container text-primary hover:bg-surface-container-high transition-colors font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1 flex-1" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+<span>Save Draft</span>
+</button>
+<button class="h-12 px-5 rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-colors font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 flex-[2] shadow-md active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+<span>Publish Route</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function scrollToSection(sectionId) {
+    const el = document.getElementById(sectionId);
+    if (!el) return;
+    const yOffset = -110; 
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+
+    // Update Pill states
+    document.querySelectorAll('#section-nav .nav-pill').forEach(pill => {
+      pill.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+      pill.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+
+    const activeBtn = event ? event.currentTarget : null;
+    if (activeBtn) {
+      activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+    }
+  }
+
+  // Interactive Day Selector Toggle micro-interaction
+  document.querySelectorAll('#day-selector .day-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isSelected = btn.classList.contains('bg-primary') || btn.classList.contains('bg-secondary');
+      if (isSelected) {
+        btn.classList.remove('bg-primary', 'bg-secondary', 'text-on-primary', 'text-on-secondary', 'shadow-sm');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface-variant', 'opacity-60');
+      } else {
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant', 'opacity-60');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-1px_8px_rgba(23,59,87,0.06)]" data-active-classes="text-secondary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-label-sm tracking-tight">Overview</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-11 transition-colors text-secondary font-semibold" data-path="routes" href="#"><span class="material-symbols-outlined text-[22px]">alt_route</span><span class="font-label-sm text-label-sm tracking-tight">Routes</span></a><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="enquiries" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="font-label-sm text-label-sm tracking-tight">Enquiries</span></a><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-label-sm text-label-sm tracking-tight">Profile</span></a><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="menu" href="#"><span class="material-symbols-outlined text-[22px]">menu</span><span class="font-label-sm text-label-sm tracking-tight">Menu</span></a></div></nav></body></html>

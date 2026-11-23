@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suspend Account Confirmation Modal - CommuteConnect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              DEFAULT: '#173b57',
+              dark: '#0f273d',
+              light: '#2a5b82',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-800 antialiased min-h-screen relative overflow-hidden flex items-center justify-center p-4">
+
+  <!-- Background Dimmed Context: CommuteConnect Admin Console backdrop -->
+  <div class="fixed inset-0 bg-[#0c1824]/85 backdrop-blur-md z-0 flex items-center justify-center pointer-events-none">
+    <div class="w-full h-full opacity-25 p-6 flex flex-col justify-between">
+      <div class="flex items-center justify-between border-b border-slate-700/60 pb-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-sky-500/30 border border-sky-400/40"></div>
+          <div class="h-4 w-48 bg-slate-700 rounded"></div>
+        </div>
+        <div class="flex space-x-4">
+          <div class="h-8 w-24 bg-slate-800 rounded"></div>
+          <div class="h-8 w-32 bg-slate-800 rounded"></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="h-24 bg-slate-800/80 rounded-xl border border-slate-700/50"></div>
+        <div class="h-24 bg-slate-800/80 rounded-xl border border-slate-700/50"></div>
+        <div class="h-24 bg-slate-800/80 rounded-xl border border-slate-700/50"></div>
+        <div class="h-24 bg-slate-800/80 rounded-xl border border-slate-700/50"></div>
+      </div>
+      <div class="h-80 bg-slate-800/60 rounded-xl border border-slate-700/50"></div>
+    </div>
+  </div>
+
+  <!-- Modal Dialog Container -->
+  <div role="dialog" aria-modal="true" aria-labelledby="modal-headline" class="relative z-10 w-full max-w-3xl bg-white rounded-2xl shadow-2xl border border-slate-200/80 overflow-hidden flex flex-col max-h-[92vh]">
+    
+    <!-- Top Warning Banner Accent -->
+    <div class="h-2 w-full bg-gradient-to-r from-rose-600 via-red-500 to-amber-500"></div>
+
+    <!-- Modal Header -->
+    <div class="p-6 pb-4 border-b border-slate-100 flex items-start justify-between bg-white">
+      <div class="flex items-start space-x-4">
+        <div class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-600 shrink-0 shadow-sm">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2.5 mb-1">
+            <h2 id="modal-headline" class="text-xl font-bold text-slate-900 tracking-tight">Confirm Account & Corridor Suspension</h2>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200 uppercase tracking-wide">
+              Irreversible Sanction
+            </span>
+          </div>
+          <p class="text-sm text-slate-500">
+            Enacting this administrative action revokes commercial publishing rights and activates statutory regulatory dispatch.
+          </p>
+        </div>
+      </div>
+      <button type="button" aria-label="Close dialog" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Body (Scrollable) -->
+    <div class="p-6 space-y-5 overflow-y-auto custom-scrollbar flex-1">
+
+      <!-- Target Record Summary Card -->
+      <div class="bg-slate-50/90 rounded-xl p-4 border border-slate-200">
+        <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200/80">
+          <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-[#173b57] text-white flex items-center justify-center font-bold text-sm shadow-sm">
+              TM
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="font-bold text-slate-900 text-sm">Tembisa Minibus Taxi Association (TMCA) PTY LTD</span>
+                <span class="text-[11px] font-mono bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded">NLTA Ch. 4</span>
+              </div>
+              <p class="text-xs text-slate-500">CIPC K2018/492011/07 • PRE Operating License #GP-2024-TMCA-VET</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="inline-flex items-center text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md">
+              Case #REP-8492
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/70">
+            <span class="text-slate-400 block font-medium mb-0.5">Primary Corridor</span>
+            <span class="text-slate-900 font-semibold truncate block">Line 104 Express</span>
+            <span class="text-[10px] text-slate-500">Oakmoor ➔ Sandton</span>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/70">
+            <span class="text-slate-400 block font-medium mb-0.5">Affected Fleet</span>
+            <span class="text-slate-900 font-semibold block">14 Minibuses</span>
+            <span class="text-[10px] text-emerald-600 font-medium">100% Langlaagte COF</span>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/70">
+            <span class="text-slate-400 block font-medium mb-0.5">Rostered Drivers</span>
+            <span class="text-slate-900 font-semibold block">38 PrDP Category P</span>
+            <span class="text-[10px] text-slate-500">eNaTIS Verified</span>
+          </div>
+          <div class="bg-white p-2.5 rounded-lg border border-slate-200/70">
+            <span class="text-slate-400 block font-medium mb-0.5">Report Severity</span>
+            <span class="text-rose-600 font-bold block">HIGH (Statutory Breach)</span>
+            <span class="text-[10px] text-slate-500">Illegal Tariff Surcharge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Effects of Suspension Notice -->
+      <div class="bg-rose-50/70 border border-rose-200 rounded-xl p-4">
+        <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs uppercase tracking-wider mb-2.5">
+          <svg class="w-4 h-4 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+          </svg>
+          <span>Immediate Regulatory & Platform Impacts</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-rose-950">
+          <div class="flex items-start space-x-2">
+            <span class="text-rose-600 font-bold shrink-0 mt-0.5">•</span>
+            <div>
+              <strong class="font-semibold text-rose-900">Instant Marketplace Delisting:</strong>
+              <p class="text-rose-800/90 leading-relaxed text-[11px]">All 6 scheduled corridors and 14 vehicles removed from commuter search and booking feeds within 60 seconds.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-rose-600 font-bold shrink-0 mt-0.5">•</span>
+            <div>
+              <strong class="font-semibold text-rose-900">Commuter Escrow Refunds:</strong>
+              <p class="text-rose-800/90 leading-relaxed text-[11px]">Passengers booked in the next 24h receive automated diversion notices and instant 100% escrow refunds.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-rose-600 font-bold shrink-0 mt-0.5">•</span>
+            <div>
+              <strong class="font-semibold text-rose-900">Dispatch Portal Lockdown:</strong>
+              <p class="text-rose-800/90 leading-relaxed text-[11px]">Operator desk is restricted to Read-Only Statutory Appeal mode; vehicle waybill generation is blocked.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span class="text-rose-600 font-bold shrink-0 mt-0.5">•</span>
+            <div>
+              <strong class="font-semibold text-rose-900">Inspectorate Transmission:</strong>
+              <p class="text-rose-800/90 leading-relaxed text-[11px]">Automated Section 79 enforcement notice transmitted to Gauteng Department of Roads & Transport (PRE).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suspension Scope Selection -->
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+          Sanction Scope & Jurisdiction <span class="text-rose-600">*</span>
+        </label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="relative flex items-start p-3 bg-white border-2 border-rose-500 rounded-xl shadow-xs cursor-pointer bg-rose-50/20">
+            <input type="radio" name="scope" value="entire_account" checked class="mt-0.5 text-rose-600 focus:ring-rose-500 h-4 w-4 border-slate-300">
+            <div class="ml-3">
+              <span class="block text-xs font-bold text-slate-900">Entire Operator Account & Fleet</span>
+              <span class="block text-[11px] text-slate-500 mt-0.5">Halts all 6 TMCA corridors and 14 vehicles. Recommended for severe executive compliance failure.</span>
+            </div>
+          </label>
+          <label class="relative flex items-start p-3 bg-white border border-slate-200 hover:border-slate-300 rounded-xl cursor-pointer transition-colors">
+            <input type="radio" name="scope" value="corridor_only" class="mt-0.5 text-rose-600 focus:ring-rose-500 h-4 w-4 border-slate-300">
+            <div class="ml-3">
+              <span class="block text-xs font-bold text-slate-900">Corridor Only: Line 104 Express</span>
+              <span class="block text-[11px] text-slate-500 mt-0.5">Restricts Oakmoor Bay 4 ➔ Sandton service. Other association feeder routes remain active.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Administrative Form Fields -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Statutory Reason Dropdown -->
+        <div>
+          <label for="admin-reason" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Primary Statutory Grounds <span class="text-rose-600">*</span>
+          </label>
+          <div class="relative">
+            <select id="admin-reason" class="w-full text-xs font-medium bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-slate-900 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 appearance-none shadow-xs">
+              <option selected>Statutory Tariff Breach (Non-gazetted cash extortion)</option>
+              <option>Vehicle Roadworthiness / Expired Certificate of Fitness (COF)</option>
+              <option>Unlicensed Operator / Corridor Permit Violation (NLTA Sec. 50)</option>
+              <option>Severe Safety Incident (Namola SOS / Commuter Harassment)</option>
+              <option>Non-responsive to Compliance Notice within SLA (Section 14)</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-[10px] text-slate-500 mt-1">Pursuant to Section 79 of the National Land Transport Act (NLTA No. 5 of 2009).</p>
+        </div>
+
+        <!-- Sanction Duration -->
+        <div>
+          <label for="admin-duration" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Sanction Duration <span class="text-rose-600">*</span>
+          </label>
+          <div class="relative">
+            <select id="admin-duration" class="w-full text-xs font-medium bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-slate-900 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 appearance-none shadow-xs">
+              <option selected>Indefinite (Pending Statutory Compliance Hearing)</option>
+              <option>7-Day Administrative Hold</option>
+              <option>14-Day Fleet Re-inspection Period</option>
+              <option>30-Day Provisional Suspension</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-[10px] text-slate-500 mt-1">Appeal window: Operator has 72h SAST to file written representation.</p>
+        </div>
+      </div>
+
+      <!-- Administrative Rationale Justification -->
+      <div>
+        <label for="admin-justification" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          Administrative Findings & Justification (Required for Audit Trail) <span class="text-rose-600">*</span>
+        </label>
+        <textarea id="admin-justification" rows="3" class="w-full text-xs font-normal text-slate-900 bg-white border border-slate-300 rounded-lg p-3 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 shadow-xs leading-relaxed" placeholder="Detail specific evidence, inspector findings, or compliance violations...">Site inspectorate blitz on R562 corridor and Oakmoor Bay 4 confirmed rank marshals demanding R9.00 illegal cash surcharge beyond gazetted R26.00 tariff on Line 104 Express. TMCA executive desk failed to remedy non-compliance notice within statutory 4h turnaround SLA. Sanction enacted pursuant to NLTA Section 79 pending DRT dispute resolution.</textarea>
+        <p class="text-[10px] text-slate-400 mt-1 flex justify-between">
+          <span>This text will be incorporated into the official Department of Transport suspension decree.</span>
+          <span>318 characters</span>
+        </p>
+      </div>
+
+      <!-- Mandatory Audit & Legal Attestation Checkbox -->
+      <div class="bg-amber-50/60 border border-amber-200/80 rounded-xl p-3.5">
+        <label class="flex items-start space-x-3 cursor-pointer">
+          <input type="checkbox" checked class="mt-0.5 h-4 w-4 text-rose-600 focus:ring-rose-500 border-amber-400 rounded">
+          <span class="text-xs text-slate-800 leading-normal">
+            I, <strong class="font-semibold text-slate-900">Sipho Ndlovu (Chief Ops Admin, Tier 3)</strong>, certify that this administrative suspension is executed under statutory authority of <span class="font-semibold">NLTA Act No. 5 of 2009 (Section 79)</span>. An immutable audit record with cryptographic hash will be entered into the <span class="font-mono text-[11px] text-slate-700 font-semibold">PRE-GAUTENG-AUDIT</span> ledger.
+          </span>
+        </label>
+      </div>
+
+    </div>
+
+    <!-- Modal Footer Actions -->
+    <div class="p-5 border-t border-slate-100 bg-slate-50/90 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center space-x-2 text-xs text-slate-500">
+        <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+        <span class="text-[11px]">Governed by NLTA Statutory Governance & POPIA Section 19</span>
+      </div>
+
+      <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
+        <button type="button" class="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 hover:text-slate-900 shadow-xs transition-colors focus:ring-2 focus:ring-slate-300">
+          Cancel (Keep Active)
+        </button>
+        <button type="button" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-xs font-bold text-white shadow-sm transition-all focus:ring-4 focus:ring-rose-200 flex items-center justify-center space-x-2">
+          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+          </svg>
+          <span>Confirm Account Suspension</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

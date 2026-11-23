@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-bright":"#f7f9ff","tertiary-container":"#4f3300","on-surface-variant":"#42474d","primary-fixed-dim":"#a9caec","surface-tint":"#40617f","secondary-fixed":"#a5eefd","on-secondary-container":"#1c6e7b","on-tertiary-fixed":"#291800","on-error-container":"#93000a","tertiary-fixed-dim":"#fdba50","secondary":"#116875","error":"#ba1a1a","on-surface":"#131d25","on-tertiary-fixed-variant":"#624000","on-error":"#ffffff","surface-container-lowest":"#ffffff","surface-container-low":"#ecf4ff","primary-fixed":"#cde5ff","primary":"#00253e","surface-variant":"#d9e4f0","inverse-on-surface":"#e7f2fe","error-container":"#ffdad6","surface-container-high":"#dfe9f6","inverse-primary":"#a9caec","on-tertiary-container":"#d4962f","on-secondary-fixed":"#001f25","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#004e59","surface-container-highest":"#d9e4f0","on-primary-fixed-variant":"#284966","background":"#f7f9ff","secondary-fixed-dim":"#89d2e0","on-background":"#131d25","surface-container":"#e5effb","tertiary-fixed":"#ffddb1","surface-dim":"#d1dbe7","outline-variant":"#c2c7ce","surface":"#f7f9ff","primary-container":"#173b57","on-secondary":"#ffffff","inverse-surface":"#27313b","on-primary-fixed":"#001d32","tertiary":"#331f00","on-primary":"#ffffff","on-primary-container":"#84a5c6","outline":"#73777e","secondary-container":"#a5eefd"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","space-md":"1rem","space-xs":"0.25rem","gutter":"1.5rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter-mobile":"1rem","margin-mobile":"1rem","margin":"2rem"},fontFamily:{"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"display-lg-mobile":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"title-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"currency-fare":["Inter"],"display-lg":["Inter"],"headline-xl":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"]},fontSize:{"headline-xl-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"currency-fare":["18px",{lineHeight:"24px",letterSpacing:"0.01em",fontWeight:"700"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(23,59,87,0.06)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center gap-space-sm bg-surface-container"><span class="material-symbols-outlined text-secondary text-[28px]">alt_route</span><div><div class="font-title-md text-title-md text-primary tracking-tight leading-none">CommuteConnect</div><div class="font-label-sm text-label-sm text-on-surface-variant leading-tight mt-space-xs">Operator Verification Portal</div></div></div><div class="px-space-md pt-space-lg"><div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-space-sm mb-space-xs">Operations & Authority</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="my-routes" href="#"><span class="material-symbols-outlined text-[20px]">route</span><span>My Routes</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="enquiries" href="#"><span class="material-symbols-outlined text-[20px]">chat</span><span>Enquiries</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="business-profile" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Business Profile</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="verification" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified</span><span>Verification</span></div><span class="material-symbols-outlined text-secondary text-[16px]">circle</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notifications</span></div><span class="bg-surface-variant text-on-surface px-space-xs py-0.5 rounded font-label-sm text-label-sm">3</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md bg-surface-container-high/60 m-space-md rounded-lg flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[16px]">gavel</span><span class="font-label-md text-label-md font-semibold">Regulatory Registry</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Department of Transport Gauteng Operating Licensing Board linked.</p></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,59,87,0.05)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex flex-col"><div class="flex items-center gap-space-sm"><span class="font-title-md text-title-md text-primary font-bold">Tembisa Minibus Taxi Association (TMCA)</span><span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[14px]">verified_user</span>Verified Operator</span></div><div class="flex items-center gap-space-md mt-0.5"><span class="font-label-md text-label-md text-on-surface-variant font-mono">NLTA #GP-2024-TMCA</span><span class="text-outline-variant">•</span><span class="font-label-md text-label-md text-on-surface-variant">Corridor Jurisdiction: East Rand – Sandton Hub</span></div></div></div><div class="flex items-center gap-space-lg"><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container font-label-md text-label-md text-on-surface"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span><span class="font-semibold">14:32 SAST</span><span class="text-on-surface-variant">(UTC+2)</span></div><div class="flex items-center gap-space-sm"><button class="relative p-space-sm rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></span></button><button class="p-space-sm rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">headset_mic</span></button></div><div class="h-8 w-px bg-surface-variant"></div><div class="flex items-center gap-space-sm cursor-pointer pl-space-xs"><div class="text-right"><div class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Dispatch Desk 04</div><div class="font-label-sm text-label-sm text-on-surface-variant">Duty Dispatcher</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 px-space-lg bg-background min-h-[calc(100vh-80px)] flex flex-col justify-between"><div><div class="flex flex-col w-full pb-space-xl">
+<!-- Interactive State Switcher Bar (Simulation Controls) -->
+<aside aria-label="Interactive State Preview Tools" class="w-full bg-surface-container-high rounded-xl p-space-md mb-space-lg shadow-sm">
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">tune</span>
+<div>
+<span class="font-label-lg text-label-lg text-primary font-bold">State Preview & Edge Condition Simulator</span>
+<span class="hidden md:inline font-body-sm text-body-sm text-on-surface-variant ml-space-xs">Toggle life-cycle phases & inspectorate auditing outcomes</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-primary-container text-on-primary-container" data-state-btn="draft" onclick="setScreenState('draft')" type="button">
+          1. Draft
+        </button>
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-surface text-on-surface-variant hover:bg-surface-container" data-state-btn="pending" onclick="setScreenState('pending')" type="button">
+          2. Pending
+        </button>
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-surface text-on-surface-variant hover:bg-surface-container" data-state-btn="under_review" onclick="setScreenState('under_review')" type="button">
+          3. Under Review
+        </button>
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-surface text-on-surface-variant hover:bg-surface-container" data-state-btn="verified" onclick="setScreenState('verified')" type="button">
+          4. Verified
+        </button>
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-surface text-on-surface-variant hover:bg-surface-container" data-state-btn="rejected" onclick="setScreenState('rejected')" type="button">
+          5. Rejected
+        </button>
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-surface text-on-surface-variant hover:bg-surface-container" data-state-btn="suspended" onclick="setScreenState('suspended')" type="button">
+          6. Suspended
+        </button>
+<span class="h-4 w-px bg-outline-variant mx-1 hidden sm:inline"></span>
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-medium transition-all bg-surface text-error hover:bg-error-container" onclick="toggleUploadFailure()" type="button">
+<span class="material-symbols-outlined text-[14px] align-middle">error</span> Error Toast
+        </button>
+<button class="px-space-sm py-1 rounded-lg font-label-md text-label-md font-medium transition-all bg-surface text-secondary hover:bg-secondary-container" onclick="openModal('confirmModal')" type="button">
+<span class="material-symbols-outlined text-[14px] align-middle">verified</span> Success Modal
+        </button>
+</div>
+</div>
+</aside>
+<!-- Page Header & Regulatory Subtitle -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-space-xs font-semibold">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span>Department of Transport • Gauteng PRE Compliance Portal</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">Operator Verification & Regulatory Dossier</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+        Statutory vetting under the National Land Transport Act (Act 5 of 2009) and Gauteng Provincial Regulatory Entity (PRE).
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<span class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        Gauteng PRE Gateway Online
+      </span>
+<button class="px-space-md py-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-space-xs transition-colors" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print File</span>
+</button>
+</div>
+</div>
+<!-- Dynamic Simulated Upload Failure Notification -->
+<div class="hidden w-full bg-error-container rounded-xl p-space-md mb-space-lg text-on-error-container shadow-sm transition-all" id="uploadFailureBanner">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[24px] mt-0.5">cloud_off</span>
+<div>
+<div class="font-title-md text-title-md font-bold text-on-error-container">Upload Failed: TMCA_corridor_audit_scan.heic</div>
+<div class="font-body-md text-body-md text-on-error-container mt-0.5">
+            Unsupported file format or corrupted payload structure. Gauteng PRE statutory repository accepts standard PDF, PNG, and JPEG documents under 25MB.
+          </div>
+<div class="flex items-center gap-space-md mt-space-sm">
+<button class="px-space-md py-1.5 bg-error text-on-error font-label-md text-label-md font-semibold rounded-lg hover:opacity-90" onclick="dismissFailure()" type="button">
+              Re-select File & Retry
+            </button>
+<button class="font-label-md text-label-md underline hover:opacity-80" onclick="dismissFailure()" type="button">
+              Dismiss Error
+            </button>
+</div>
+</div>
+</div>
+<button class="text-on-error-container hover:opacity-75" onclick="dismissFailure()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Business Information Summary Card -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-lg mb-space-lg shadow-sm relative overflow-hidden">
+<div class="absolute right-0 top-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="w-16 h-16 rounded-xl bg-primary text-on-primary flex items-center justify-center flex-shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[34px]">local_taxi</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Tembisa Minibus Taxi Association (TMCA) PTY LTD</h2>
+<span class="px-space-xs py-0.5 rounded bg-surface-variant text-on-surface font-label-sm text-label-sm font-mono">Ch. 4 NLTA</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-space-lg gap-y-1 mt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div><span class="font-label-sm text-label-sm font-semibold text-on-surface">CIPC Reg:</span> K2018/492011/07</div>
+<div><span class="font-label-sm text-label-sm font-semibold text-on-surface">NLTA Ref:</span> #GP-2024-TMCA-VET</div>
+<div><span class="font-label-sm text-label-sm font-semibold text-on-surface">Licensing Board:</span> Gauteng PRE Desk 02</div>
+<div><span class="font-label-sm text-label-sm font-semibold text-on-surface">Dispatch Hub:</span> Bay 4, Oakmoor Terminal</div>
+<div><span class="font-label-sm text-label-sm font-semibold text-on-surface">Direct Line:</span> +27 11 924 4500</div>
+<div><span class="font-label-sm text-label-sm font-semibold text-on-surface">Dispatch Email:</span> dispatch@tmca-transit.co.za</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-start lg:items-end justify-center gap-space-xs flex-shrink-0 pl-space-md border-l-0 lg:border-l border-outline-variant/30">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>POPIA Encrypted Dossier</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant lg:text-right max-w-xs">
+          Access strictly restricted to certified PRE transit examiners & eNaTIS data liaisons.
+        </p>
+</div>
+</div>
+</div>
+<!-- Dynamic Status & Regulatory Action Banner -->
+<div class="w-full rounded-xl p-space-lg mb-space-lg shadow-sm transition-all duration-300 bg-surface-container" id="statusBanner">
+<!-- Populated dynamically via JS -->
+</div>
+<!-- Main Content Layout (Left Column 8 cols, Right Column 4 cols) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: Dossier Checklist, Document Upload Areas, Submit Controls -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- Statutory Verification Progress Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="font-title-md text-title-md text-primary font-bold">Mandatory Statutory Documents</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Prerequisite verification items required by Section 50 of the National Land Transport Act.</div>
+</div>
+<div class="flex items-center gap-space-sm self-start sm:self-center">
+<span class="px-space-sm py-1 rounded-full font-label-md text-label-md font-bold bg-primary-container text-on-primary-container" id="progressPill">
+              3 of 4 Documents Uploaded
+            </span>
+</div>
+</div>
+<!-- Visual Progress Bar -->
+<div class="w-full bg-surface-container h-3 rounded-full overflow-hidden mb-space-lg relative">
+<div class="bg-secondary h-full rounded-full transition-all duration-500 ease-out" id="progressBar" style="width: 75%;"></div>
+</div>
+<!-- 4 Key Statutory Requirements Checkpoints -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface" id="check1">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">check_circle</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">1. Association Constitution & CIPC</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Validated enterprise charter with 2024 compliance certificate.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface" id="check2">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">check_circle</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">2. Gauteng PRE Operating Licences</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Certified gazetted corridor permits for 14 operational lines.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface" id="check3">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">check_circle</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">3. Vehicle Certificates of Fitness (COF)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Langlaagte VTS test sheets for 14 registered minibuses.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface" id="check4">
+<span class="material-symbols-outlined text-outline-variant text-[22px] mt-0.5" id="check4Icon">radio_button_unchecked</span>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface" id="check4Title">4. Driver PrDP Endorsement Register</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant" id="check4Sub">eNaTIS driver records and Category P passenger permits.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Missing Document Notice (Dynamic) -->
+<div class="bg-tertiary-fixed/30 rounded-xl p-space-md shadow-sm flex items-start gap-space-sm text-on-tertiary-fixed" id="missingDocNotice">
+<span class="material-symbols-outlined text-on-tertiary-container text-[24px] mt-0.5">warning</span>
+<div class="flex-1">
+<div class="font-title-md text-title-md font-bold text-on-tertiary-fixed">Missing 1 Mandatory Requirement: Driver PrDP Register</div>
+<p class="font-body-md text-body-md mt-0.5">
+            Gauteng PRE statutory requirements dictate that all 38 rostered drivers operating across the Tembisa-Sandton corridor must hold verified Category P PrDPs. Upload the signed register below before auditing can begin.
+          </p>
+</div>
+</div>
+<!-- Statutory Document Upload Grid / Cards -->
+<div class="flex flex-col gap-space-md">
+<!-- CARD 1: Gauteng PRE Operating Licences (Uploaded) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm transition-all" id="docCard1">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">description</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-primary font-bold">1. Gauteng PRE Operating Licences (Batch Scans)</h3>
+<span class="inline-flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold" id="badgeCard1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Encrypted & Hashed
+                  </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Corridor authority for Oakmoor Terminal ↔ Sandton City, Midrand Gautrain feeder corridors.
+                </div>
+<!-- File Meta Box -->
+<div class="mt-space-sm flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="font-mono text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">picture_as_pdf</span>
+                    TMCA_PRE_Operating_Licence_2024_2026.pdf
+                  </span>
+<span>4.2 MB</span>
+<span>Uploaded 22 Oct 2024 at 11:15 SAST</span>
+<span class="text-secondary font-mono">SHA256: 9e4f..8b21</span>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex items-center gap-space-xs flex-shrink-0 self-start md:self-center">
+<button class="px-space-md py-1.5 rounded-lg bg-surface hover:bg-surface-container text-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-space-xs" onclick="previewDocument('Gauteng PRE Operating Licences', 'TMCA_PRE_Operating_Licence_2024_2026.pdf')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Preview</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface hover:bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold transition-colors flex items-center gap-space-xs" onclick="triggerFileSelect('card1')" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Replace</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" onclick="simulateRemove(1)" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Document Deficiencies / Warning box (For Rejected or Suspended State) -->
+<div class="hidden mt-space-md p-space-md rounded-lg bg-error-container text-on-error-container" id="deficiencyBox1">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[20px]">report</span>
+<div>
+<span class="font-label-lg text-label-lg font-bold">Regulatory Non-Compliance Flag:</span>
+<span class="font-body-sm text-body-sm block mt-0.5">Page 4 corridor endorsement stamp expired on 30 Sept 2024. Provide updated temporary extension receipt issued by Gauteng PRE Germiston licensing hub.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: Fleet Certificates of Fitness (COF) (Uploaded) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm transition-all" id="docCard2">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">directions_bus</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-primary font-bold">2. Fleet Certificates of Fitness (COF) - Langlaagte VTS</h3>
+<span class="inline-flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold" id="badgeCard2">
+<span class="material-symbols-outlined text-[13px]">verified</span> Roadworthiness Certified
+                  </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  14 registered 16-seater Toyota Quantum passenger vehicles inspected at Langlaagte Vehicle Testing Station.
+                </div>
+<!-- File Meta Box -->
+<div class="mt-space-sm flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="font-mono text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">picture_as_pdf</span>
+                    TMCA_Langlaagte_VTS_Batch_COF.pdf
+                  </span>
+<span>8.7 MB</span>
+<span>14 Vehicles Indexed</span>
+<span>Uploaded 23 Oct 2024</span>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex items-center gap-space-xs flex-shrink-0 self-start md:self-center">
+<button class="px-space-md py-1.5 rounded-lg bg-surface hover:bg-surface-container text-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-space-xs" onclick="previewDocument('Fleet Certificates of Fitness', 'TMCA_Langlaagte_VTS_Batch_COF.pdf')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Preview</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface hover:bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold transition-colors flex items-center gap-space-xs" onclick="triggerFileSelect('card2')" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Replace</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" onclick="simulateRemove(2)" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 3: Driver PrDP Endorsement Register (Empty Dropzone / Upload State) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm transition-all" id="docCard3">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">badge</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-primary font-bold">3. Driver Professional Driving Permit (PrDP) Register</h3>
+<span class="inline-flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold" id="badgeCard3">
+                      Action Required
+                    </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Must include Category P passenger endorsements, RSA ID references, and valid eNaTIS license cards for all 38 rostered drivers.
+                  </div>
+</div>
+</div>
+</div>
+<!-- Upload Area State (Default Missing/Dropzone) -->
+<div class="w-full rounded-xl p-space-xl bg-surface hover:bg-surface-container text-center transition-colors cursor-pointer group shadow-inner" id="card3UploadZone" onclick="simulatePrdpUpload()">
+<input class="hidden" id="fileInputPrdp" onchange="handleFileUpload(event)" type="file"/>
+<div class="flex flex-col items-center justify-center gap-space-xs max-w-lg mx-auto">
+<div class="w-14 h-14 rounded-full bg-surface-container-high group-hover:bg-primary-container text-primary group-hover:text-on-primary-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[30px]">upload_file</span>
+</div>
+<div class="font-title-md text-title-md text-primary font-bold mt-space-xs">
+                  Drag and drop your signed Driver PrDP register or browse files
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                  Supported formats: PDF, TIFF, PNG, JPEG (Max 25MB). Clean, high-contrast municipal certified copies.
+                </div>
+<div class="mt-space-sm flex items-center gap-space-xs text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span>Browse Local Directory</span>
+</div>
+</div>
+</div>
+<!-- Uploaded State (Hidden initially, shown after simulated upload or in verified state) -->
+<div class="hidden flex flex-col md:flex-row md:items-center justify-between gap-space-md p-space-md rounded-xl bg-surface" id="card3UploadedView">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[32px]">task_alt</span>
+<div>
+<div class="font-title-md text-title-md font-bold text-primary">TMCA_Rostered_Drivers_PrDP_2024.pdf</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    38 Driver Records • 3.4 MB • Uploaded just now • Validated eNaTIS Registry
+                  </div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" onclick="previewDocument('Driver PrDP Register', 'TMCA_Rostered_Drivers_PrDP_2024.pdf')" type="button">
+                  Preview
+                </button>
+<button class="p-1.5 rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" onclick="resetPrdpUpload()" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Upload In Progress Bar (Simulated) -->
+<div class="hidden flex flex-col gap-space-xs p-space-md bg-surface rounded-xl" id="card3Progress">
+<div class="flex items-center justify-between text-body-sm font-label-md">
+<span class="text-primary font-semibold">Encrypting & Uploading Driver Dossier...</span>
+<span class="font-mono text-secondary" id="uploadPercent">64%</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-200" id="uploadFill" style="width: 64%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 4: CIPC Registration & Association Constitution (Uploaded) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm transition-all" id="docCard4">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<h3 class="font-title-md text-title-md text-primary font-bold">4. CIPC Enterprise Registration & Constitution</h3>
+<span class="inline-flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold" id="badgeCard4">
+<span class="material-symbols-outlined text-[13px]">gavel</span> Verified Legal Entity
+                  </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  South African Companies and Intellectual Property Commission enterprise filing certificate and ratified taxi association charter.
+                </div>
+<!-- File Meta Box -->
+<div class="mt-space-sm flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="font-mono text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">picture_as_pdf</span>
+                    CIPC_TMCA_Enterprise_Charter.pdf
+                  </span>
+<span>2.1 MB</span>
+<span>Uploaded 19 Oct 2024</span>
+<span class="text-secondary font-mono">CIPC: K2018/492011/07</span>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex items-center gap-space-xs flex-shrink-0 self-start md:self-center">
+<button class="px-space-md py-1.5 rounded-lg bg-surface hover:bg-surface-container text-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-space-xs" onclick="previewDocument('CIPC Enterprise Charter', 'CIPC_TMCA_Enterprise_Charter.pdf')" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Preview</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface hover:bg-surface-container text-on-surface-variant font-label-md text-label-md font-semibold transition-colors flex items-center gap-space-xs" onclick="triggerFileSelect('card4')" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Replace</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" onclick="simulateRemove(4)" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Statutory Perjury & Submission Action Bar -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Statutory Perjury Declaration Checkbox -->
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input class="mt-1 w-5 h-5 rounded bg-surface text-primary focus:ring-0 focus:outline-none cursor-pointer" id="statutoryCertCheck" onchange="toggleSubmitButton()" type="checkbox"/>
+<div class="text-on-surface font-body-sm text-body-sm leading-relaxed">
+<span class="font-semibold text-primary">Statutory Attestation & Declaration (NLTA Section 90):</span>
+            I, on behalf of <strong>Tembisa Minibus Taxi Association</strong>, certify under penalty of statutory perjury and license forfeiture that all submitted operating licences, driver PrDPs, and vehicle certificates of fitness are authentic, valid, and unexpired copies registered with the Gauteng Department of Roads & Transport.
+          </div>
+</label>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-sm">
+<button class="w-full sm:w-auto px-space-lg py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold transition-colors flex items-center justify-center gap-space-xs" onclick="saveDraftToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+<span>Save Draft & Exit</span>
+</button>
+<button class="w-full sm:w-auto px-space-xl py-2.5 rounded-lg bg-outline-variant text-on-surface-variant font-label-lg text-label-lg font-semibold transition-all flex items-center justify-center gap-space-sm cursor-not-allowed" disabled="" id="submitDossierBtn" onclick="submitVerificationDossier()" type="button">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>Submit Verification Dossier for PRE Audit</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Security Guarantee, Audit SLAs, Support Desk, Inspection Guidelines -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Security & Privacy Safeguard Notice (POPIA Sec 14) -->
+<div class="bg-primary text-on-primary rounded-xl p-space-lg shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-space-sm text-secondary-fixed mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+<span class="font-label-lg text-label-lg font-bold tracking-wide uppercase">Confidential Statutory Repository</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary/90 leading-relaxed">
+            Uploaded operating licences, PrDP registers, and association constitutions are encrypted with <strong>256-bit AES</strong> at rest and TLS in transit. 
+          </p>
+<div class="mt-space-md p-space-sm rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs font-semibold text-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>POPIA Act No. 4 of 2013</span>
+</div>
+<p class="mt-1 text-on-primary/80">
+              Personal driver identities and biometric records are strictly shielded from public commuters and commercial third parties. Decryption is reserved exclusively for certified PRE transit inspectors.
+            </p>
+</div>
+</div>
+</div>
+<!-- Regulatory Audit SLA & Timelines -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-xs font-title-md text-title-md text-primary font-bold mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">timer</span>
+<span>Statutory Audit Service Level</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Gauteng Department of Roads and Transport official vetting window:
+        </div>
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface">
+<span class="font-label-md text-label-md text-on-surface">Standard Operating Audit</span>
+<span class="font-label-md text-label-md font-mono font-bold text-secondary">48 – 72 SAST Hours</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface">
+<span class="font-label-md text-label-md text-on-surface">eNaTIS Roadworthiness Crosscheck</span>
+<span class="font-label-md text-label-md font-mono font-bold text-on-surface">24 Hours</span>
+</div>
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface">
+<span class="font-label-md text-label-md text-on-surface">Corridor Conflict Inspection</span>
+<span class="font-label-md text-label-md font-mono font-bold text-on-surface">Same-day Sync</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t-0 border-outline-variant/30 flex items-center justify-between">
+<a class="font-label-sm text-label-sm text-secondary hover:underline flex items-center gap-1 font-semibold" href="#">
+<span>Gazette No. 44109 Tariff Directives</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Rejection Avoidance Quick Guide -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="font-title-md text-title-md text-primary font-bold mb-space-xs flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">fact_check</span>
+<span>Audit Checklist Quick Guide</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Common reasons PRE examiners decline taxi association submissions:
+        </p>
+<ul class="space-y-space-sm text-body-sm font-body-sm text-on-surface-variant">
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check</span>
+<span><strong>Clear PRE Stamps:</strong> Ensure the red municipal concession stamp is 100% visible with uncropped date stamps.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check</span>
+<span><strong>Multi-page COF Sheets:</strong> Both pages of the Langlaagte Vehicle Testing Station test sheet must be included.</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check</span>
+<span><strong>Valid PrDP Category P:</strong> Regular Category B/C licenses will be rejected for passenger fare operations.</span>
+</li>
+</ul>
+</div>
+<!-- Dedicated Compliance Helpdesk & Inspector Contacts -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center gap-space-xs font-title-md text-title-md text-primary font-bold mb-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">contact_support</span>
+<span>Dedicated Regulatory Desk</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Assigned Compliance Officer for Ekurhuleni & North East Corridor:
+        </div>
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface mb-space-md">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold font-title-md">
+            MD
+          </div>
+<div>
+<div class="font-label-lg text-label-lg font-bold text-on-surface">Inspector M. Dlamini</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Gauteng Dept of Roads & Transport</div>
+<div class="font-label-sm text-label-sm text-secondary font-mono mt-0.5">PRE ID: DRT-AUD-4412</div>
+</div>
+</div>
+<div class="space-y-space-xs font-label-md text-label-md">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Toll-Free RSA Line:</span>
+<span class="font-semibold font-mono text-on-surface">0800 266 688</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>WhatsApp Operator Liaison:</span>
+<span class="font-semibold font-mono text-secondary">+27 11 924 4500</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span>Support Desk Hours:</span>
+<span class="font-semibold text-on-surface">07:30 – 16:30 SAST</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: Document Preview Simulation -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/60 backdrop-blur-sm" id="previewModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<div>
+<div class="font-title-md text-title-md text-primary font-bold" id="modalDocTitle">Document Preview</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono" id="modalDocSubtitle">Filename.pdf</div>
+</div>
+</div>
+<button class="p-1 rounded-lg hover:bg-surface-variant text-on-surface-variant" onclick="closeModal('previewModal')" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Preview Canvas) -->
+<div class="p-space-xl flex flex-col items-center justify-center bg-surface overflow-y-auto min-h-[380px]">
+<div class="w-full max-w-md p-space-lg bg-surface-container-lowest rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-mono">Republic of South Africa</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Official Certified Record</span>
+</div>
+<div class="h-32 bg-surface-container-low rounded flex items-center justify-center flex-col gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[48px] text-secondary">article</span>
+<span class="font-label-sm text-label-sm">High-Resolution Vector Scan • 300 DPI</span>
+</div>
+<div class="space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex justify-between"><span>Issuing Entity:</span> <strong class="text-on-surface">Gauteng PRE Licensing Board</strong></div>
+<div class="flex justify-between"><span>Accreditation Stamp:</span> <strong class="text-on-surface">Active (2024-2026 Cycle)</strong></div>
+<div class="flex justify-between"><span>Cryptographic Hash:</span> <span class="font-mono text-secondary font-bold">e7a49..b2d9</span></div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock</span>
+          Watermarked with TMCA Operator ID #GP-2024-TMCA
+        </span>
+<div class="flex gap-space-sm">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md font-semibold" onclick="closeModal('previewModal')" type="button">
+            Close
+          </button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-1" onclick="closeModal('previewModal')" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Download Certified Scan</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: Submission Confirmation -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/60 backdrop-blur-sm" id="confirmModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-xl flex flex-col items-center text-center shadow-2xl">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[36px]">verified</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Dossier Successfully Submitted!</h3>
+<div class="mt-space-xs font-mono font-bold text-secondary text-title-md">
+        Application Reference: #GP-2024-TMCA-VET
+      </div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm leading-relaxed">
+        Your verification bundle has been committed to the <strong>Gauteng Provincial Regulatory Entity</strong> queue. Inspection officers will review operating permits and roadworthiness records within <strong>48 to 72 SAST business hours</strong>.
+      </p>
+<div class="w-full my-space-md p-space-sm rounded-lg bg-surface-container text-left font-body-sm text-body-sm text-on-surface-variant space-y-1">
+<div>• SMS confirmation sent to: <strong class="text-on-surface">+27 11 924 4500</strong></div>
+<div>• Audit docket emailed to: <strong class="text-on-surface">dispatch@tmca-transit.co.za</strong></div>
+</div>
+<div class="flex items-center gap-space-sm w-full mt-space-xs">
+<button class="flex-1 py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container transition-colors" onclick="closeModal('confirmModal'); setScreenState('under_review');" type="button">
+          View Under Review Status
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="hidden fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-space-lg py-space-md rounded-xl shadow-xl flex items-center gap-space-sm transition-all" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed" id="toastIcon">bookmark</span>
+<span class="font-label-md text-label-md" id="toastMsg">Dossier draft state saved successfully.</span>
+</div>
+</div>
+<!-- Interactive Client-side Script for Status and State Switching -->
+<script>
+  let currentState = 'draft';
+  let prdpUploaded = false;
+
+  const stateData = {
+    draft: {
+      badgeText: 'Draft / Upload Workspace - 3 of 4 Ready',
+      badgeBg: 'bg-surface-variant',
+      badgeColor: 'text-on-surface',
+      bannerBg: 'bg-surface-container',
+      title: 'Verification Dossier In Progress',
+      explanation: 'Your statutory verification submission is currently being prepared. Mandatory operating licences and vehicle roadworthiness records have been uploaded. Upload the Driver PrDP register below to finalize the submission.',
+      actionPrimary: 'Submit Verification Dossier for PRE Audit',
+      actionSecondary: 'Save Draft & Exit',
+      progress: 75,
+      progressText: '3 of 4 Documents Uploaded',
+      showMissingNotice: true,
+      card3IsUploaded: false,
+      showDeficiency: false
+    },
+    pending: {
+      badgeText: 'Pending Submission - 3 of 4 Documents Uploaded',
+      badgeBg: 'bg-tertiary-fixed',
+      badgeColor: 'text-on-tertiary-fixed',
+      bannerBg: 'bg-tertiary-fixed/20',
+      title: 'Action Required: Incomplete Verification Bundle',
+      explanation: 'Your verification dossier is incomplete. Mandatory operating licences and certificates must be submitted before Gauteng PRE auditors can commence statutory vetting.',
+      actionPrimary: 'Complete Missing Requirements',
+      actionSecondary: 'Save As Draft',
+      progress: 75,
+      progressText: '3 of 4 Documents Uploaded',
+      showMissingNotice: true,
+      card3IsUploaded: false,
+      showDeficiency: false
+    },
+    under_review: {
+      badgeText: 'Under Statutory Audit - Estimated 2-3 Business Days',
+      badgeBg: 'bg-primary-container',
+      badgeColor: 'text-on-primary-container',
+      bannerBg: 'bg-surface-container-high',
+      title: 'Auditing by Gauteng Provincial Regulatory Entity',
+      explanation: 'Dossier received and timestamped. Gauteng Department of Roads & Transport compliance officers are validating your operating licenses and eNaTIS fleet roadworthiness records.',
+      actionPrimary: 'Track Regulatory Audit Progress',
+      actionSecondary: 'Request Expedited Feeder Audit',
+      progress: 100,
+      progressText: '4 of 4 Submitted for Audit',
+      showMissingNotice: false,
+      card3IsUploaded: true,
+      showDeficiency: false
+    },
+    verified: {
+      badgeText: 'Verified Operator - Statutory Clearance Active',
+      badgeBg: 'bg-secondary-container',
+      badgeColor: 'text-on-secondary-container',
+      bannerBg: 'bg-secondary-container/30',
+      title: 'Accreditation Certified & Active in Gauteng PRE Registry',
+      explanation: 'Accreditation certified under PRE Permit #GP-2024-TMCA. Authorized to publish live high-frequency passenger corridors, register shuttle fleets, and collect digital fares across Gauteng.',
+      actionPrimary: 'Download Verified Operator Certificate (PDF)',
+      actionSecondary: 'Publish Corridor Routes',
+      progress: 100,
+      progressText: '4 of 4 Verified & Certified',
+      showMissingNotice: false,
+      card3IsUploaded: true,
+      showDeficiency: false
+    },
+    rejected: {
+      badgeText: 'Application Rejected - Action Required',
+      badgeBg: 'bg-error-container',
+      badgeColor: 'text-on-error-container',
+      bannerBg: 'bg-error-container/40',
+      title: 'Statutory Vetting Unsuccessful: Deficiencies Identified',
+      explanation: 'PRE Operating Licence scan was rejected due to an expired corridor endorsement stamp (Valid until 30 Sept 2024; required 2025/2026 renewal). Langlaagte VTS Certificate of Fitness is missing inspection sheet page 2.',
+      actionPrimary: 'Re-upload Corrected Documents',
+      actionSecondary: 'Schedule PRE Regulatory Hearing',
+      progress: 50,
+      progressText: '2 of 4 Disqualified / Rejected',
+      showMissingNotice: false,
+      card3IsUploaded: true,
+      showDeficiency: true
+    },
+    suspended: {
+      badgeText: 'Operating Clearance Suspended',
+      badgeBg: 'bg-tertiary-container',
+      badgeColor: 'text-on-tertiary-container',
+      bannerBg: 'bg-tertiary-container/15',
+      title: 'Temporary Audit Hold Imposed by Provincial Board',
+      explanation: 'Temporary audit hold placed due to pending annual fleet roadworthiness recertification for 4 vehicles. Marketplace route listings are temporarily hidden from commuters until resolved.',
+      actionPrimary: 'Submit Langlaagte VTS Recertification Dossier',
+      actionSecondary: 'Contact Dispute Liaison Desk',
+      progress: 75,
+      progressText: 'Statutory Clearance Paused',
+      showMissingNotice: false,
+      card3IsUploaded: true,
+      showDeficiency: false
+    }
+  };
+
+  function setScreenState(state) {
+    currentState = state;
+    const config = stateData[state];
+
+    // Highlight active toolbar button
+    document.querySelectorAll('[data-state-btn]').forEach(btn => {
+      if (btn.getAttribute('data-state-btn') === state) {
+        btn.className = 'px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-primary-container text-on-primary-container';
+      } else {
+        btn.className = 'px-space-sm py-1 rounded-lg font-label-md text-label-md font-semibold transition-all bg-surface text-on-surface-variant hover:bg-surface-container';
+      }
+    });
+
+    // Render Status Banner
+    const banner = document.getElementById('statusBanner');
+    banner.className = `w-full rounded-xl p-space-lg mb-space-lg shadow-sm transition-all duration-300 ${config.bannerBg}`;
+    banner.innerHTML = `
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+        <div class="flex-1">
+          <div class="flex items-center gap-space-xs mb-space-xs">
+            <span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full ${config.badgeBg} ${config.badgeColor} font-label-sm text-label-sm font-bold">
+              <span class="material-symbols-outlined text-[15px]">verified</span>
+              ${config.badgeText}
+            </span>
+          </div>
+          <h2 class="font-headline-sm text-headline-sm text-primary font-bold mt-1">${config.title}</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed max-w-3xl">${config.explanation}</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-space-xs flex-shrink-0">
+          <button type="button" onclick="handleBannerAction('${config.actionPrimary}')" class="px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold transition-colors flex items-center gap-space-xs shadow-sm">
+            <span>${config.actionPrimary}</span>
+          </button>
+          <button type="button" onclick="handleBannerAction('${config.actionSecondary}')" class="px-space-md py-2.5 rounded-lg bg-surface hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold transition-colors">
+            <span>${config.actionSecondary}</span>
+          </button>
+        </div>
+      </div>
+    `;
+
+    // Update Progress Bar & Checklist
+    document.getElementById('progressBar').style.width = `${config.progress}%`;
+    document.getElementById('progressPill').innerText = config.progressText;
+
+    // Toggle Missing Notice Banner
+    const missingNotice = document.getElementById('missingDocNotice');
+    if (config.showMissingNotice) {
+      missingNotice.classList.remove('hidden');
+    } else {
+      missingNotice.classList.add('hidden');
+    }
+
+    // Toggle Deficiency Box on Card 1
+    const defBox = document.getElementById('deficiencyBox1');
+    if (config.showDeficiency) {
+      defBox.classList.remove('hidden');
+    } else {
+      defBox.classList.add('hidden');
+    }
+
+    // Toggle Card 3 (Driver PrDP) uploaded state
+    const card3Dropzone = document.getElementById('card3UploadZone');
+    const card3Uploaded = document.getElementById('card3UploadedView');
+    const card3Badge = document.getElementById('badgeCard3');
+    const check4Icon = document.getElementById('check4Icon');
+
+    if (config.card3IsUploaded || prdpUploaded) {
+      card3Dropzone.classList.add('hidden');
+      card3Uploaded.classList.remove('hidden');
+      card3Badge.className = 'inline-flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold';
+      card3Badge.innerHTML = '<span class="material-symbols-outlined text-[13px]">verified</span> Validated eNaTIS Record';
+      check4Icon.innerText = 'check_circle';
+      check4Icon.className = 'material-symbols-outlined text-secondary text-[22px] mt-0.5';
+    } else {
+      card3Dropzone.classList.remove('hidden');
+      card3Uploaded.classList.add('hidden');
+      card3Badge.className = 'inline-flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold';
+      card3Badge.innerText = 'Action Required';
+      check4Icon.innerText = 'radio_button_unchecked';
+      check4Icon.className = 'material-symbols-outlined text-outline-variant text-[22px] mt-0.5';
+    }
+
+    toggleSubmitButton();
+  }
+
+  function simulatePrdpUpload() {
+    const dropzone = document.getElementById('card3UploadZone');
+    const progress = document.getElementById('card3Progress');
+    const uploadedView = document.getElementById('card3UploadedView');
+    const uploadPercent = document.getElementById('uploadPercent');
+    const uploadFill = document.getElementById('uploadFill');
+
+    dropzone.classList.add('hidden');
+    progress.classList.remove('hidden');
+
+    let p = 15;
+    const interval = setInterval(() => {
+      p += 20;
+      if (p >= 100) {
+        clearInterval(interval);
+        progress.classList.add('hidden');
+        uploadedView.classList.remove('hidden');
+        prdpUploaded = true;
+        showToast('TMCA_Rostered_Drivers_PrDP_2024.pdf uploaded and encrypted.');
+        setScreenState(currentState);
+      } else {
+        uploadPercent.innerText = p + '%';
+        uploadFill.style.width = p + '%';
+      }
+    }, 150);
+  }
+
+  function resetPrdpUpload() {
+    prdpUploaded = false;
+    document.getElementById('card3UploadedView').classList.add('hidden');
+    document.getElementById('card3UploadZone').classList.remove('hidden');
+    setScreenState(currentState);
+    showToast('Driver PrDP file removed.');
+  }
+
+  function toggleSubmitButton() {
+    const checkbox = document.getElementById('statutoryCertCheck');
+    const submitBtn = document.getElementById('submitDossierBtn');
+    
+    // In Draft or Pending, enabled if checkbox is checked and files are in order
+    if (checkbox.checked && (currentState === 'under_review' || currentState === 'verified' || prdpUploaded)) {
+      submitBtn.disabled = false;
+      submitBtn.className = 'w-full sm:w-auto px-space-xl py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold transition-all flex items-center justify-center gap-space-sm shadow-md cursor-pointer';
+    } else {
+      submitBtn.disabled = true;
+      submitBtn.className = 'w-full sm:w-auto px-space-xl py-2.5 rounded-lg bg-surface-variant text-on-surface-variant font-label-lg text-label-lg font-semibold transition-all flex items-center justify-center gap-space-sm cursor-not-allowed';
+    }
+  }
+
+  function submitVerificationDossier() {
+    openModal('confirmModal');
+  }
+
+  function toggleUploadFailure() {
+    const banner = document.getElementById('uploadFailureBanner');
+    banner.classList.toggle('hidden');
+  }
+
+  function dismissFailure() {
+    document.getElementById('uploadFailureBanner').classList.add('hidden');
+  }
+
+  function previewDocument(title, filename) {
+    document.getElementById('modalDocTitle').innerText = title;
+    document.getElementById('modalDocSubtitle').innerText = filename;
+    openModal('previewModal');
+  }
+
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    document.getElementById('toastMsg').innerText = msg;
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3800);
+  }
+
+  function saveDraftToast() {
+    showToast('Draft progress successfully saved under NLTA Ref: #GP-2024-TMCA-VET');
+  }
+
+  function handleBannerAction(label) {
+    if (label.includes('Download')) {
+      showToast('Downloading PRE Official Verified Operator Certificate...');
+    } else if (label.includes('Publish')) {
+      showToast('Redirecting to Route Management Console...');
+    } else if (label.includes('Submit') || label.includes('Complete')) {
+      if (!prdpUploaded) {
+        simulatePrdpUpload();
+      } else {
+        openModal('confirmModal');
+      }
+    } else {
+      showToast(`Action invoked: ${label}`);
+    }
+  }
+
+  function triggerFileSelect(cardId) {
+    showToast('Browsing file selector for ' + cardId + '...');
+  }
+
+  function simulateRemove(cardNum) {
+    showToast(`Removed document ${cardNum} for re-upload.`);
+  }
+
+  // Initial Load
+  document.addEventListener('DOMContentLoaded', () => {
+    setScreenState('draft');
+  });
+</script></div><footer class="w-full mt-space-xl py-space-lg"><div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px]">security</span><span class="font-body-sm text-body-sm">Statutory compliance governed by the <strong>National Land Transport Act (Act No. 5 of 2009)</strong> and the Gauteng Transport Authority.</span></div><div class="flex items-center gap-space-md font-label-sm text-label-sm"><span>Protected under <strong>POPIA (Protection of Personal Information Act)</strong></span><span>Provincial Operating Licence Board REF: GP-REG-9402</span></div></div></footer></main></div></body></html>

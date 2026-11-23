@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary": "#ffffff", "on-tertiary-container": "#d4962f", "tertiary-container": "#4f3300", "on-error-container": "#93000a", "outline": "#73777e", "surface-bright": "#f7f9ff", "on-tertiary-fixed": "#291800", "tertiary-fixed": "#ffddb1", "primary-fixed": "#cde5ff", "secondary-container": "#a5eefd", "surface-container-high": "#dfe9f6", "on-primary-fixed-variant": "#284966", "secondary": "#116875", "primary-container": "#173b57", "on-secondary": "#ffffff", "background": "#f7f9ff", "secondary-fixed-dim": "#89d2e0", "error": "#ba1a1a", "surface": "#f7f9ff", "inverse-surface": "#27313b", "on-tertiary-fixed-variant": "#624000", "on-secondary-fixed": "#001f25", "on-primary": "#ffffff", "surface-dim": "#d1dbe7", "surface-container": "#e5effb", "on-primary-fixed": "#001d32", "on-primary-container": "#84a5c6", "tertiary-fixed-dim": "#fdba50", "primary": "#00253e", "on-surface-variant": "#42474d", "on-secondary-fixed-variant": "#004e59", "surface-container-low": "#ecf4ff", "surface-container-highest": "#d9e4f0", "on-background": "#131d25", "inverse-primary": "#a9caec", "outline-variant": "#c2c7ce", "on-secondary-container": "#1c6e7b", "on-error": "#ffffff", "inverse-on-surface": "#e7f2fe", "primary-fixed-dim": "#a9caec", "surface-container-lowest": "#ffffff", "secondary-fixed": "#a5eefd", "on-surface": "#131d25", "surface-variant": "#d9e4f0", "tertiary": "#331f00", "surface-tint": "#40617f", "error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1.5rem", "margin": "2rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-mobile": "1rem", "space-xl": "2rem" }, fontFamily: { "currency-fare": ["Inter"], "display-lg": ["Inter"], "display-lg-mobile": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "title-md": ["Inter"], "headline-lg": ["Inter"], "label-lg": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl-mobile": ["Inter"] }, fontSize: { "currency-fare": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,59,87,0.05)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[20px]">hub</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">CommuteConnect</span></div><div class="flex items-center gap-space-xs"><h1 class="font-title-md text-title-md text-on-surface truncate">Notifications</h1><span class="flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-error text-on-error font-label-sm text-label-sm rounded-full leading-none">3</span></div></div></div><div class="flex items-center gap-space-xs"><button aria-label="Settings and Options" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">tune</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col flex-1 relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive View Switcher (UX Delight Feature) -->
+<div class="px-margin-mobile pt-space-xs pb-space-sm bg-surface-container-low">
+<div class="flex items-center justify-between bg-surface-container-highest/80 p-1 rounded-xl">
+<button class="flex-1 py-1.5 px-space-xs rounded-lg text-center transition-all bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md flex items-center justify-center gap-1.5" id="btn-show-feed" onclick="toggleNotificationView('feed')" type="button">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+<span>Populated (8)</span>
+</button>
+<button class="flex-1 py-1.5 px-space-xs rounded-lg text-center transition-all text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center justify-center gap-1.5" id="btn-show-empty" onclick="toggleNotificationView('empty')" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>Zero State</span>
+</button>
+</div>
+</div>
+<!-- Sticky Top Controls Bar -->
+<div class="sticky top-16 z-30 bg-surface/95 backdrop-blur-md px-margin-mobile pt-space-sm pb-space-sm shadow-[0_2px_10px_rgba(23,59,87,0.04)]">
+<!-- Header Row -->
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Notifications</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">3 unread</span>
+</div>
+<button class="text-secondary hover:text-primary font-label-md text-label-md transition-colors flex items-center gap-0.5 active:scale-95 transform" id="mark-all-btn" onclick="markAllAsRead()" type="button">
+<span class="material-symbols-outlined text-[16px]">mark_email_read</span>
+<span>Mark all read</span>
+</button>
+</div>
+<!-- Quick Gauteng Transit Subtitle -->
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block animate-pulse"></span>
+      Gauteng Transit Updates • Live Corridor Feed
+    </p>
+<!-- Primary Filter Segmented Controls -->
+<div class="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-surface-container-high mb-space-sm text-center">
+<button class="filter-pill active-pill py-1.5 rounded-lg font-label-md text-label-md transition-all bg-primary-container text-on-primary shadow-sm font-semibold" onclick="filterByStatus('all', this)" type="button">
+        All (8)
+      </button>
+<button class="filter-pill py-1.5 rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-primary font-medium" onclick="filterByStatus('unread', this)" type="button">
+        Unread (3)
+      </button>
+<button class="filter-pill py-1.5 rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-primary font-medium" onclick="filterByStatus('read', this)" type="button">
+        Read (5)
+      </button>
+</div>
+<!-- Secondary Category Chips Carousel -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5 -mx-margin-mobile px-margin-mobile">
+<button class="cat-chip active-chip shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-secondary text-on-secondary font-semibold transition-colors" onclick="filterCategory('all', this)">
+        Everything
+      </button>
+<button class="cat-chip shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors" onclick="filterCategory('requests', this)">
+        Requests
+      </button>
+<button class="cat-chip shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors" onclick="filterCategory('operators', this)">
+        Operators
+      </button>
+<button class="cat-chip shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors" onclick="filterCategory('safety', this)">
+        Safety
+      </button>
+<button class="cat-chip shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors" onclick="filterCategory('alerts', this)">
+        Alerts
+      </button>
+</div>
+</div>
+<!-- POPULATED FEED VIEW -->
+<div class="flex flex-col px-margin-mobile pt-space-sm pb-space-lg gap-space-sm" id="notifications-feed">
+<!-- Card 1: New Join Request (Unread, Amber/Blue, Interactive Actions) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm relative overflow-hidden" data-category="requests" data-status="unread">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-title-md text-title-md text-primary truncate">New Seat Join Request</span>
+<span class="w-2 h-2 rounded-full bg-error shrink-0" title="Unread"></span>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">14m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 leading-snug">
+<strong class="text-on-surface font-semibold">Kabelo D.</strong> requested 1 seat on <span class="text-secondary font-medium">Tembisa Plaza → Sandton Gautrain</span> (06:40 SAST).
+          </p>
+<div class="mt-2 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_gas_station</span>
+              Fuel share: <strong class="text-on-surface font-currency-fare">R 28.00</strong>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm">Community Lift</span>
+</div>
+</div>
+</div>
+<!-- Dual Action Buttons -->
+<div class="flex items-center gap-space-xs pt-space-xs pl-12">
+<button class="flex-1 py-2 px-space-sm bg-primary-container text-on-primary rounded-lg font-label-md text-label-md font-semibold hover:bg-primary transition-all active:scale-98 flex items-center justify-center gap-1" onclick="handleAction(this, 'Accepted Kabelo\\'s seat request')" type="button">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Accept</span>
+</button>
+<button class="px-space-md py-2 bg-surface-container text-on-surface-variant hover:text-error rounded-lg font-label-md text-label-md font-medium transition-all active:scale-98" onclick="handleAction(this, 'Declined request')" type="button">
+          Decline
+        </button>
+</div>
+</div>
+<!-- Card 2: Join Request Accepted (Unread, Green, PIN Highlight) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm relative overflow-hidden" data-category="requests" data-status="unread">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-title-md text-title-md text-primary truncate">Booking Confirmed!</span>
+<span class="w-2 h-2 rounded-full bg-error shrink-0"></span>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">42m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+<strong class="text-on-surface font-semibold">Sipho M.</strong> accepted your seat to <span class="text-secondary font-medium">Waterfall City Hub</span>. Pickup zone: <span class="text-on-surface font-medium">Tembisa Plaza Bay 2</span>.
+          </p>
+<div class="mt-2.5 p-2 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">key</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Boarding PIN</span>
+</div>
+<span class="font-headline-sm text-headline-sm tracking-wider text-primary font-bold">4892</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs pl-12 flex">
+<button class="w-full py-2 px-space-sm bg-secondary text-on-secondary rounded-lg font-label-md text-label-md font-semibold hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors flex items-center justify-center gap-1.5" onclick="showModal('Boarding PIN: 4892', 'Show this encrypted 4-digit code to driver Sipho M. when entering the silver Toyota Corolla at Tembisa Plaza Bay 2. Verified for mutual commuter safety under POPIA guidelines.')" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+<span>View Boarding Pass</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Operator Response (Unread, Blue, TMCA Line) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm relative overflow-hidden" data-category="operators" data-status="unread">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">directions_bus</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="font-title-md text-title-md text-primary truncate">TMCA Line 104 Express</span>
+<span class="w-2 h-2 rounded-full bg-error shrink-0"></span>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">1h ago</span>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Verified Minibus Operator</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+            Live schedule update: Confirmed 10-minute peak headway dispatched directly from Oakmoor Rank to Midrand Gautrain.
+          </p>
+</div>
+</div>
+<div class="pt-space-xs pl-12 flex">
+<button class="w-full py-2 px-space-sm bg-surface-container text-primary hover:bg-surface-container-high rounded-lg font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" onclick="showModal('TMCA Line 104 Express', 'Active departures every 10 min until 08:30 SAST. Current queue latency: Under 6 mins. Standard fare: R 24.50.')" type="button">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>View Live Schedule</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Journey Cancellation / Change (Read, Warning/Amber) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm" data-category="alerts" data-status="read">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">schedule_send</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-title-md text-title-md text-on-surface truncate">Departure Time Adjusted</span>
+<span class="font-label-sm text-label-sm text-outline shrink-0">3h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+<strong class="text-on-surface font-semibold">Bongani Z.</strong> shifted morning takeoff to <span class="text-tertiary-fixed-variant font-semibold">06:50 SAST (+10m)</span> due to resurfacing on R562 Olifantsfontein Rd.
+          </p>
+<div class="mt-2 flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-variant">traffic</span>
+<span>+8 min corridor traffic delay expected</span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs pl-12 flex gap-2">
+<button class="flex-1 py-1.5 px-space-sm bg-surface-container text-primary hover:bg-surface-container-high rounded-lg font-label-md text-label-md font-semibold transition-colors" onclick="handleAction(this, 'Confirmed new departure time (06:50 SAST)')" type="button">
+          Confirm 06:50
+        </button>
+<button class="flex-1 py-1.5 px-space-sm bg-surface-container-low text-secondary hover:text-primary rounded-lg font-label-md text-label-md font-semibold transition-colors" onclick="showModal('Alternate Corridors', 'Alternative lift clubs leaving between 06:30 - 06:45 SAST are available on Tembisa Central corridor.')" type="button">
+          Find Alternate
+        </button>
+</div>
+</div>
+<!-- Card 5: Verification Approved (Read, Trust & Safety) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm" data-category="safety" data-status="read">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-title-md text-title-md text-on-surface truncate">ID &amp; Workplace Verified</span>
+<span class="font-label-sm text-label-sm text-outline shrink-0">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+            Your RSA ID validation and Sandton Corporate Park employer affiliation were successfully certified.
+          </p>
+<div class="mt-2 flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">shield</span> Level 2 Trust Verified
+            </span>
+</div>
+</div>
+</div>
+<div class="pt-space-xs pl-12 flex">
+<button class="w-full py-1.5 px-space-sm bg-surface-container text-primary hover:bg-surface-container-high rounded-lg font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" onclick="showModal('Trust Profile', 'Level 2 Trust status allows instant seat bookings across all Sandton, Waterfall, and Rosebank Gautrain feeder clubs without manual approval.')" type="button">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+<span>View Civic Trust Badge</span>
+</button>
+</div>
+</div>
+<!-- Card 6: Operator Enquiry (Read, Putco) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm" data-category="operators" data-status="read">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-title-md text-title-md text-on-surface truncate">Putco Express Ticket Query</span>
+<span class="font-label-sm text-label-sm text-outline shrink-0">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+            Response regarding Line 502 Monthly Commuter Pass: Pre-loaded smartcards are currently active for the Pretoria - Joburg CBD link.
+          </p>
+</div>
+</div>
+<div class="pt-space-xs pl-12 flex">
+<button class="w-full py-1.5 px-space-sm bg-surface-container-low text-secondary hover:text-primary rounded-lg font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" onclick="showModal('Operator Response: Putco 502', 'Monthly smartcards can be topped up at Pretoria Bosman Station or via electronic transit voucher. Rate: R 740 / month.')" type="button">
+<span>Read Full Reply</span>
+</button>
+</div>
+</div>
+<!-- Card 7: Request Unavailable (Read, Filled Seat) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm" data-category="requests" data-status="read">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">event_busy</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-title-md text-title-md text-on-surface truncate">Seat Request Expired</span>
+<span class="font-label-sm text-label-sm text-outline shrink-0">2d ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+            The final open seat on Lerato's Sandton Gautrain lift club was filled by a daily subscriber.
+          </p>
+</div>
+</div>
+<div class="pt-space-xs pl-12 flex">
+<button class="w-full py-1.5 px-space-sm bg-surface-container text-primary hover:bg-surface-container-high rounded-lg font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" onclick="showModal('Search Alternate Rides', 'Connecting to 4 matching morning lift clubs between 06:30 and 07:15 on your route.')" type="button">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>Find Alternate Rides</span>
+</button>
+</div>
+</div>
+<!-- Card 8: Safety Report Update (Read, Terminal Patrols) -->
+<div class="notification-card bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm" data-category="safety" data-status="read">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-title-md text-title-md text-on-surface truncate">Oakmoor Terminal Security</span>
+<span class="font-label-sm text-label-sm text-outline shrink-0">2d ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+            Municipal marshal patrols and high-mast LED coverage have been extended at the northern boarding apron until 21:00 nightly.
+          </p>
+<span class="inline-block mt-1 font-label-sm text-label-sm text-secondary font-medium">Civic Safety Working Group</span>
+</div>
+</div>
+<div class="pt-space-xs pl-12 flex">
+<button class="w-full py-1.5 px-space-sm bg-surface-container-low text-on-surface hover:text-primary rounded-lg font-label-md text-label-md font-medium transition-colors flex items-center justify-center gap-1" onclick="showModal('Terminal Safety Report', 'High-visibility safety marshals are deployed on Bay 1-6. Emergency contact kiosk located next to Station Master office.')" type="button">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>View Safety Advisory</span>
+</button>
+</div>
+</div>
+<!-- POPIA Privacy Note -->
+<div class="mt-space-sm p-space-md rounded-xl bg-surface-container-low text-center flex flex-col items-center gap-1 text-on-surface-variant">
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>POPIA Protected Transit Network</span>
+</div>
+<p class="font-body-sm text-body-sm leading-tight text-outline max-w-xs">
+        Exact residential addresses are never displayed. Corridor pickup points use safe, geofenced public landmarks.
+      </p>
+</div>
+</div>
+<!-- EMPTY STATE VIEW (Hidden by default, toggleable via top switcher) -->
+<div class="hidden flex-col items-center justify-center px-margin-mobile py-16 text-center" id="notifications-empty">
+<!-- Delightful Empty Illustration Framing -->
+<div class="relative w-28 h-28 mb-space-md flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-secondary-container/40 animate-ping opacity-25"></div>
+<div class="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center shadow-inner relative z-10">
+<span class="material-symbols-outlined text-secondary text-[44px]">notifications_none</span>
+</div>
+<div class="absolute bottom-1 right-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm z-20">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">
+      You're all caught up!
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-space-lg leading-relaxed">
+      No pending transit alerts or lift club requests right now. We'll ping you the second hosts or regional operators respond.
+    </p>
+<div class="flex flex-col w-full max-w-xs gap-2.5">
+<button class="w-full py-3 px-space-md bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg font-semibold shadow-sm hover:bg-primary transition-all active:scale-98 flex items-center justify-center gap-2" onclick="toggleNotificationView('feed')" type="button">
+<span class="material-symbols-outlined text-[18px]">commute</span>
+<span>Search Corridors</span>
+</button>
+<button class="w-full py-2.5 px-space-md bg-surface-container text-on-surface-variant hover:text-primary rounded-xl font-label-md text-label-md font-medium transition-colors" onclick="toggleNotificationView('feed')" type="button">
+        Return to Notifications
+      </button>
+</div>
+<!-- Quick Tip Box -->
+<div class="mt-10 p-space-md rounded-xl bg-surface-container-low max-w-xs text-left flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">lightbulb</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-primary">Commuter Tip</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+          Morning lift club seats fill fastest between 19:00 and 21:00 the evening before.
+        </span>
+</div>
+</div>
+</div>
+<!-- Shared Contextual Modal / Toast Container -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-margin-mobile" id="info-modal">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg max-w-sm w-full shadow-2xl flex flex-col gap-space-sm transform transition-all animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<h3 class="font-title-md text-title-md text-primary" id="modal-title">Notice</h3>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container" onclick="closeModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed py-space-xs" id="modal-desc"></p>
+<button class="w-full py-2.5 bg-primary-container text-on-primary rounded-lg font-label-md text-label-md font-semibold" onclick="closeModal()" type="button">
+        Dismiss
+      </button>
+</div>
+</div>
+<!-- Inline Micro-Interaction Script -->
+<script>
+    let currentStatus = 'all';
+    let currentCategory = 'all';
+
+    function toggleNotificationView(view) {
+      const feed = document.getElementById('notifications-feed');
+      const empty = document.getElementById('notifications-empty');
+      const btnFeed = document.getElementById('btn-show-feed');
+      const btnEmpty = document.getElementById('btn-show-empty');
+
+      if (view === 'empty') {
+        feed.classList.add('hidden');
+        empty.classList.remove('hidden');
+        empty.classList.add('flex');
+        
+        btnEmpty.className = "flex-1 py-1.5 px-space-xs rounded-lg text-center transition-all bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md flex items-center justify-center gap-1.5";
+        btnFeed.className = "flex-1 py-1.5 px-space-xs rounded-lg text-center transition-all text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center justify-center gap-1.5";
+      } else {
+        empty.classList.add('hidden');
+        empty.classList.remove('flex');
+        feed.classList.remove('hidden');
+
+        btnFeed.className = "flex-1 py-1.5 px-space-xs rounded-lg text-center transition-all bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md flex items-center justify-center gap-1.5";
+        btnEmpty.className = "flex-1 py-1.5 px-space-xs rounded-lg text-center transition-all text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center justify-center gap-1.5";
+      }
+    }
+
+    function filterByStatus(status, el) {
+      currentStatus = status;
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.className = "filter-pill py-1.5 rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:text-primary font-medium";
+      });
+      el.className = "filter-pill active-pill py-1.5 rounded-lg font-label-md text-label-md transition-all bg-primary-container text-on-primary shadow-sm font-semibold";
+      applyFilters();
+    }
+
+    function filterCategory(cat, el) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-chip').forEach(btn => {
+        btn.className = "cat-chip shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest transition-colors";
+      });
+      el.className = "cat-chip active-chip shrink-0 px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-secondary text-on-secondary font-semibold transition-colors";
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const cards = document.querySelectorAll('.notification-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const matchStatus = (currentStatus === 'all') || (card.getAttribute('data-status') === currentStatus);
+        const matchCategory = (currentCategory === 'all') || (card.getAttribute('data-category') === currentCategory);
+
+        if (matchStatus && matchCategory) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function markAllAsRead() {
+      const cards = document.querySelectorAll('.notification-card[data-status="unread"]');
+      cards.forEach(card => {
+        card.setAttribute('data-status', 'read');
+        const dot = card.querySelector('.bg-error');
+        if (dot) dot.remove();
+        const sideStrips = card.querySelectorAll('.w-1');
+        sideStrips.forEach(s => s.classList.remove('bg-secondary-container', 'bg-secondary', 'bg-primary'));
+      });
+      
+      const badge = document.querySelector('header span.bg-error');
+      if (badge) badge.innerText = '0';
+      const localBadge = document.querySelector('.sticky span.bg-secondary');
+      if (localBadge) {
+        localBadge.innerText = '0 unread';
+        localBadge.classList.replace('bg-secondary', 'bg-surface-container-high');
+        localBadge.classList.replace('text-on-secondary', 'text-on-surface-variant');
+      }
+      
+      const markBtn = document.getElementById('mark-all-btn');
+      if (markBtn) {
+        markBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span><span>All Read</span>';
+        markBtn.classList.add('opacity-60', 'pointer-events-none');
+      }
+
+      applyFilters();
+    }
+
+    function handleAction(btn, message) {
+      const parent = btn.closest('.flex');
+      if (parent) {
+        parent.innerHTML = `<div class="w-full py-2 px-3 rounded-lg bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[16px]">check_circle</span><span>${message}</span></div>`;
+      }
+    }
+
+    function showModal(title, desc) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-desc').innerText = desc;
+      const modal = document.getElementById('info-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('info-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(23,59,87,0.06)]" data-active-classes="text-secondary font-semibold"><div class="h-16 flex items-center justify-around px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-label-sm leading-none">Overview</span></a><a class="flex flex-col items-center justify-center w-14 h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="find" href="#"><span class="material-symbols-outlined text-[22px]">commute</span><span class="font-label-sm text-label-sm leading-none">Find</span></a><a class="flex flex-col items-center justify-center w-14 h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="my-trips" href="#"><span class="material-symbols-outlined text-[22px]">route</span><span class="font-label-sm text-label-sm leading-none">My Trips</span></a><a class="flex flex-col items-center justify-center w-14 h-11 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="requests" href="#"><span class="material-symbols-outlined text-[22px]">group_add</span><span class="font-label-sm text-label-sm leading-none">Requests</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-11 gap-0.5 transition-colors relative text-secondary font-semibold" data-path="notifications" href="#"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="font-label-sm text-label-sm leading-none">Alerts</span><span class="absolute top-1 right-3.5 w-2 h-2 rounded-full bg-error"></span></a></div></nav></body></html>

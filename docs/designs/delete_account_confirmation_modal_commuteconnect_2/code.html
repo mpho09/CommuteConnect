@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delete CommuteConnect Account Confirmation</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-typography">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+  </style>
+<style data-purpose="modal-effects">
+    /* Subtle custom scrollbar inside modal body for clean rendering */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="h-full bg-slate-950 antialiased overflow-hidden select-none flex items-center justify-center p-4">
+<!-- BEGIN: DesktopBackdropOverlay -->
+<!-- Mimics rich navy/slate desktop application background with backdrop blur -->
+<div class="fixed inset-0 bg-slate-950/85 backdrop-blur-md flex items-center justify-center z-40 p-3 sm:p-6" data-purpose="modal-backdrop">
+<!-- Mock Background Structural Wireframe (visual depth as seen in admin console) -->
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none opacity-20 flex flex-col justify-between p-8">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700"></div>
+<div class="w-48 h-5 rounded bg-slate-800"></div>
+</div>
+<div class="w-full h-32 rounded-xl border border-slate-800 bg-slate-900/40"></div>
+<div class="w-full h-40 rounded-xl border border-slate-800 bg-slate-900/40"></div>
+</div>
+<!-- BEGIN: ConfirmationModalContainer -->
+<section aria-describedby="modal-description" aria-labelledby="modal-title" aria-modal="true" class="relative w-full max-w-[680px] max-h-[96vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-slate-200/90 overflow-hidden z-50 text-slate-800" data-purpose="delete-confirmation-dialog" role="dialog">
+<!-- Danger Gradient Top Edge Accent -->
+<div class="h-1.5 w-full bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 shrink-0" data-purpose="danger-accent-bar"></div>
+<!-- BEGIN: ModalHeader -->
+<header class="pt-6 px-6 sm:px-8 pb-4 border-b border-slate-100 flex items-start justify-between gap-4 shrink-0" data-purpose="modal-header">
+<div class="flex items-start gap-3.5">
+<!-- Alert Icon Badge -->
+<div aria-hidden="true" class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200/70 flex items-center justify-center text-rose-600 shrink-0 shadow-sm mt-0.5">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Modal Titles & Badge -->
+<div>
+<div class="flex flex-wrap items-center gap-2.5">
+<h2 class="text-xl font-bold tracking-tight text-slate-900" id="modal-title">
+                Delete CommuteConnect Account
+              </h2>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 border border-rose-200">
+                Irreversible Action
+              </span>
+</div>
+<p class="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed" id="modal-description">
+              Enacting this request permanently terminates your commuter profile and revokes access across all platforms.
+            </p>
+</div>
+</div>
+<!-- Close Dialog Button -->
+<button aria-label="Close modal without deleting" class="text-slate-400 hover:text-slate-600 hover:bg-slate-100 p-1.5 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</header>
+<!-- END: ModalHeader -->
+<!-- BEGIN: ModalContentScrollableArea -->
+<div class="p-6 sm:px-8 overflow-y-auto custom-scrollbar space-y-4 text-sm" data-purpose="modal-body">
+<!-- 1. Target User Account Badge -->
+<div class="rounded-xl border border-slate-200 bg-slate-50/70 p-4 transition-all" data-purpose="user-account-badge">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<!-- User Initials Circle -->
+<div class="w-11 h-11 rounded-full bg-slate-900 text-white font-bold text-sm flex items-center justify-center ring-2 ring-slate-100 shadow-sm shrink-0">
+                SB
+              </div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-bold text-slate-900 truncate">Sipho Baloyi</span>
+<span class="text-xs text-slate-500 font-medium bg-slate-200/60 px-2 py-0.5 rounded">Tier 1 #COM-9104</span>
+</div>
+<div class="text-xs text-slate-500 truncate mt-0.5">
+                  s.baloyi@***.co.za • +27 82 *** 4912
+                </div>
+</div>
+</div>
+<div class="sm:text-right text-xs border-t sm:border-t-0 pt-2 sm:pt-0 border-slate-200/60">
+<div class="font-semibold text-slate-700">Active since Mar 2023</div>
+<div class="text-emerald-600 font-medium flex items-center sm:justify-end gap-1 mt-0.5">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                142 Completed Trips
+              </div>
+</div>
+</div>
+</div>
+<!-- 2. Immediate Operational Consequences Warning Box -->
+<div class="rounded-xl bg-rose-50/80 border border-rose-200 p-4 text-rose-950 space-y-2.5" data-purpose="impacts-warning-box">
+<div class="flex items-center gap-2 text-rose-800 font-bold text-xs uppercase tracking-wide">
+<svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Immediate Platform &amp; Commute Impacts
+          </div>
+<div class="grid grid-cols-1 gap-2.5 pt-1 text-xs">
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 shrink-0"></span>
+<p class="leading-relaxed">
+<strong class="font-semibold text-rose-900">Immediate Access Revocation:</strong> You will be instantly signed out of all mobile apps and web terminals. Profile recovery, saved routes, and history will be permanently wiped.
+              </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 shrink-0"></span>
+<p class="leading-relaxed">
+<strong class="font-semibold text-rose-900">Open Requests &amp; Bookings Cancelled:</strong> 1 active booking (<span class="font-mono font-medium">#CR-4821 Sandton Corridor</span>) will be cancelled immediately. Pre-paid escrow balance of <strong class="text-rose-950">R 340.00</strong> will be automatically refunded to your originating bank account within 3–5 SAST business days.
+              </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 shrink-0"></span>
+<p class="leading-relaxed">
+<strong class="font-semibold text-rose-900">Lift Club Memberships Terminated:</strong> Automatic departure from <span class="font-medium">Midrand Tech Corridor Carpool Club</span>; recurring reserved seats are released immediately to waitlisted commuters.
+              </p>
+</div>
+</div>
+</div>
+<!-- 3. Statutory Data Retention & POPIA Disclosure Box -->
+<div class="rounded-xl bg-slate-50 border border-slate-200/90 p-4 text-slate-700 space-y-1.5" data-purpose="popia-compliance-advisory">
+<div class="flex items-center gap-2 text-slate-800 font-semibold text-xs tracking-tight">
+<svg class="w-4 h-4 text-slate-600 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Statutory Data Retention &amp; POPIA Compliance
+          </div>
+<p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+            Under Section 14 of the Protection of Personal Information Act (POPIA No. 4 of 2013) and Section 79 of the National Land Transport Act (NLTA No. 5 of 2009), your personal biometric keys, direct contact numbers, and avatars are permanently destroyed. However, non-identifying passenger transit manifests and tax invoices are legally retained for 5 years for SARS statutory tax records and provincial transit safety audits.
+          </p>
+</div>
+<!-- 4. Explicit Confirmation Form Controls -->
+<div class="pt-2 space-y-3.5" data-purpose="confirmation-form">
+<!-- Mandatory Checkbox -->
+<label class="flex items-start gap-3 p-3 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors bg-white">
+<input checked="" class="mt-0.5 rounded border-slate-300 text-rose-600 focus:ring-rose-500 h-4 w-4 transition duration-150 cursor-pointer" id="confirm-checkbox" type="checkbox"/>
+<span class="text-xs text-slate-700 leading-normal select-none">
+              I understand that deleting my account is permanent, active reservations will be cancelled, and this action cannot be reversed.
+            </span>
+</label>
+<!-- Type DELETE Section -->
+<div class="space-y-1.5">
+<label class="block text-xs font-semibold text-slate-700" for="type-delete-input">
+              To confirm account deletion, type <span class="font-mono font-bold text-rose-600">DELETE</span> in capital letters below:
+            </label>
+<div class="relative">
+<input class="w-full text-sm font-mono tracking-wider font-semibold rounded-lg border-slate-300 px-3.5 py-2.5 uppercase focus:border-rose-500 focus:ring-rose-500 transition shadow-sm placeholder:text-slate-300 text-rose-700 bg-white" id="type-delete-input" name="confirmation-code" placeholder="DELETE" type="text" value="DELETE"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-emerald-600">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: ModalContentScrollableArea -->
+<!-- BEGIN: ModalActionFooter -->
+<footer class="px-6 sm:px-8 py-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3.5 shrink-0" data-purpose="modal-actions-footer">
+<!-- Audit & Compliance Label -->
+<div class="flex items-center gap-1.5 text-[11px] text-slate-500">
+<svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Protected under POPIA S14 &amp; NLTA Audit Framework</span>
+</div>
+<!-- Button Actions -->
+<div class="flex items-center justify-end gap-2.5">
+<!-- Safe / Cancel Button -->
+<button class="w-full sm:w-auto px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 hover:text-slate-900 active:bg-slate-200 transition focus:outline-none focus:ring-2 focus:ring-slate-300 shadow-sm" type="button">
+            Keep My Account
+          </button>
+<!-- Destructive Confirm Button -->
+<button class="w-full sm:w-auto px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-lg bg-rose-600 hover:bg-rose-700 active:bg-rose-800 text-white transition flex items-center justify-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2" type="button">
+<!-- Trash Icon -->
+<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Delete Account</span>
+</button>
+</div>
+</footer>
+<!-- END: ModalActionFooter -->
+</section>
+<!-- END: ConfirmationModalContainer -->
+</div>
+<!-- END: DesktopBackdropOverlay -->
+</body></html>

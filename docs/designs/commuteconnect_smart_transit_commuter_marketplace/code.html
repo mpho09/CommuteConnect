@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>CommuteConnect - SA Transit Discovery &amp; Coordination</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary":"#00253e","inverse-on-surface":"#e7f2fe","on-background":"#131d25","tertiary-fixed-dim":"#fdba50","surface":"#f7f9ff","error-container":"#ffdad6","outline-variant":"#c2c7ce","on-primary":"#ffffff","on-tertiary-fixed-variant":"#624000","primary-fixed":"#cde5ff","primary-container":"#173b57","secondary-container":"#a5eefd","inverse-surface":"#27313b","on-error-container":"#93000a","outline":"#73777e","on-error":"#ffffff","tertiary-container":"#4f3300","surface-bright":"#f7f9ff","surface-container-low":"#ecf4ff","on-surface-variant":"#42474d","secondary":"#116875","secondary-fixed":"#a5eefd","on-secondary-fixed":"#001f25","surface-dim":"#d1dbe7","surface-tint":"#40617f","on-primary-fixed":"#001d32","on-tertiary-fixed":"#291800","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#004e59","surface-variant":"#d9e4f0","secondary-fixed-dim":"#89d2e0","surface-container-highest":"#d9e4f0","inverse-primary":"#a9caec","primary-fixed-dim":"#a9caec","error":"#ba1a1a","background":"#f7f9ff","on-secondary-container":"#1c6e7b","surface-container-lowest":"#ffffff","on-primary-container":"#84a5c6","tertiary":"#331f00","on-secondary":"#ffffff","surface-container":"#e5effb","on-tertiary-container":"#d4962f","on-primary-fixed-variant":"#284966","tertiary-fixed":"#ffddb1","surface-container-high":"#dfe9f6","on-surface":"#131d25"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","gutter-mobile":"1rem","space-sm":"0.5rem","margin-mobile":"1rem","space-xs":"0.25rem","space-xl":"2rem","gutter":"1.5rem","space-lg":"1.5rem","margin":"2rem"},"fontFamily":{"label-md":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"title-md":["Inter"],"headline-xl-mobile":["Inter"],"currency-fare":["Inter"],"headline-xl":["Inter"],"label-lg":["Inter"],"headline-sm":["Inter"],"display-lg-mobile":["Inter"],"headline-lg":["Inter"],"display-lg":["Inter"],"body-lg":["Inter"],"body-sm":["Inter"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-xl-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"currency-fare":["18px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"700"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,59,87,0.06)]"><div class="h-20 w-full px-gutter lg:px-margin max-w-7xl mx-auto flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="home" href="#"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm group-hover:bg-primary transition-colors"><span class="material-symbols-outlined text-[22px]">hub</span></div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold tracking-tight text-primary leading-none">Commute<span class="text-secondary">Connect</span></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">South Africa</span></div></a><div class="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant"><span class="material-symbols-outlined text-[16px] text-secondary">near_me</span><span class="font-label-sm text-label-sm font-medium">Gauteng (JHB / PTA)</span></div></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title-md"><a aria-current="page" class="transition-colors py-2 text-primary font-title-md" data-path="home" href="#">Home</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="find-transport" href="#">Find Transport</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="how-it-works" href="#">How It Works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="for-operators" href="#">For Operators</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="safety-and-standards" href="#">Safety &amp; Standards</a></nav><div class="flex items-center gap-space-sm sm:gap-space-md"><a class="hidden md:inline-flex items-center px-3.5 py-2 rounded-lg font-label-lg text-label-lg text-secondary bg-surface-container hover:bg-secondary hover:text-on-secondary transition-all" data-path="operator-portal" href="#">List Your Service</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary px-2.5 py-2 transition-colors" data-path="login" href="#">Login</a><a class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-secondary transition-all" data-path="register" href="#">Get Started</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO & SEARCH BENCHMARK -->
+<section class="relative w-full overflow-hidden bg-surface pb-space-xl lg:pb-32 pt-8 lg:pt-14">
+<!-- Ambient Backdrop Gradient & Geometry -->
+<div aria-hidden="true" class="pointer-events-none absolute -top-40 right-0 h-96 w-96 rounded-full bg-secondary-container/30 blur-3xl"></div>
+<div aria-hidden="true" class="pointer-events-none absolute top-1/2 -left-32 h-[500px] w-[500px] rounded-full bg-primary-fixed/20 blur-3xl"></div>
+<div class="mx-auto max-w-7xl px-gutter lg:px-margin">
+<!-- Eyebrow & Headline Cluster -->
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high shadow-sm mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold tracking-wide uppercase">
+            South Africa's Trusted Commute &amp; Transit Marketplace • Gauteng Corridor Beta
+          </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight max-w-2xl text-balance">
+          Your journey. More options. Less hassle.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-xl text-balance">
+          Discover transport services, compare routes and connect with people travelling in the same direction.
+        </p>
+<!-- Quick Trust Pill Row -->
+<div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-on-surface-variant font-label-md text-label-md">
+<span class="inline-flex items-center gap-1.5 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span> Licensed PRE Operators
+          </span>
+<span class="inline-flex items-center gap-1.5 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[18px]">group</span> Verified Peer Carpools
+          </span>
+<span class="inline-flex items-center gap-1.5 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[18px]">payments</span> Fixed ZAR Fares • Zero Surging
+          </span>
+<span class="inline-flex items-center gap-1.5 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[18px]">lock</span> POPIA-Compliant Geofencing
+          </span>
+</div>
+</div>
+<!-- Interactive Transit Search Engine Panel -->
+<div class="mt-10 lg:mt-12 max-w-5xl mx-auto">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl p-5 sm:p-7 md:p-8 relative">
+<!-- Segmented Frequency Switcher -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<div class="inline-flex p-1 bg-surface-container rounded-lg" role="tablist">
+<button class="px-4 py-2 rounded-md font-label-md text-label-md transition-all font-semibold bg-surface-container-lowest text-primary shadow-sm" id="tab-recurring" onclick="switchFrequency('recurring')" type="button">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+                  Recurring Commute (Daily Work/Campus)
+                </span>
+</button>
+<button class="px-4 py-2 rounded-md font-label-md text-label-md transition-all text-on-surface-variant hover:text-primary" id="tab-once" onclick="switchFrequency('once')" type="button">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+                  Once-off Journey
+                </span>
+</button>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+<span>All departures aligned to South Africa Standard Time (SAST)</span>
+</div>
+</div>
+<!-- Main Input Field Matrix -->
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3.5" onsubmit="event.preventDefault();">
+<!-- 1. Origin Input -->
+<div class="lg:col-span-3 flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold flex items-center gap-1" for="search-origin">
+<span class="material-symbols-outlined text-[14px] text-secondary">trip_origin</span>
+                Departure Zone / Hub
+              </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">location_on</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all outline-none" id="search-origin" placeholder="e.g. Tembisa, Centurion, Soweto" type="text" value="Tembisa Plaza zone"/>
+</div>
+</div>
+<!-- 2. Destination Input -->
+<div class="lg:col-span-3 flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold flex items-center gap-1" for="search-destination">
+<span class="material-symbols-outlined text-[14px] text-secondary">location_searching</span>
+                Destination Area
+              </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">flag</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary/20 transition-all outline-none" id="search-destination" placeholder="e.g. Sandton CBD, Midrand" type="text" value="Sandton Gautrain zone"/>
+</div>
+</div>
+<!-- 3. Travel Date / Recurrence Window -->
+<div class="lg:col-span-2 flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold flex items-center gap-1" for="search-date" id="date-label">
+<span class="material-symbols-outlined text-[14px] text-secondary">date_range</span>
+                Schedule / Days
+              </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[18px] pointer-events-none">repeat</span>
+<input class="w-full h-11 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md cursor-pointer select-none outline-none" id="search-date" readonly="" type="text" value="Daily Mon – Fri"/>
+</div>
+</div>
+<!-- 4. Departure Window Time -->
+<div class="lg:col-span-2 flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1 font-semibold flex items-center gap-1" for="search-time">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+                Window (SAST)
+              </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[18px] pointer-events-none">alarm</span>
+<select class="w-full h-11 pl-9 pr-7 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md appearance-none outline-none cursor-pointer" id="search-time">
+<option selected="">06:00 – 07:00</option>
+<option>06:30 – 07:30</option>
+<option>07:00 – 08:00</option>
+<option>07:30 – 08:30</option>
+<option>16:00 – 17:00 (PM Peak)</option>
+<option>17:00 – 18:00 (PM Peak)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- 5. Primary CTA Search Action Button -->
+<div class="lg:col-span-2 flex items-end">
+<button class="w-full h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all group" type="submit">
+<span>Search</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Popular Corridor Presets Sub-bar -->
+<div class="mt-5 pt-4 bg-surface-container/40 -mx-5 sm:-mx-7 md:-mx-8 -mb-5 sm:-mb-7 md:-mb-8 px-5 sm:px-7 md:px-8 py-3 rounded-b-xl flex flex-wrap items-center justify-between gap-2">
+<div class="flex flex-wrap items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="font-semibold text-primary">Popular corridors:</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:text-secondary hover:bg-surface transition-colors" onclick="setCorridor('Tembisa Plaza zone', 'Sandton Gautrain zone')" type="button">Tembisa ⇄ Sandton</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:text-secondary hover:bg-surface transition-colors" onclick="setCorridor('Centurion CBD hub', 'Midrand Corporate Park')" type="button">Centurion ⇄ Midrand</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:text-secondary hover:bg-surface transition-colors" onclick="setCorridor('Soweto Maponya perimeter', 'Rosebank Mall exterior perimeter')" type="button">Soweto ⇄ Rosebank</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface hover:text-secondary hover:bg-surface transition-colors" onclick="setCorridor('Pretoria Station hub', 'JHB CBD Park Station')" type="button">Pretoria ⇄ JHB CBD</button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">1,420+ trips tracked today</span>
+</div>
+</div>
+</div>
+<!-- Corridor Vector Diagram Visual (High-Fidelity SA Transit Blueprint) -->
+<div class="mt-12 max-w-5xl mx-auto">
+<div class="rounded-xl bg-surface-container-low p-6 lg:p-8 shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+<div>
+<div class="inline-flex items-center gap-1.5 font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold mb-1">
+<span class="material-symbols-outlined text-[16px]">linear_scale</span>
+                Live Arterial Corridor Map
+              </div>
+<h2 class="font-title-md text-title-md text-primary font-bold">
+                N1 Ben Schoeman &amp; M1 Arterial Corridor Performance
+              </h2>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">speed</span>
+<span class="font-label-md text-label-md font-semibold text-primary">34 min</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">avg travel time</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span class="font-label-md text-label-md font-semibold text-primary">94%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">on-time</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">savings</span>
+<span class="font-label-md text-label-md font-semibold text-primary">R 32.00 ZAR</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">avg fair share</span>
+</div>
+</div>
+</div>
+<!-- Vector Schematic of Corridor Waypoints -->
+<div class="relative py-6 px-4 bg-surface-container-lowest rounded-xl shadow-sm overflow-x-auto">
+<div class="min-w-[620px] flex items-center justify-between relative">
+<!-- Connecting Route Line -->
+<div class="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-1.5 bg-surface-container-highest rounded-full z-0"></div>
+<div class="absolute left-8 w-2/3 top-1/2 -translate-y-1/2 h-1.5 bg-secondary rounded-full z-0"></div>
+<!-- Node 1: Centurion -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold font-label-md text-label-md shadow-md">
+                  01
+                </div>
+<span class="font-label-md text-label-md font-bold text-primary mt-2">Centurion Hub</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Botha Ave Interchange</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[10px] font-semibold">Minibus + Carpool</span>
+</div>
+<!-- Node 2: Midrand -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold font-label-md text-label-md shadow-md">
+                  02
+                </div>
+<span class="font-label-md text-label-md font-bold text-primary mt-2">Midrand Interchange</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Allandale Off-ramp</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-semibold">Express Bus Node</span>
+</div>
+<!-- Node 3: Waterfall -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold font-label-md text-label-md shadow-md">
+                  03
+                </div>
+<span class="font-label-md text-label-md font-bold text-primary mt-2">Waterfall City</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mall of Africa Hub</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[10px] font-semibold">Regional Shuttle</span>
+</div>
+<!-- Node 4: Sandton Financial -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold font-label-md text-label-md shadow-md">
+                  04
+                </div>
+<span class="font-label-md text-label-md font-bold text-primary mt-2">Sandton Financial</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rivonia Rd / Gautrain</span>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-[10px] font-semibold">Terminal Zone</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: HOW COMMUTECONNECT WORKS -->
+<section class="w-full py-space-xl lg:py-28 bg-surface-container-lowest">
+<div class="mx-auto max-w-7xl px-gutter lg:px-margin">
+<!-- Section Header -->
+<div class="max-w-2xl mx-auto text-center mb-16">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider mb-2 block">
+          Streamlined Coordination Architecture
+        </span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+          How CommuteConnect Works
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 text-balance">
+          Three streamlined steps from route planning to arriving safely at your destination.
+        </p>
+</div>
+<!-- 3 Steps Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<!-- Step 1 -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-between hover:bg-surface-container transition-all group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-display-lg text-display-lg font-bold text-primary/20 group-hover:text-secondary transition-colors">01</span>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[26px]">search_insights</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+              Search your journey.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Enter your departure area, destination, and preferred commute schedule. We match your route across both regulated public transit corridors and community lift clubs.
+            </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span>
+<span>Neighborhood Geofencing Active</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-between hover:bg-surface-container transition-all group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-display-lg text-display-lg font-bold text-primary/20 group-hover:text-secondary transition-colors">02</span>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[26px]">compare_arrows</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+              Explore available transport options.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Compare verified scheduled operator lines (minibuses, express coaches) and screened commuter carpools side-by-side with transparent ZAR pricing.
+            </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">price_check</span>
+<span>Fixed Benchmark Pricing</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col justify-between hover:bg-surface-container transition-all group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-display-lg text-display-lg font-bold text-primary/20 group-hover:text-secondary transition-colors">03</span>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[26px]">how_to_reg</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-3">
+              Connect and coordinate.
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Reserve your seat with licensed operators or send a compatibility request to verified co-workers and neighbors with geofenced pickup zones.
+            </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>RSA ID &amp; PrDP Verification</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: TRANSPORT OPTIONS DUAL SHOWCASE -->
+<section class="w-full py-space-xl lg:py-28 bg-surface">
+<div class="mx-auto max-w-7xl px-gutter lg:px-margin">
+<!-- Section Header -->
+<div class="max-w-3xl mx-auto text-center mb-16">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider mb-2 block">
+          Multi-Modal Flexibility
+        </span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+          Two Distinct Ways to Travel with Confidence
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 text-balance">
+          Whether you need a licensed commercial line with fixed schedules or an intimate carpool with colleagues, CommuteConnect applies strict verification to both.
+        </p>
+</div>
+<!-- 2-Column Comparison Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+<!-- CARD 1: TRANSPORT OPERATORS (COMMERCIAL) -->
+<div class="bg-surface-container-lowest rounded-xl p-7 lg:p-9 shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-primary"></div>
+<div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-bold inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                Regulated &amp; Licensed (PRE / NLTA)
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Scheduled Transit</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold">
+              Transport Operators
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 font-medium">
+              For reliable daily schedules, fixed timetables, and dedicated business shuttles.
+            </p>
+<ul class="mt-6 space-y-3.5 font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">check_circle</span>
+<span><strong>Provincial Regulatory Entity (PRE)</strong> accreditation cross-verified before listing</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">badge</span>
+<span>Professional drivers with active <strong>PrDP licenses</strong> and annual medical fitness records</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">pin_invoke</span>
+<span>Guaranteed departures from designated municipal transit ranks and safe business hubs</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">contactless</span>
+<span>Contactless tap-to-pay via CommutePass, digital vouchers, and corporate monthly invoices</span>
+</li>
+</ul>
+<!-- Listing Snippet Mock -->
+<div class="mt-8 p-4 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">directions_bus</span>
+                  Tembisa-Midrand Commuter Line 101
+                </span>
+<span class="font-currency-fare text-currency-fare text-primary">R 22.00 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">ZAR</span></span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Departs every 12 mins • 05:45 – 08:30 SAST</span>
+<span class="text-secondary font-semibold">18 Seats Left</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4">
+<a class="inline-flex items-center justify-between w-full px-5 py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors group" href="#">
+<span>Browse Operator Directory</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+</a>
+</div>
+</div>
+<!-- CARD 2: SHARED JOURNEYS (LIFT CLUBS) -->
+<div class="bg-surface-container-lowest rounded-xl p-7 lg:p-9 shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+<div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]">eco</span>
+                Community Co-Travel • SARS Fuel Split
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Peer-to-Peer</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold">
+              Shared Journeys (Lift Clubs)
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 font-medium">
+              For commuters traveling similar highway routes wishing to share fuel costs.
+            </p>
+<ul class="mt-6 space-y-3.5 font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">verified_user</span>
+<span>Verified corporate email addresses, South African ID numbers, and social safety scores</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">share_location</span>
+<span><strong>POPIA-compliant perimeter pickup spots</strong> (residential gate tags &amp; exact addresses hidden)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">toll</span>
+<span>Transparent fair-share fuel cost splits (R25.00 – R40.00 ZAR average per journey)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">female</span>
+<span>Women-only lift club filters, quiet commute cabins, and verified corporate affinity groups</span>
+</li>
+</ul>
+<!-- Listing Snippet Mock -->
+<div class="mt-8 p-4 rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">
+                    LK
+                  </div>
+<span class="font-label-sm text-label-sm font-bold text-primary">Centurion to Sandton CBD • Lerato K.</span>
+</div>
+<span class="font-currency-fare text-currency-fare text-primary">R 38.00 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">ZAR</span></span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Departs 06:45 SAST • 2 Co-riders onboard</span>
+<span class="text-secondary font-semibold">1 Spot Open</span>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4">
+<a class="inline-flex items-center justify-between w-full px-5 py-3 rounded-lg bg-secondary hover:bg-secondary-container hover:text-on-secondary-container text-on-secondary font-label-lg text-label-lg transition-colors group" href="#">
+<span>Explore Shared Commute Rides</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: B2B OPERATOR RECRUITMENT BANNER -->
+<section class="w-full py-space-xl lg:py-24 bg-surface-container-low">
+<div class="mx-auto max-w-7xl px-gutter lg:px-margin">
+<div class="rounded-xl bg-primary text-on-primary p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-xl">
+<!-- Subtle Pattern Backdrop -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#a5eefd_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-secondary-fixed font-label-sm text-label-sm font-semibold uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+              Transport Associations &amp; Fleet Owners
+            </div>
+<h2 class="font-headline-xl text-headline-xl font-bold tracking-tight text-white max-w-2xl">
+              Are You a Licensed Transport Operator or Association?
+            </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed mt-3 max-w-2xl">
+              CommuteConnect modernizes your daily operations with high-intent commuter demand across Gauteng's top economic arteries.
+            </p>
+<div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="space-y-1">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-container">120,000+</span>
+<p class="font-body-sm text-body-sm text-surface-container-high">Monthly corridor searches seeking scheduled rides</p>
+</div>
+<div class="space-y-1">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-container">100% Cashless</span>
+<p class="font-body-sm text-body-sm text-surface-container-high">Guaranteed digital fare collections straight to bank</p>
+</div>
+<div class="space-y-1">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-container">PRE Verified</span>
+<p class="font-body-sm text-body-sm text-surface-container-high">Accreditation mark trusted by major employers</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-4 lg:items-end">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg font-bold shadow-lg hover:bg-tertiary-fixed-dim transition-colors text-center" href="#">
+              List Your Service
+            </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-secondary-container hover:text-white font-label-md text-label-md transition-colors text-center" href="#">
+<span>Learn About Licensing Requirements</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: TRUST, SAFETY & STANDARDS SECTION -->
+<section class="w-full py-space-xl lg:py-28 bg-surface-container-lowest">
+<div class="mx-auto max-w-7xl px-gutter lg:px-margin">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider mb-2 block">
+          Civic Transit Infrastructure
+        </span>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">
+          Engineered for South African Commuter Peace of Mind
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 text-balance">
+          Safety isn't an afterthought. Every layer of CommuteConnect conforms to national statutory transport regulations and active digital safeguards.
+        </p>
+</div>
+<!-- 4 Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container transition-all">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm mb-5">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold mb-2">
+              Operator Verification Protocol
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Every commercial vehicle association is cross-referenced with Gauteng Department of Transport records and NLTA database before listing.
+            </p>
+</div>
+<div class="mt-6 pt-4 text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+<span>Annual PRE Audits</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container transition-all">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm mb-5">
+<span class="material-symbols-outlined text-[26px]">request_quote</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold mb-2">
+              Transparent Fixed Fares (ZAR)
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Upfront regulated pricing. Zero surge pricing during rainy mornings or train delays. SARS-aligned non-profit fuel reimbursement caps.
+            </p>
+</div>
+<div class="mt-6 pt-4 text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">price_change</span>
+<span>Regulated Price Cap</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container transition-all">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm mb-5">
+<span class="material-symbols-outlined text-[26px]">schedule</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold mb-2">
+              Clear Schedules &amp; Real-Time (SAST)
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Accurate departure windows, guaranteed peak hour allocations, and live corridor traffic incident alerts tailored for Gauteng arterial routes.
+            </p>
+</div>
+<div class="mt-6 pt-4 text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">update</span>
+<span>Live Timetable Feeds</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between hover:bg-surface-container transition-all">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm mb-5">
+<span class="material-symbols-outlined text-[26px]">contact_support</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold mb-2">
+              User Reporting &amp; Incident Support
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Bilateral passenger and host ratings, rapid SOS escalation channels, and community conduct monitoring to keep high standards across all vehicles.
+            </p>
+</div>
+<div class="mt-6 pt-4 text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sos</span>
+<span>24/7 Incident Escalation</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: FINAL CONVERSION BANNER (PRE-FOOTER) -->
+<section class="w-full py-space-xl lg:py-24 bg-surface">
+<div class="mx-auto max-w-5xl px-gutter lg:px-margin text-center">
+<div class="bg-surface-container-lowest rounded-xl p-8 sm:p-12 lg:p-16 shadow-lg">
+<h2 class="font-display-lg text-display-lg text-primary font-bold tracking-tight">
+          Ready to transform your daily commute?
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-xl mx-auto text-balance">
+          Join thousands of Gauteng commuters and licensed operators moving smarter together.
+        </p>
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-md transition-all" href="#">
+            Find Transport Now
+          </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg font-semibold transition-all" href="#">
+            Register as an Operator
+          </a>
+</div>
+<div class="mt-8 pt-6 flex flex-wrap items-center justify-center gap-6 text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span> Zero sign-up charges for commuters
+          </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span> Immediate route matching
+          </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check</span> SARS non-taxable fuel caps
+          </span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Simple Vanilla Script for Micro-Interactions -->
+<script>
+  function switchFrequency(mode) {
+    var recBtn = document.getElementById('tab-recurring');
+    var onceBtn = document.getElementById('tab-once');
+    var dateInput = document.getElementById('search-date');
+    var dateLabel = document.getElementById('date-label');
+
+    if (mode === 'recurring') {
+      recBtn.className = "px-4 py-2 rounded-md font-label-md text-label-md transition-all font-semibold bg-surface-container-lowest text-primary shadow-sm";
+      onceBtn.className = "px-4 py-2 rounded-md font-label-md text-label-md transition-all text-on-surface-variant hover:text-primary";
+      dateInput.value = "Daily Mon – Fri";
+      dateLabel.innerHTML = '<span class="material-symbols-outlined text-[14px] text-secondary">date_range</span> Schedule / Days';
+    } else {
+      onceBtn.className = "px-4 py-2 rounded-md font-label-md text-label-md transition-all font-semibold bg-surface-container-lowest text-primary shadow-sm";
+      recBtn.className = "px-4 py-2 rounded-md font-label-md text-label-md transition-all text-on-surface-variant hover:text-primary";
+      dateInput.value = "Tomorrow, " + new Date(Date.now() + 86400000).toLocaleDateString('en-ZA', { day: 'numeric', month: 'short' });
+      dateLabel.innerHTML = '<span class="material-symbols-outlined text-[14px] text-secondary">event</span> Departure Date';
+    }
+  }
+
+  function setCorridor(origin, dest) {
+    var originField = document.getElementById('search-origin');
+    var destField = document.getElementById('search-destination');
+    if (originField && destField) {
+      originField.value = origin;
+      destField.value = dest;
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-7xl mx-auto px-gutter lg:px-margin pt-space-xl pb-space-lg"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-lg lg:gap-space-xl pb-space-xl"><div class="lg:col-span-2 space-y-space-md"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">hub</span></div><span class="font-title-md text-title-md font-bold tracking-tight text-primary">Commute<span class="text-secondary">Connect</span></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">South Africa's civic transport coordination framework. Bridging commuter safety, scheduled minibus taxis, regional shuttles, and verified communal lift clubs.</p><div class="flex flex-wrap items-center gap-space-sm pt-space-xs"><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface"><span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span><span class="font-label-sm text-label-sm font-semibold">POPIA Compliant</span></div><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface"><span class="material-symbols-outlined text-[16px] text-secondary">shield</span><span class="font-label-sm text-label-sm font-semibold">RSA Transit Protocol</span></div></div></div><div><h3 class="font-label-lg text-label-lg font-bold text-primary tracking-wide uppercase mb-space-md">Commute Solutions</h3><ul class="space-y-2.5 font-body-md text-body-md text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="find-transport" href="#">Find Transport</a></li><li><a class="hover:text-primary transition-colors" data-path="scheduled-minibus-lines" href="#">Scheduled Minibus Lines</a></li><li><a class="hover:text-primary transition-colors" data-path="regional-shuttles" href="#">Regional Shuttles</a></li><li><a class="hover:text-primary transition-colors" data-path="lift-clubs-carpooling" href="#">Lift Clubs &amp; Carpools</a></li><li><a class="hover:text-primary transition-colors" data-path="fare-index" href="#">Fare Index (ZAR)</a></li></ul></div><div><h3 class="font-label-lg text-label-lg font-bold text-primary tracking-wide uppercase mb-space-md">Operators</h3><ul class="space-y-2.5 font-body-md text-body-md text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="operator-portal" href="#">Operator Portal</a></li><li><a class="hover:text-primary transition-colors" data-path="verification-accreditation" href="#">Accreditation Process</a></li><li><a class="hover:text-primary transition-colors" data-path="fleet-dashboard" href="#">Fleet Dashboard</a></li><li><a class="hover:text-primary transition-colors" data-path="list-your-service" href="#">List Your Service</a></li><li><a class="hover:text-primary transition-colors" data-path="compliance-prdp-pre" href="#">PrDP &amp; PRE Standards</a></li></ul></div><div><h3 class="font-label-lg text-label-lg font-bold text-primary tracking-wide uppercase mb-space-md">Trust &amp; Safety</h3><ul class="space-y-2.5 font-body-md text-body-md text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="safety-and-standards" href="#">Safety Guidelines</a></li><li><a class="hover:text-primary transition-colors" data-path="bilateral-verification" href="#">Bilateral Verification</a></li><li><a class="hover:text-primary transition-colors" data-path="geofenced-privacy-hubs" href="#">Geofenced Safe Hubs</a></li><li><a class="hover:text-primary transition-colors" data-path="report-an-incident" href="#">Report an Incident</a></li><li><a class="hover:text-primary transition-colors" data-path="women-only-lift-clubs" href="#">Women-Only Clubs</a></li></ul></div><div><h3 class="font-label-lg text-label-lg font-bold text-primary tracking-wide uppercase mb-space-md">Support &amp; Legal</h3><ul class="space-y-2.5 font-body-md text-body-md text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="help-centre" href="#">Help Centre</a></li><li><a class="hover:text-primary transition-colors" data-path="contact-us" href="#">Contact Us</a></li><li><a class="hover:text-primary transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li><a class="hover:text-primary transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="hover:text-primary transition-colors" data-path="gauteng-protocol" href="#">Gauteng Protocol</a></li></ul></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col sm:flex-row items-center gap-space-sm text-center sm:text-left"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 CommuteConnect Technologies (Pty) Ltd. Fares benchmarked in ZAR. Times SAST.</p></div><div class="flex items-center gap-space-md"><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-on-surface"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm font-medium">All Systems Operational</span></div></div></div></div></footer></body></html>

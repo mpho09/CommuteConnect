@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><title>CommuteConnect Secure Portal</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#d9e4f0", "primary-container": "#173b57", "outline-variant": "#c2c7ce", "on-primary-fixed-variant": "#284966", "surface-container-low": "#ecf4ff", "on-primary-container": "#84a5c6", "secondary-container": "#a5eefd", "inverse-surface": "#27313b", "surface-container-high": "#dfe9f6", "primary-fixed": "#cde5ff", "on-secondary-container": "#1c6e7b", "secondary-fixed-dim": "#89d2e0", "on-secondary-fixed-variant": "#004e59", "on-secondary": "#ffffff", "primary-fixed-dim": "#a9caec", "secondary": "#116875", "on-tertiary": "#ffffff", "secondary-fixed": "#a5eefd", "surface-dim": "#d1dbe7", "outline": "#73777e", "on-secondary-fixed": "#001f25", "on-primary": "#ffffff", "surface": "#f7f9ff", "error-container": "#ffdad6", "on-surface-variant": "#42474d", "surface-container-lowest": "#ffffff", "on-background": "#131d25", "surface-variant": "#d9e4f0", "tertiary-fixed-dim": "#fdba50", "tertiary-fixed": "#ffddb1", "tertiary": "#331f00", "inverse-on-surface": "#e7f2fe", "on-error": "#ffffff", "surface-container": "#e5effb", "on-tertiary-fixed-variant": "#624000", "on-surface": "#131d25", "on-primary-fixed": "#001d32", "on-error-container": "#93000a", "background": "#f7f9ff", "tertiary-container": "#4f3300", "surface-bright": "#f7f9ff", "on-tertiary-container": "#d4962f", "on-tertiary-fixed": "#291800", "surface-tint": "#40617f", "inverse-primary": "#a9caec", "error": "#ba1a1a", "primary": "#00253e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "space-lg": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem", "gutter": "1.5rem" }, "fontFamily": { "display-lg-mobile": ["Inter"], "display-lg": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "currency-fare": ["Inter"], "headline-xl-mobile": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "label-lg": ["Inter"], "headline-xl": ["Inter"] }, "fontSize": { "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "currency-fare": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700" }], "headline-xl-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><main class="w-full bg-surface min-h-screen flex flex-col"><div class="flex flex-col w-full">
+<div class="min-h-screen w-full flex flex-col lg:flex-row bg-surface">
+<!-- LEFT PANEL: Visual Identity & Civic Transit Authority (Desktop 45%-50%) -->
+<section class="lg:w-5/12 xl:w-5/12 bg-primary text-on-primary flex flex-col justify-between p-8 lg:p-12 relative overflow-hidden shadow-2xl">
+<!-- Ambient Transit Glow & Route Grid Effect -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/40 via-transparent to-black/30 pointer-events-none"></div>
+<div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<!-- Top Section: Brand Identity -->
+<div class="relative z-10">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container-low/10 flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1; font-size: 26px;">hub</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm tracking-tight text-white font-bold">CommuteConnect</span>
+<span class="bg-secondary-container/20 text-secondary-container px-2 py-0.5 rounded-full text-label-sm font-label-sm uppercase tracking-wider">ZA Public Portal</span>
+</div>
+<p class="font-label-sm text-label-sm text-outline-variant tracking-wide">Integrated Gauteng Intermodal Corridor</p>
+</div>
+</div>
+<!-- Hero Headline & Description -->
+<div class="mt-12 xl:mt-16 space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low/10 backdrop-blur-md">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed tracking-wide uppercase">Operational Corridor Status • SAST</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-white font-bold tracking-tight leading-tight">
+            Welcome back to your daily commute.
+          </h1>
+<p class="font-body-md text-body-md text-outline-variant max-w-md leading-relaxed">
+            Access your scheduled lift clubs, verified operator timetables, and saved Gauteng transit corridors with municipal-grade security.
+          </p>
+</div>
+<!-- Live Corridor Status Card with Node Graph -->
+<div class="mt-8 bg-surface-container-low/10 backdrop-blur-md rounded-xl p-5 shadow-lg space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-lg" style="font-variation-settings: 'FILL' 1;">alt_route</span>
+<span class="font-label-lg text-label-lg text-white font-semibold">Gauteng Rapid Transit Spine</span>
+</div>
+<span class="bg-surface-container-lowest/15 text-white px-2 py-0.5 rounded text-label-sm font-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">verified</span> Normal Flow
+            </span>
+</div>
+<div class="space-y-1">
+<div class="text-label-sm font-label-sm text-outline-variant">Ben Schoeman Highway &amp; Gautrain Link</div>
+<p class="font-body-sm text-body-sm text-white">All corridors operating normally (SAST). 12-min headways on Sandton-Centurion segment.</p>
+</div>
+<!-- Transit Corridor Node Vector Diagram -->
+<div class="pt-2">
+<div class="flex items-center justify-between text-[11px] font-medium text-outline-variant px-1 mb-2">
+<span>Soweto</span>
+<span>JHB CBD</span>
+<span class="text-secondary-fixed font-semibold">Sandton</span>
+<span>Midrand</span>
+<span>Pretoria</span>
+</div>
+<div class="relative w-full flex items-center">
+<div class="w-full h-1 bg-surface-container-low/20 rounded-full"></div>
+<div class="absolute left-0 w-3/4 h-1 bg-gradient-to-r from-secondary to-secondary-fixed rounded-full"></div>
+<div class="absolute left-0 -top-1 w-3 h-3 rounded-full bg-secondary-fixed ring-2 ring-primary"></div>
+<div class="absolute left-[24%] -top-1 w-3 h-3 rounded-full bg-secondary-fixed ring-2 ring-primary"></div>
+<div class="absolute left-[49%] -top-1.5 w-4 h-4 rounded-full bg-white shadow-md ring-2 ring-secondary flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<div class="absolute left-[74%] -top-1 w-3 h-3 rounded-full bg-secondary-fixed ring-2 ring-primary"></div>
+<div class="absolute right-0 -top-1 w-3 h-3 rounded-full bg-surface-container-highest ring-2 ring-primary"></div>
+</div>
+<div class="flex justify-between items-center mt-3 pt-2 text-label-sm font-label-sm text-outline-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary-fixed">speed</span> Free-flow (82 km/h)
+              </span>
+<span>Updated 3 mins ago</span>
+</div>
+</div>
+</div>
+<!-- Real Commuter Quote -->
+<div class="mt-6 p-4 rounded-lg bg-surface-container-low/5 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-xl shrink-0 mt-0.5">format_quote</span>
+<div class="space-y-1">
+<p class="font-body-sm text-body-sm text-surface-container-high italic leading-relaxed">
+              "Seamless coordination every morning from Centurion to Rosebank. The verified lift club tracking saves our carpool 40 minutes daily."
+            </p>
+<div class="font-label-sm text-label-sm text-outline-variant font-medium">
+              — Johan V., Verified Daily Commuter • Pretoria-Sandton Corridor
+            </div>
+</div>
+</div>
+</div>
+<!-- Bottom Security & POPIA Reassurance -->
+<div class="relative z-10 mt-10 pt-6">
+<div class="flex flex-wrap items-center gap-y-2 gap-x-4 text-label-sm font-label-sm text-outline-variant">
+<span class="flex items-center gap-1.5 text-white/90">
+<span class="material-symbols-outlined text-secondary-fixed text-base">verified_user</span>
+            POPIA Compliant
+          </span>
+<span class="text-surface-container-low/30">•</span>
+<span class="flex items-center gap-1.5 text-white/90">
+<span class="material-symbols-outlined text-secondary-fixed text-base">key</span>
+            End-to-End Encrypted Transit Tokens
+          </span>
+<span class="text-surface-container-low/30">•</span>
+<span class="flex items-center gap-1.5 text-white/90">
+<span class="material-symbols-outlined text-secondary-fixed text-base">shield</span>
+            100% Vetted Operators
+          </span>
+</div>
+</div>
+</section>
+<!-- RIGHT PANEL: Authentication Form & Interactive State Engine -->
+<main class="lg:w-7/12 xl:w-7/12 flex-1 flex flex-col justify-center items-center p-6 sm:p-10 lg:p-16 bg-surface">
+<div class="w-full max-w-xl mx-auto space-y-6">
+<!-- Simulation State Selector (Audit & Testing Pills) -->
+<div class="p-2 rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-2 shadow-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant px-2">
+<span class="material-symbols-outlined text-sm text-secondary">tune</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">Preview State:</span>
+</div>
+<div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-1 w-full sm:w-auto" id="state-toggle-group">
+<button class="px-3 py-1.5 text-label-sm font-label-sm rounded-md transition-all font-semibold bg-primary text-white shadow-sm" id="btn-state-normal" onclick="setScreenState('normal')" type="button">
+              Normal
+            </button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm rounded-md transition-all font-medium text-on-surface-variant hover:bg-surface-container-highest" id="btn-state-invalid" onclick="setScreenState('invalid')" type="button">
+              Invalid Creds
+            </button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm rounded-md transition-all font-medium text-on-surface-variant hover:bg-surface-container-highest" id="btn-state-expired" onclick="setScreenState('expired')" type="button">
+              Session Expired
+            </button>
+<button class="px-3 py-1.5 text-label-sm font-label-sm rounded-md transition-all font-medium text-on-surface-variant hover:bg-surface-container-highest" id="btn-state-loading" onclick="setScreenState('loading')" type="button">
+              Submitting
+            </button>
+</div>
+</div>
+<!-- Form Header Section -->
+<div class="space-y-2">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/30 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">security</span>
+            Gauteng Transit Portal Authentication
+          </div>
+<h2 class="font-headline-xl text-headline-xl text-on-background font-bold tracking-tight">
+            Sign in to CommuteConnect
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Enter your registered credentials to manage your journeys, verified vehicles, and bookings.
+          </p>
+</div>
+<!-- DYNAMIC STATE BANNERS -->
+<!-- 1. Invalid Credentials Banner -->
+<div class="hidden rounded-xl bg-error-container p-4 text-on-error-container shadow-sm transition-all" id="banner-invalid">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error shrink-0 mt-0.5">error</span>
+<div class="space-y-1">
+<div class="font-title-md text-title-md font-bold text-on-error-container">Authentication Failed</div>
+<p class="font-body-sm text-body-sm text-on-error-container/90 leading-relaxed">
+                The email address or password entered does not match our records. Please verify your credentials or reset your password.
+              </p>
+</div>
+</div>
+</div>
+<!-- 2. Session Expired Notice Banner -->
+<div class="hidden rounded-xl bg-tertiary-fixed p-4 text-on-tertiary-fixed-variant shadow-sm transition-all" id="banner-expired">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container shrink-0 mt-0.5">timer_off</span>
+<div class="space-y-1">
+<div class="font-title-md text-title-md font-bold text-on-tertiary-fixed">Session Expired</div>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant leading-relaxed">
+                Your transit session has timed out after 30 minutes of inactivity for your security. Please sign in again to resume your journey tracking.
+              </p>
+</div>
+</div>
+</div>
+<!-- AUTHENTICATION FORM (Email Authentication Only - Strictly No Social OAuth) -->
+<form class="space-y-5 bg-surface-container-lowest p-6 sm:p-8 rounded-2xl shadow-sm" id="auth-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+<!-- Email Address Input -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md font-semibold text-on-surface" for="email-field">
+              Transit Email Address
+            </label>
+<div class="relative rounded-lg flex items-center shadow-inner">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-xl">mail</span>
+</div>
+<input class="w-full h-11 pl-10 pr-4 bg-surface text-on-surface font-body-md text-body-md rounded-lg focus:bg-surface-container-lowest focus:outline-none transition-all placeholder:text-outline/70" id="email-field" placeholder="name@corridor.co.za" required="" type="email" value="johan.v@pretoria-commute.co.za"/>
+</div>
+<p class="hidden font-body-sm text-body-sm text-error flex items-center gap-1 mt-1" id="email-error-msg">
+<span class="material-symbols-outlined text-sm">warning</span> Please provide a valid commuter email address
+            </p>
+</div>
+<!-- Password Input with Show/Hide Toggle -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block font-label-md text-label-md font-semibold text-on-surface" for="password-field">
+                Account Password
+              </label>
+<a class="font-label-md text-label-md font-semibold text-secondary hover:underline transition-colors" href="#forgot">
+                Forgot password?
+              </a>
+</div>
+<div class="relative rounded-lg flex items-center shadow-inner">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-xl">lock</span>
+</div>
+<input class="w-full h-11 pl-10 pr-11 bg-surface text-on-surface font-body-md text-body-md rounded-lg focus:bg-surface-container-lowest focus:outline-none transition-all placeholder:text-outline/70" id="password-field" placeholder="Enter your password" required="" type="password" value="GautengTransit#2025"/>
+<button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-on-surface transition-colors focus:outline-none" id="toggle-pwd-btn" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-xl" id="pwd-icon">visibility</span>
+</button>
+</div>
+<p class="hidden font-body-sm text-body-sm text-error flex items-center gap-1 mt-1" id="password-error-msg">
+<span class="material-symbols-outlined text-sm">error</span> Incorrect password entered. Attempt 1 of 5.
+            </p>
+</div>
+<!-- Controls: Remember Me Device Checkbox -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2.5 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" id="remember-me" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                Remember me on this trusted device
+              </span>
+</label>
+</div>
+<!-- Primary Submit Button -->
+<div class="pt-2">
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-white font-label-lg text-label-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 active:scale-[0.99] focus:outline-none" id="submit-btn" type="submit">
+<span class="hidden animate-spin inline-block w-5 h-5 border-2 border-white/20 border-t-white rounded-full" id="btn-spinner"></span>
+<span class="flex items-center gap-2" id="btn-label">
+<span>Sign In to Account</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</span>
+</button>
+</div>
+<!-- Register Referral -->
+<div class="text-center pt-2">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Don't have a CommuteConnect account?
+              <a class="font-label-md text-label-md font-bold text-secondary hover:underline ml-1" href="#register">
+                Register as commuter or operator
+              </a>
+</p>
+</div>
+</form>
+<!-- Compliance & Security Assurance Footer Note -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">policy</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Protected by South African Protection of Personal Information Act (POPIA) standards. Official Gautrain, Metrobus, and municipal transit interchange safe-point verification actively enforced.
+          </p>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script>
+  // Interactive UI Script for Testing States & Password Visibility
+  function togglePasswordVisibility() {
+    const pwdInput = document.getElementById('password-field');
+    const pwdIcon = document.getElementById('pwd-icon');
+    if (!pwdInput || !pwdIcon) return;
+
+    if (pwdInput.type === 'password') {
+      pwdInput.type = 'text';
+      pwdIcon.textContent = 'visibility_off';
+    } else {
+      pwdInput.type = 'password';
+      pwdIcon.textContent = 'visibility';
+    }
+  }
+
+  function setScreenState(state) {
+    const bannerInvalid = document.getElementById('banner-invalid');
+    const bannerExpired = document.getElementById('banner-expired');
+    const emailField = document.getElementById('email-field');
+    const passwordField = document.getElementById('password-field');
+    const emailErrorMsg = document.getElementById('email-error-msg');
+    const passwordErrorMsg = document.getElementById('password-error-msg');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const btnLabel = document.getElementById('btn-label');
+    const rememberMe = document.getElementById('remember-me');
+
+    // Reset pill buttons
+    const stateButtons = ['normal', 'invalid', 'expired', 'loading'];
+    stateButtons.forEach(s => {
+      const btn = document.getElementById('btn-state-' + s);
+      if (btn) {
+        if (s === state) {
+          btn.className = "px-3 py-1.5 text-label-sm font-label-sm rounded-md transition-all font-semibold bg-primary text-white shadow-sm";
+        } else {
+          btn.className = "px-3 py-1.5 text-label-sm font-label-sm rounded-md transition-all font-medium text-on-surface-variant hover:bg-surface-container-highest";
+        }
+      }
+    });
+
+    // Reset default inputs state
+    bannerInvalid.classList.add('hidden');
+    bannerExpired.classList.add('hidden');
+    emailErrorMsg.classList.add('hidden');
+    passwordErrorMsg.classList.add('hidden');
+    emailField.disabled = false;
+    passwordField.disabled = false;
+    rememberMe.disabled = false;
+    submitBtn.disabled = false;
+    btnSpinner.classList.add('hidden');
+    btnLabel.innerHTML = '<span>Sign In to Account</span><span class="material-symbols-outlined text-lg">arrow_forward</span>';
+    
+    // Clear error backgrounds
+    emailField.classList.remove('bg-error-container/40', 'text-error');
+    passwordField.classList.remove('bg-error-container/40', 'text-error');
+
+    if (state === 'normal') {
+      emailField.value = 'johan.v@pretoria-commute.co.za';
+      passwordField.value = 'GautengTransit#2025';
+    } else if (state === 'invalid') {
+      bannerInvalid.classList.remove('hidden');
+      emailField.classList.add('bg-error-container/40', 'text-error');
+      passwordField.classList.add('bg-error-container/40', 'text-error');
+      passwordErrorMsg.classList.remove('hidden');
+    } else if (state === 'expired') {
+      bannerExpired.classList.remove('hidden');
+      emailField.value = 'johan.v@pretoria-commute.co.za';
+      passwordField.value = '';
+      passwordField.placeholder = 'Please re-enter your password';
+      passwordField.focus();
+    } else if (state === 'loading') {
+      emailField.disabled = true;
+      passwordField.disabled = true;
+      rememberMe.disabled = true;
+      submitBtn.disabled = true;
+      btnSpinner.classList.remove('hidden');
+      btnLabel.innerHTML = '<span>Authenticating transit credentials...</span>';
+    }
+  }
+
+  function handleFormSubmit() {
+    setScreenState('loading');
+    setTimeout(() => {
+      setScreenState('normal');
+    }, 2000);
+  }
+</script></main></body></html>

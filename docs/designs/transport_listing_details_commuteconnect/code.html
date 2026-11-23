@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#cde5ff","tertiary-container":"#4f3300","primary":"#00253e","inverse-primary":"#a9caec","secondary-container":"#a5eefd","surface-dim":"#d1dbe7","background":"#f7f9ff","tertiary-fixed-dim":"#fdba50","surface-container-high":"#dfe9f6","on-error":"#ffffff","secondary-fixed":"#a5eefd","surface-container":"#e5effb","secondary-fixed-dim":"#89d2e0","outline":"#73777e","on-primary-fixed-variant":"#284966","surface-container-highest":"#d9e4f0","error-container":"#ffdad6","surface-variant":"#d9e4f0","surface-container-lowest":"#ffffff","on-primary-fixed":"#001d32","on-secondary-fixed":"#001f25","on-secondary-fixed-variant":"#004e59","outline-variant":"#c2c7ce","on-tertiary":"#ffffff","error":"#ba1a1a","on-background":"#131d25","primary-container":"#173b57","inverse-surface":"#27313b","on-secondary-container":"#1c6e7b","on-surface-variant":"#42474d","secondary":"#116875","primary-fixed-dim":"#a9caec","surface-container-low":"#ecf4ff","tertiary-fixed":"#ffddb1","inverse-on-surface":"#e7f2fe","surface-bright":"#f7f9ff","surface":"#f7f9ff","on-tertiary-fixed":"#291800","on-primary":"#ffffff","tertiary":"#331f00","on-tertiary-fixed-variant":"#624000","on-error-container":"#93000a","on-surface":"#131d25","on-secondary":"#ffffff","surface-tint":"#40617f","on-primary-container":"#84a5c6","on-tertiary-container":"#d4962f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"margin-mobile":"1rem","space-xl":"2rem","gutter-mobile":"1rem",margin:"2rem","space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem",gutter:"1.5rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Inter"],"headline-sm":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"headline-xl-mobile":["Inter"],"display-lg":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"title-md":["Inter"],"label-lg":["Inter"],"display-lg-mobile":["Inter"],"currency-fare":["Inter"],"headline-xl":["Inter"],"headline-lg":["Inter"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.015em",fontWeight:"700"}],"currency-fare":["18px",{lineHeight:"24px",letterSpacing:"0.01em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-lg"><div class="px-space-lg flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">directions_transit</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-tight tracking-tight">CommuteConnect</span><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Civic Transit SA</span></div></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-primary-container text-on-primary font-title-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="find-transport" href="#"><span class="material-symbols-outlined text-[20px]">commute</span><span>Find Transport</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-journeys" href="#"><span class="material-symbols-outlined text-[20px]">route</span><span>My Journeys</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-requests" href="#"><span class="material-symbols-outlined text-[20px]">pending_actions</span><span>My Requests</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="matches" href="#"><span class="material-symbols-outlined text-[20px]">supervised_user_circle</span><span>Matches</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notifications</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="profile-settings" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span>Profile &amp; Settings</span></a></nav></div><div class="px-space-md"><div class="bg-surface-container p-space-md rounded-xl flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span><div class="flex flex-col"><span class="font-label-md text-label-md text-on-surface">Safe Journey Shield</span><span class="font-body-sm text-body-sm text-on-surface-variant">Verified Corridors Only</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-high py-space-xs px-space-md rounded-full shadow-[0_1px_3px_0_rgba(23,59,87,0.05)]"><span class="material-symbols-outlined text-secondary text-[18px]">pin_drop</span><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface"><span class="font-title-md text-title-md text-primary">Tembisa Plaza</span><span class="text-on-surface-variant">→</span><span class="font-title-md text-title-md text-primary">Sandton Gautrain</span></div><div class="w-1 h-1 rounded-full bg-outline"></div><div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm"><span>Today</span><span class="text-outline">•</span><span>06:30 - 08:00 SAST</span></div><button class="ml-space-xs px-space-sm py-1 rounded-full bg-surface text-secondary hover:bg-surface-bright hover:text-on-secondary-container transition-colors font-label-sm text-label-sm shadow-[0_1px_2px_rgba(0,0,0,0.04)]" type="button">Edit Search</button></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Content Canvas Area -->
+<div class="px-space-md lg:px-space-xl py-space-md max-w-7xl mx-auto w-full flex flex-col gap-space-lg">
+<!-- Top Nav & Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant overflow-x-auto whitespace-nowrap pb-1">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Home</span>
+</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Find Transport</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Gauteng Corridors</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">Tembisa to Midrand</a>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-label-md">Listing Details</span>
+</nav>
+<!-- Main Dual Mode Switcher -->
+<div class="bg-surface-container p-1.5 rounded-xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-1.5 w-full sm:w-auto bg-surface-container-high/60 p-1 rounded-lg">
+<button class="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg transition-all font-label-lg text-label-lg shadow-sm bg-primary text-on-primary" id="toggle-operator" onclick="switchView('operator')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Regulated Operator Listing</span>
+<span class="ml-1 text-[10px] bg-secondary-fixed text-on-secondary-fixed px-1.5 py-0.5 rounded-full font-label-sm">NLTA Licensed</span>
+</button>
+<button class="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg transition-all font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high" id="toggle-liftclub" onclick="switchView('liftclub')">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>Community Lift Club</span>
+<span class="ml-1 text-[10px] bg-surface-container-lowest text-secondary px-1.5 py-0.5 rounded-full font-label-sm">Peer Match</span>
+</button>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center px-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Corridor R562 Live Sync: <strong class="text-on-surface font-label-md">Active</strong></span>
+</div>
+</div>
+<!-- Route Master Header Card -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex flex-col gap-space-xs">
+<!-- Dynamic Route Meta Badges -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container text-on-primary" id="badge-route-type">
+              Regulated Minibus Express
+            </span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">straighten</span>
+<span>24.6 km route</span>
+</span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+<span>~35 mins typical</span>
+</span>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-surface-container-low text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>Corridor Shield Verified</span>
+</span>
+</div>
+<!-- Dynamic Title -->
+<h1 class="font-headline-xl text-headline-xl text-primary mt-1" id="route-title">
+            Line 104 Express: Tembisa Oakmoor ⇄ Midrand Grand Central
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant" id="route-subtitle">
+            Direct high-frequency trunk transit serving Kempton/Tembisa east nodes into Waterfall Commercial Hub &amp; Gautrain Midrand Station.
+          </p>
+</div>
+<!-- Metric Fast Blocks -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="bg-surface-container p-3 rounded-lg text-center min-w-[90px]">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Headway</span>
+<span class="font-title-md text-title-md text-primary" id="metric-headway">10-12m</span>
+<span class="block font-body-sm text-body-sm text-secondary">Peak SAST</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg text-center min-w-[90px]">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Fare Base</span>
+<span class="font-currency-fare text-currency-fare text-primary" id="metric-fare">R 26.00</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Fixed Tariffs</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg text-center min-w-[90px]">
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Fleet/Seats</span>
+<span class="font-title-md text-title-md text-primary" id="metric-seats">14 Vans</span>
+<span class="block font-body-sm text-body-sm text-secondary">Active Today</span>
+</div>
+</div>
+</div>
+<!-- Corridor Schematic Map Graphic -->
+<div class="mt-space-lg bg-surface-container-low rounded-xl p-space-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-3 mb-3 gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">alt_route</span>
+<span class="font-title-md text-title-md text-primary">Corridor Schematic (R562 &amp; Allandale Arterial)</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-2.5 py-1 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Live Corridor Flow: Normal, 0 mins delay</span>
+</div>
+</div>
+<!-- Visual Waypoint Track -->
+<div class="relative py-2 overflow-x-auto">
+<div class="min-w-[680px] flex items-center justify-between relative px-4">
+<!-- Connecting Pipeline Track -->
+<div class="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-1.5 bg-surface-container-high rounded-full z-0"></div>
+<div class="absolute left-6 w-3/4 top-1/2 -translate-y-1/2 h-1.5 bg-secondary/70 rounded-full z-0"></div>
+<!-- Point 1 -->
+<div class="relative z-10 flex flex-col items-center group">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-sm ring-4 ring-surface-container-low">
+                01
+              </div>
+<span class="mt-2 font-label-md text-label-md text-primary text-center">Tembisa Oakmoor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rank Bay 4B</span>
+</div>
+<!-- Point 2 -->
+<div class="relative z-10 flex flex-col items-center group">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-sm ring-4 ring-surface-container-low">
+                02
+              </div>
+<span class="mt-2 font-label-md text-label-md text-primary text-center">Tembisa Plaza Hub</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Public Shelter</span>
+</div>
+<!-- Point 3 -->
+<div class="relative z-10 flex flex-col items-center group">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm shadow-sm ring-4 ring-surface-container-low">
+<span class="material-symbols-outlined text-[14px]">turn_slight_right</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-primary text-center">Kaalfontein Link</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">R562 Transition</span>
+</div>
+<!-- Point 4 -->
+<div class="relative z-10 flex flex-col items-center group">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm shadow-sm ring-4 ring-surface-container-low">
+<span class="material-symbols-outlined text-[14px]">fork_right</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-primary text-center">Allandale Offramp</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Midrand Entry</span>
+</div>
+<!-- Point 5 -->
+<div class="relative z-10 flex flex-col items-center group">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-sm ring-4 ring-surface-container-low">
+                05
+              </div>
+<span class="mt-2 font-label-md text-label-md text-primary text-center">Waterfall East</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mall Perimeter</span>
+</div>
+<!-- Point 6 -->
+<div class="relative z-10 flex flex-col items-center group">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm shadow-sm ring-4 ring-surface-container-low">
+<span class="material-symbols-outlined text-[15px]">flag</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-primary text-center">Midrand Gautrain</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Grand Central Hub</span>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 flex flex-wrap items-center justify-between text-body-sm font-body-sm text-on-surface-variant gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span>All intermediate pick-ups follow municipal geofenced roadside passenger bays.</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Terminal Rank</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Geofenced Passenger Zone</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT 2/3 COLUMN: Interactive View Pane -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- ======================= A. REGULATED OPERATOR VIEW ======================= -->
+<div class="flex flex-col gap-space-lg transition-opacity duration-200" id="operator-view-panel">
+<!-- Association Profile Header -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[32px]">airport_shuttle</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">TMCA Minibus Taxi Association</h2>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>NLTA/PRE Registered</span>
+</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                    Permit Ref: <strong class="text-on-surface font-label-md">GP-2024-TMCA-CORR104</strong> • Ekurhuleni &amp; Joburg Metropolitan Region
+                  </span>
+<div class="flex items-center gap-3 mt-2 text-body-sm font-body-sm">
+<span class="flex items-center gap-1 text-primary font-label-md">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.7</span>
+<span class="text-on-surface-variant font-body-sm">(1,840 weekly commuters)</span>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                      14 Peak Vehicles In Corridor
+                    </span>
+</div>
+</div>
+</div>
+<div class="sm:text-right flex sm:flex-col justify-between items-center sm:items-end gap-1 bg-surface-container-low sm:bg-transparent p-2.5 sm:p-0 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Association Marshall</span>
+<span class="font-label-lg text-label-lg text-primary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                  Active at Oakmoor Rank
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Shift Opened: 05:45 SAST</span>
+</div>
+</div>
+<!-- Route Description -->
+<div class="pt-space-md">
+<h3 class="font-title-md text-title-md text-primary mb-2">Corridor Context &amp; Operations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Line 104 Express operates as an integrated Gauteng municipal priority arterial. Vehicles bypass local suburban congestion using designated R562 priority lanes into Waterfall and Midrand corporate clusters. Passengers can connect seamlessly to Gautrain trains, Gautrain Bus feeder routes, and local metered e-hail pick-up bays at Grand Central.
+              </p>
+</div>
+<!-- Compliance Proof Badges -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-space-md pt-space-md bg-surface-container p-3 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">badge</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">PrDP Certified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Every driver credentialed</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">car_repair</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">COF Inspections</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bi-annual roadworthiness</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">security</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Passenger Shield</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Third-party passenger cover</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Schedule & Headway Timetable Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Operational Timetable &amp; Headways</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Departures operate on strict time intervals and rank turn-dispatch</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">update</span>
+                Current SAST Window
+              </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between">
+<div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary text-on-primary inline-block mb-2">Morning Peak</span>
+<div class="font-headline-sm text-headline-sm text-primary">06:00 – 08:30</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">High frequency turn; vehicles dispatch every 10–12 minutes directly upon fill.</p>
+</div>
+<div class="mt-3 pt-2 text-label-md font-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                  Active Dispatchers On Duty
+                </div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between">
+<div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container-high text-on-surface inline-block mb-2">Off-Peak Regular</span>
+<div class="font-headline-sm text-headline-sm text-primary">08:30 – 16:30</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Regular hourly schedule; guaranteed departures every 25 minutes.</p>
+</div>
+<div class="mt-3 pt-2 text-label-md font-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">timelapse</span>
+                  Scheduled Interval
+                </div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between">
+<div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary text-on-primary inline-block mb-2">Evening Return</span>
+<div class="font-headline-sm text-headline-sm text-primary">16:30 – 19:30</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Reverse flow departures from Midrand Grand Central to Tembisa zones.</p>
+</div>
+<div class="mt-3 pt-2 text-label-md font-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                  Active Return Marshal
+                </div>
+</div>
+</div>
+<!-- Fares Breakdown -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-primary block">Official Regulated Association Tariff</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Statutory fixed pricing. No surge during heavy rain or loadshedding.</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-currency-fare text-currency-fare text-primary block">R 26.00 ZAR</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cash or CommuteConnect Transit QR</span>
+</div>
+</div>
+</div>
+<!-- Stops & Designated Boarding Bays -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Designated Passenger Waypoints</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Safe, lit, and municipal-approved corridor boarding points.</p>
+<div class="space-y-3">
+<div class="flex items-start gap-space-md p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shrink-0">1</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-md text-title-md text-primary">Tembisa Oakmoor Taxi Rank (Terminal)</h4>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded shadow-sm">Origin Platform 4B</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Undercover shelter, marshal dispatch desk, CommuteConnect QR scanner lane.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-md p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md shrink-0">2</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-md text-title-md text-primary">Tembisa Plaza zone (Geofenced Bay)</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Headway +8 mins</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Near Main Entrance Perimeter Bay. Well illuminated street-facing layby.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-md p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-label-md text-label-md shrink-0">3</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-md text-title-md text-primary">Waterfall City / Mall of Africa East Bay</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Headway +24 mins</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Designated transit drop-off lane directly adjacent to commercial park reception.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-md p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<span class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-label-md text-label-md shrink-0">4</span>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-md text-title-md text-primary">Midrand Gautrain &amp; Grand Central Station</h4>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded shadow-sm">Destination Terminal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Intermodal transfer concourse for rapid rail, Gautrain buses, and central business district shuttles.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ======================= B. COMMUNITY LIFT CLUB VIEW ======================= -->
+<div class="hidden flex flex-col gap-space-lg transition-opacity duration-200" id="liftclub-view-panel">
+<!-- Host Profile Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-space-md">
+<div class="flex items-start gap-space-md">
+<div class="relative shrink-0">
+<img class="w-16 h-16 rounded-xl object-cover shadow-md" data-alt="A portrait of Sipho Ndlovu, a professional South African IT engineer in his early thirties with a warm confident smile, wearing a navy smart-casual collared polo shirt against a modern blurred corporate office background in Johannesburg, crisp daylighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMgkkKUYuh0qd1elTRl3jG78OUD8bJryswCFLUQtKNRfvlVjpJ2PQ9CRnzsnEddFw3j_mEUTjhBMS8cVm7XtVdVAoi_RXkbSxdoaXPLtUmh1eG2FGXaQWkUKG4X_RifHNs6oZu3sskI1j-19VT4GEqFHnBW8kmx3AegLYxl5to8RTahenRTn4biK36tEUNQ2BqMu2rQ7qXv6g_FiGSfyccIj_4cKeCNAlpge4G3Oed"/>
+<span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[14px] shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Sipho Ndlovu</h2>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">corporate_fare</span>
+<span>Vodaworld Tech Campus Staff</span>
+</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+                    Senior Cloud Systems Analyst • Daily Corridor Commuter since 2021
+                  </span>
+<div class="flex items-center gap-3 mt-2 text-body-sm font-body-sm">
+<span class="flex items-center gap-1 text-primary font-label-md">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+<span class="text-on-surface-variant font-body-sm">(42 completed club rides)</span>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="text-secondary font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                      ID &amp; Workplace Email Verified
+                    </span>
+</div>
+</div>
+</div>
+<div class="sm:text-right flex sm:flex-col justify-between items-center sm:items-end gap-1 bg-surface-container-low sm:bg-transparent p-2.5 sm:p-0 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Available Capacity</span>
+<span class="font-headline-sm text-headline-sm text-primary">2 spots open</span>
+<span class="font-body-sm text-body-sm text-secondary">2 recurring members on-board</span>
+</div>
+</div>
+<!-- Vehicle & Amenity Specs -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-space-md pt-space-md bg-surface-container p-3 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">directions_car</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">2022 Toyota Corolla Cross</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Silver • Insured • Air Conditioned</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">luggage</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Boot Space Available</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Laptop bags &amp; small parcels</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">smoke_free</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Non-Smoking Cab</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quiet workspace vibe</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Schedule & Recurring Rules Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Journey Logistics &amp; Departure Window</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mon – Fri recurring workday commute with guaranteed departure windows.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-semibold">Morning Outbound</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface">Mon to Fri</span>
+</div>
+<div class="font-headline-xl text-headline-xl text-primary">06:40 <span class="text-body-md font-body-md text-on-surface-variant">SAST</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Leaves Tembisa Plaza Hub. Flexible by ±5 minutes via carpool in-app chat.</p>
+<div class="mt-3 pt-2 text-body-sm font-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                  Estimated arrival at Midrand: 07:15 SAST
+                </div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Evening Return Run</span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container text-on-surface">Optional Add-on</span>
+</div>
+<div class="font-headline-xl text-headline-xl text-primary">16:45 <span class="text-body-md font-body-md text-on-surface-variant">SAST</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Departing Vodaworld Campus / Waterfall City directly back to Tembisa Plaza.</p>
+<div class="mt-3 pt-2 text-body-sm font-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                  Coordinated via weekly carpool schedule
+                </div>
+</div>
+</div>
+<!-- SARS Statutory Compliance Note -->
+<div class="bg-surface-container p-space-md rounded-xl flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">account_balance</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary">Statutory Fuel-Sharing Non-Profit Protocol</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  In full compliance with South African Revenue Service (SARS) commuter guidelines and the National Land Transport Act. This listing is strictly a shared-cost mutual lift club. The contribution covers petrol and toll sharing only; no commercial profit is generated.
+                </p>
+</div>
+</div>
+</div>
+<!-- POPIA Geofenced Locations Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Safe Pick-up &amp; Drop-off Perimeters</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">POPIA Privacy Safeguard: Exact residential gates are never shared in public feeds.</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">lock</span>
+</div>
+<div class="space-y-3">
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">pin_drop</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary">Tembisa Plaza Public Hub (Bay 3)</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded shadow-sm">Pick-up zone</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Designated carpool waiting area opposite Engen service forecourt. 24/7 CCTV surveillance and security presence.
+                  </p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">where_to_vote</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary">Waterfall City / Mall of Africa East Gate</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded shadow-sm">Intermediate Drop</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Visitor reception drop lane. Convenient walk to PwC Tower, Deloitte, and Novartis offices.
+                  </p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">domain</span>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary">Vodaworld Midrand Tech Campus Perimeter</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-lowest px-2 py-0.5 rounded shadow-sm">Final Hub</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Main access perimeter gate. Host assists colleagues directly with turnstile entry.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 1/3 COLUMN: Sticky Action & Booking Card -->
+<div class="lg:col-span-4 sticky top-20 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Contribution / Fare</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold" id="card-price">R 26.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="card-period">/ statutory trip</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary" id="card-type-tag">
+              Regulated Single
+            </span>
+</div>
+<!-- Dynamic Action Buttons -->
+<div class="flex flex-col gap-2" id="action-buttons-operator">
+<button class="w-full py-3 px-space-md bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Enquire with Association Dispatch</span>
+</button>
+<button class="w-full py-2.5 px-space-md bg-surface-container hover:bg-surface-container-high text-primary rounded-lg font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">qr_code_2</span>
+<span>Download Timetable &amp; QR Pass</span>
+</button>
+</div>
+<div class="hidden flex flex-col gap-2" id="action-buttons-liftclub">
+<button class="w-full py-3 px-space-md bg-secondary hover:bg-on-secondary-container text-on-secondary rounded-lg font-label-lg text-label-lg transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>Request to Join Lift Club</span>
+</button>
+<button class="w-full py-2.5 px-space-md bg-surface-container hover:bg-surface-container-high text-primary rounded-lg font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+<span>Save to My Journeys</span>
+</button>
+</div>
+<!-- Important Match Notice -->
+<div class="bg-surface-container-low p-3 rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+<strong class="text-on-surface font-label-md">Civic Safety Rule:</strong> A match or enquiry is not a confirmed ride. Connecting requires formal operator slot check or mutual carpool host acceptance.
+            </p>
+</div>
+<!-- Quick Specifications Checklist -->
+<div class="space-y-2.5 pt-2 font-body-sm text-body-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">timelapse</span>
+                Departure Flexibility
+              </span>
+<span class="font-label-md text-label-md text-on-surface" id="spec-flexibility">Every 10-12m (Peak)</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">airline_seat_recline_normal</span>
+                Seat Guarantee
+              </span>
+<span class="font-label-md text-label-md text-on-surface" id="spec-seats">Turn Dispatch Order</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">credit_card</span>
+                Payment Protection
+              </span>
+<span class="font-label-md text-label-md text-secondary">Escrow Protected</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">cancel</span>
+                Cancellation Terms
+              </span>
+<span class="font-label-md text-label-md text-on-surface">Free up to 45m before</span>
+</div>
+</div>
+<!-- Dispatch / Host Response Pill -->
+<div class="mt-2 pt-space-md bg-surface-container p-3 rounded-lg flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+              Response Metric
+            </span>
+<span class="font-label-md text-label-md text-primary">Typically replies in 12 mins</span>
+</div>
+<!-- Report Listing Action Link -->
+<div class="flex justify-center pt-1">
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 font-body-sm text-body-sm" onclick="openReportModal()">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+<span>Report this listing or fare discrepancy</span>
+</button>
+</div>
+</div>
+<!-- Trust & Civic Protection Card -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+<span class="material-symbols-outlined text-secondary text-[20px]">gavel</span>
+<span>CommuteConnect Civic Seal</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Transport operators and peer carpool hosts are screened against provincial transport registers and verified corporate email credentials.
+          </p>
+<a class="text-secondary font-label-md text-label-md hover:underline flex items-center gap-1 mt-1" href="#">
+<span>Read Commute Charter &amp; Corridor Rights</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- BOTTOM SECTION: Safety Protocol & Alternatives -->
+<section class="mt-space-lg flex flex-col gap-space-lg">
+<!-- Verification Matrix Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Corridor Safety &amp; Verification Protocol</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Real-time measures securing Gauteng transit pathways</p>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">enhanced_encryption</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">POPIA Compliance</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Commuter identities and private residence addresses are never surfaced on route directories.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">local_police</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">SAPS Vetted</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Commercial and private vehicles checked against National Traffic Information System (eNaTIS).</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">SARS Fuel Protocol</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Car-share contributions are capped at regulated per-km cost reimbursement guidelines.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">emergency</span>
+</div>
+<span class="font-label-lg text-label-lg text-primary">24/7 Rapid Shield</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Direct emergency dispatch linking GP Traffic Police, rank marshals, and roadside support.</p>
+</div>
+</div>
+</div>
+<!-- Alternative Journeys on this Corridor -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md lg:p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Other Verified Options on this Corridor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Departing within the same 06:30 – 07:30 SAST morning window</p>
+</div>
+<a class="text-secondary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">
+<span>View all 18 options</span>
+<span class="material-symbols-outlined text-[14px]">east</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Alt Card 1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary text-on-primary">Gautrain Feeder Shuttle</span>
+<span class="font-currency-fare text-currency-fare text-primary">R 24.00</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary">Midrand Station Route M1</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Leaves Tembisa Oakmoor stop at 06:45 SAST. Tap with Gautrain Gold Card or contactless.</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">departure_board</span> 06:45 SAST
+              </span>
+<button class="text-primary hover:text-secondary font-label-md">Details →</button>
+</div>
+</div>
+<!-- Alt Card 2 -->
+<div class="bg-surface-container-low p-space-md rounded-xl hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed">Lift Club</span>
+<span class="font-currency-fare text-currency-fare text-primary">R 32.00</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary">Lerato K. (Sandton &amp; Waterfall)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Hyundai Creta, leaving 07:10 SAST from Tembisa Plaza Bay 1 directly to Sandton via Allandale.</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">airline_seat_recline_normal</span> 1 seat left
+              </span>
+<button class="text-primary hover:text-secondary font-label-md">Details →</button>
+</div>
+</div>
+<!-- Alt Card 3 -->
+<div class="bg-surface-container-low p-space-md rounded-xl hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-primary text-on-primary">Line 105 Secondary</span>
+<span class="font-currency-fare text-currency-fare text-primary">R 26.00</span>
+</div>
+<h4 class="font-title-md text-title-md text-primary">Kaalfontein ⇄ Gallagher Hub</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Operated by Midrand Taxi Association (MTA). Direct commuter run via Old Pretoria Road.</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-secondary font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Every 15 mins
+              </span>
+<button class="text-primary hover:text-secondary font-label-md">Details →</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive Report Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/60 p-4" id="report-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-error">flag</span>
+<span>Report this Listing</span>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-surface-container text-on-surface-variant" onclick="closeReportModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Our corridor safety team investigates every submission. Select the reason that applies to this corridor route:
+      </p>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer">
+<input checked="" class="accent-primary" name="report_reason" type="radio"/>
+<span class="font-label-md text-label-md text-primary">Statutory fare discrepancy or unauthorised surge</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer">
+<input class="accent-primary" name="report_reason" type="radio"/>
+<span class="font-label-md text-label-md text-primary">Route misrepresentation or unscheduled deviation</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer">
+<input class="accent-primary" name="report_reason" type="radio"/>
+<span class="font-label-md text-label-md text-primary">Unlicensed driver or vehicle registration mismatch</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer">
+<input class="accent-primary" name="report_reason" type="radio"/>
+<span class="font-label-md text-label-md text-primary">Suspicious host profile / POPIA privacy breach</span>
+</label>
+</div>
+<textarea class="w-full h-20 p-2.5 rounded-lg bg-surface-container-low text-body-sm font-body-sm text-on-surface placeholder:text-outline-variant resize-none focus:outline-none" placeholder="Provide relevant details (optional)..."></textarea>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container" onclick="closeReportModal()">Cancel</button>
+<button class="px-space-md py-2 rounded-lg font-label-md text-label-md bg-error text-on-error hover:bg-on-error-container" onclick="submitReport()">Submit Report</button>
+</div>
+</div>
+</div>
+<script>
+    function switchView(mode) {
+      const toggleOp = document.getElementById('toggle-operator');
+      const toggleLc = document.getElementById('toggle-liftclub');
+      const panelOp = document.getElementById('operator-view-panel');
+      const panelLc = document.getElementById('liftclub-view-panel');
+      const badgeRouteType = document.getElementById('badge-route-type');
+      const routeTitle = document.getElementById('route-title');
+      const routeSubtitle = document.getElementById('route-subtitle');
+      const metricHeadway = document.getElementById('metric-headway');
+      const metricFare = document.getElementById('metric-fare');
+      const metricSeats = document.getElementById('metric-seats');
+      const cardPrice = document.getElementById('card-price');
+      const cardPeriod = document.getElementById('card-period');
+      const cardTypeTag = document.getElementById('card-type-tag');
+      const actionOp = document.getElementById('action-buttons-operator');
+      const actionLc = document.getElementById('action-buttons-liftclub');
+      const specFlex = document.getElementById('spec-flexibility');
+      const specSeats = document.getElementById('spec-seats');
+
+      if (mode === 'operator') {
+        // Toggle Buttons
+        toggleOp.className = 'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg transition-all font-label-lg text-label-lg shadow-sm bg-primary text-on-primary';
+        toggleLc.className = 'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg transition-all font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high';
+        
+        // Panels
+        panelOp.classList.remove('hidden');
+        panelLc.classList.add('hidden');
+
+        // Header Data
+        badgeRouteType.textContent = 'Regulated Minibus Express';
+        badgeRouteType.className = 'px-2.5 py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-primary-container text-on-primary';
+        routeTitle.textContent = 'Line 104 Express: Tembisa Oakmoor ⇄ Midrand Grand Central';
+        routeSubtitle.textContent = 'Direct high-frequency trunk transit serving Kempton/Tembisa east nodes into Waterfall Commercial Hub & Gautrain Midrand Station.';
+        metricHeadway.textContent = '10-12m';
+        metricFare.textContent = 'R 26.00';
+        metricSeats.textContent = '14 Vans';
+
+        // Sidebar Card
+        cardPrice.textContent = 'R 26.00';
+        cardPeriod.textContent = '/ statutory trip';
+        cardTypeTag.textContent = 'Regulated Single';
+        cardTypeTag.className = 'px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary';
+        actionOp.classList.remove('hidden');
+        actionLc.classList.add('hidden');
+        specFlex.textContent = 'Every 10-12m (Peak)';
+        specSeats.textContent = 'Turn Dispatch Order';
+      } else {
+        // Toggle Buttons
+        toggleLc.className = 'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg transition-all font-label-lg text-label-lg shadow-sm bg-secondary text-on-secondary';
+        toggleOp.className = 'flex-1 sm:flex-initial flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg transition-all font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high';
+        
+        // Panels
+        panelOp.classList.add('hidden');
+        panelLc.classList.remove('hidden');
+
+        // Header Data
+        badgeRouteType.textContent = 'Verified Community Carpool';
+        badgeRouteType.className = 'px-2.5 py-0.5 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-secondary-fixed text-on-secondary-fixed';
+        routeTitle.textContent = 'Tembisa Plaza Hub ➔ Waterfall City Express Carpool';
+        routeSubtitle.textContent = 'Peer tech staff daily shared commute via Toyota Corolla Cross. Cost-recovery fuel contribution only.';
+        metricHeadway.textContent = '06:40';
+        metricFare.textContent = 'R 28.00';
+        metricSeats.textContent = '2 Open';
+
+        // Sidebar Card
+        cardPrice.textContent = 'R 28.00';
+        cardPeriod.textContent = '/ ride fuel split';
+        cardTypeTag.textContent = 'Lift Club Seat';
+        cardTypeTag.className = 'px-2.5 py-1 rounded-full font-label-sm text-label-sm bg-secondary text-on-secondary';
+        actionOp.classList.add('hidden');
+        actionLc.classList.remove('hidden');
+        specFlex.textContent = '±5 mins departure window';
+        specSeats.textContent = 'Reserved Spot (2 left)';
+      }
+    }
+
+    function openReportModal() {
+      document.getElementById('report-modal').classList.remove('hidden');
+    }
+
+    function closeReportModal() {
+      document.getElementById('report-modal').classList.add('hidden');
+    }
+
+    function submitReport() {
+      alert('Listing report successfully submitted to Gauteng Corridor Transit Inspection.');
+      closeReportModal();
+    }
+  </script>
+</div></main></div></body></html>

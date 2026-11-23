@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancel Request Modal - CommuteConnect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecf4ff',
+              100: '#dbeafe',
+              600: '#1e40af',
+              700: '#1d4ed8',
+              800: '#173b57',
+              900: '#0f2438',
+            },
+            surface: {
+              bg: '#f7f9ff',
+              dim: '#d1dbe7',
+              container: '#ffffff',
+              muted: '#f1f5f9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Subtle backdrop blur & overlay animation simulation */
+    .modal-backdrop {
+      background-color: rgba(15, 36, 56, 0.65);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-[#eaf0f8] min-h-screen text-slate-800 relative selection:bg-brand-100 flex flex-col justify-between">
+
+  <!-- Background App Mock (Simulating Commuter / Journey Management context behind modal) -->
+  <div class="filter blur-[2px] opacity-40 pointer-events-none select-none max-w-7xl mx-auto w-full px-4 sm:px-6 py-6" aria-hidden="true">
+    <!-- Mock Top Nav -->
+    <header class="flex items-center justify-between py-4 border-b border-slate-200">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-[#173b57] text-white flex items-center justify-center font-bold text-sm">CC</div>
+        <span class="font-bold text-slate-900 tracking-tight text-lg">CommuteConnect</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-sm font-medium text-slate-600">My Bookings</span>
+        <div class="w-8 h-8 rounded-full bg-slate-300"></div>
+      </div>
+    </header>
+
+    <!-- Mock Content Body -->
+    <main class="py-8 space-y-6">
+      <div class="h-8 bg-slate-200 rounded w-1/4"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="h-44 bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-3">
+          <div class="h-4 bg-slate-200 rounded w-1/2"></div>
+          <div class="h-6 bg-slate-100 rounded w-3/4"></div>
+        </div>
+        <div class="h-44 bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-3">
+          <div class="h-4 bg-slate-200 rounded w-1/2"></div>
+          <div class="h-6 bg-slate-100 rounded w-3/4"></div>
+        </div>
+        <div class="h-44 bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-3">
+          <div class="h-4 bg-slate-200 rounded w-1/2"></div>
+          <div class="h-6 bg-slate-100 rounded w-3/4"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Accessible Modal Backdrop & Overlay Wrapper -->
+  <div class="fixed inset-0 z-50 overflow-y-auto modal-backdrop flex items-center justify-center p-4 sm:p-6" role="presentation">
+    
+    <!-- Modal Dialog Container (Compact, Accessible, Responsive) -->
+    <div 
+      role="dialog" 
+      aria-modal="true" 
+      aria-labelledby="modal-title" 
+      aria-describedby="modal-description"
+      class="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden transform transition-all animate-in fade-in zoom-in-95 duration-200"
+    >
+      <!-- Top Accent Bar for Destructive/Caution State -->
+      <div class="h-1.5 w-full bg-gradient-to-r from-amber-500 via-rose-500 to-rose-600"></div>
+
+      <!-- Modal Content Body -->
+      <div class="p-6 sm:p-7">
+        
+        <!-- Header row: Warning Badge + Close button -->
+        <div class="flex items-start justify-between gap-4 mb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 shrink-0">
+              <!-- Alert Triangle Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <div>
+              <h2 id="modal-title" class="text-lg font-bold text-slate-900 tracking-tight leading-snug">
+                Cancel Commute Request?
+              </h2>
+              <p id="modal-description" class="text-xs sm:text-sm text-slate-500">
+                Are you sure you want to cancel your seat request?
+              </p>
+            </div>
+          </div>
+
+          <!-- Close Modal Icon Button -->
+          <button 
+            type="button" 
+            onclick="dismissModal()" 
+            aria-label="Close cancellation dialog" 
+            class="text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg p-1.5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#173b57] focus:ring-offset-1"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Request Summary Card -->
+        <div class="bg-slate-50 border border-slate-200/90 rounded-xl p-3.5 sm:p-4 mb-4 text-xs sm:text-sm">
+          <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-200/80">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-50 text-brand-800 border border-blue-200">
+                Req #CR-4821
+              </span>
+              <span class="text-slate-400">•</span>
+              <span class="font-medium text-slate-700">1 Seat Requested</span>
+            </div>
+            <span class="font-bold text-slate-900">R 45.00 <span class="text-[10px] font-normal text-slate-500">ZAR</span></span>
+          </div>
+
+          <!-- Route corridor snippet -->
+          <div class="space-y-1.5">
+            <div class="flex items-start gap-2 text-slate-700">
+              <div class="mt-1 w-2 h-2 rounded-full bg-emerald-600 shrink-0"></div>
+              <div class="flex-1 truncate">
+                <span class="text-slate-400 text-[11px] block">Departure Hub</span>
+                <span class="font-semibold text-slate-800 text-xs sm:text-sm">Centurion Gautrain Station (West Deck)</span>
+              </div>
+              <span class="text-slate-500 text-[11px] font-medium shrink-0 mt-3">07:15 SAST</span>
+            </div>
+
+            <div class="ml-1 border-l-2 border-dashed border-slate-200 h-2.5"></div>
+
+            <div class="flex items-start gap-2 text-slate-700">
+              <div class="mt-1 w-2 h-2 rounded-full bg-rose-600 shrink-0"></div>
+              <div class="flex-1 truncate">
+                <span class="text-slate-400 text-[11px] block">Drop-off Point</span>
+                <span class="font-semibold text-slate-800 text-xs sm:text-sm">Sandton City / Nelson Mandela Sq</span>
+              </div>
+              <span class="text-slate-500 text-[11px] font-medium shrink-0 mt-3">~08:05 SAST</span>
+            </div>
+          </div>
+
+          <!-- Recipient / Driver Info -->
+          <div class="mt-3 pt-2.5 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-600">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400">Driver / Lift Club:</span>
+              <span class="font-semibold text-slate-800">Lerato K.</span>
+              <span class="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200">
+                Verified
+              </span>
+            </div>
+            <span class="text-slate-500">Scheduled for Tomorrow</span>
+          </div>
+        </div>
+
+        <!-- Notification Warning Notice -->
+        <div class="flex items-start gap-2.5 p-3 rounded-lg bg-amber-50/90 border border-amber-200 text-amber-900 text-xs sm:text-xs mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <div class="leading-relaxed">
+            <span class="font-semibold text-amber-950">Recipient notification:</span>
+            <span class="text-amber-800"> <strong>Lerato K.</strong> will be notified immediately via SMS/In-App alert that this seat has been released, making it available for other commuters.</span>
+          </div>
+        </div>
+
+        <!-- Optional Reason Form -->
+        <div class="mb-5">
+          <label for="cancellation-reason" class="block text-xs font-semibold text-slate-700 mb-1.5 flex items-center justify-between">
+            <span>Reason for cancelling <span class="text-slate-400 font-normal">(optional)</span></span>
+            <span class="text-[11px] text-slate-400 font-normal">Helps improve ride scheduling</span>
+          </label>
+          <div class="relative">
+            <select 
+              id="cancellation-reason" 
+              name="reason" 
+              class="w-full text-xs sm:text-sm bg-white border border-slate-300 rounded-lg px-3 py-2 pr-8 text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#173b57] focus:border-transparent transition appearance-none cursor-pointer"
+            >
+              <option value="">Select a reason...</option>
+              <option value="schedule_changed">My work schedule or commute time changed</option>
+              <option value="alternative_transport">Found alternative transport (Gautrain / Metrobus)</option>
+              <option value="accidental_booking">Requested by mistake</option>
+              <option value="cost_consideration">Fare or budget consideration</option>
+              <option value="other">Other reason</option>
+            </select>
+            <!-- Custom Select Arrow -->
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Confirmation Alert (Appears on click simulation) -->
+        <div id="cancellation-feedback" class="hidden mb-4 p-3 bg-rose-50 border border-rose-200 text-rose-800 rounded-lg text-xs flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-rose-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <span>Request #CR-4821 cancelled. The ride publisher has been notified.</span>
+        </div>
+
+        <!-- Action Button Group -->
+        <div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-2.5 pt-2 border-t border-slate-100">
+          <!-- Secondary Action: Keep Request -->
+          <button 
+            type="button" 
+            onclick="dismissModal()"
+            class="w-full sm:w-auto px-4 py-2.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs sm:text-sm tracking-wide transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-1 text-center"
+          >
+            Keep Request
+          </button>
+
+          <!-- Destructive Action: Cancel Request -->
+          <button 
+            type="button" 
+            id="cancel-btn"
+            onclick="confirmCancellation()"
+            class="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 active:bg-rose-800 text-white font-semibold text-xs sm:text-sm tracking-wide transition-all shadow-sm shadow-rose-600/20 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 flex items-center justify-center gap-1.5"
+          >
+            <!-- Trash / Cancel Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h18"/>
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+              <line x1="10" y1="11" x2="10" y2="17"/>
+              <line x1="14" y1="11" x2="14" y2="17"/>
+            </svg>
+            <span>Cancel Request</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- POPIA / Trust footer -->
+      <div class="px-6 py-2.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+        <span class="flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd"></path>
+          </svg>
+          POPIA Protected
+        </span>
+        <span>Esc: Close modal</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function dismissModal() {
+      const feedback = document.getElementById('cancellation-feedback');
+      feedback.classList.remove('hidden');
+      feedback.className = "mb-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg text-xs flex items-center gap-2";
+      feedback.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Request kept active. You remain on the passenger roster.</span>
+      `;
+    }
+
+    function confirmCancellation() {
+      const btn = document.getElementById('cancel-btn');
+      const feedback = document.getElementById('cancellation-feedback');
+      btn.disabled = true;
+      btn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Cancelling...</span>
+      `;
+      setTimeout(() => {
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+        btn.innerHTML = '<span>Cancelled</span>';
+        feedback.classList.remove('hidden');
+      }, 700);
+    }
+
+    // Keyboard accessibility: ESC key handler
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dismissModal();
+      }
+    });
+  </script>
+</body>
+</html>

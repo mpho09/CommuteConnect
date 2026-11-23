@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>CommuteConnect | Operator Registration & Vetting Portal</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#291800", "surface-container": "#e5effb", "tertiary": "#331f00", "secondary": "#116875", "surface-variant": "#d9e4f0", "inverse-primary": "#a9caec", "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-background": "#131d25", "on-surface-variant": "#42474d", "on-tertiary-fixed-variant": "#624000", "surface": "#f7f9ff", "tertiary-fixed-dim": "#fdba50", "on-error-container": "#93000a", "primary-fixed": "#cde5ff", "surface-container-high": "#dfe9f6", "outline": "#73777e", "on-tertiary-container": "#d4962f", "surface-bright": "#f7f9ff", "on-tertiary": "#ffffff", "surface-dim": "#d1dbe7", "secondary-fixed-dim": "#89d2e0", "surface-container-highest": "#d9e4f0", "surface-container-lowest": "#ffffff", "outline-variant": "#c2c7ce", "secondary-fixed": "#a5eefd", "on-primary-container": "#84a5c6", "on-secondary-fixed-variant": "#004e59", "on-secondary-fixed": "#001f25", "background": "#f7f9ff", "surface-tint": "#40617f", "inverse-surface": "#27313b", "primary": "#00253e", "inverse-on-surface": "#e7f2fe", "on-primary": "#ffffff", "on-primary-fixed": "#001d32", "error": "#ba1a1a", "surface-container-low": "#ecf4ff", "on-primary-fixed-variant": "#284966", "primary-fixed-dim": "#a9caec", "tertiary-fixed": "#ffddb1", "primary-container": "#173b57", "on-surface": "#131d25", "tertiary-container": "#4f3300", "secondary-container": "#a5eefd", "on-secondary-container": "#1c6e7b", "on-error": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-xs": "0.25rem", "gutter-mobile": "1rem", "gutter": "1.5rem", "margin": "2rem", "space-md": "1rem" }, fontFamily: { "headline-xl-mobile": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "label-md": ["Inter"], "label-sm": ["Inter"], "currency-fare": ["Inter"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "title-md": ["Inter"], "label-lg": ["Inter"] }, fontSize: { "headline-xl-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "currency-fare": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,59,87,0.06)]"><div class="h-20 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">directions_bus</span></div><div class="flex flex-col"><span class="font-title-md text-title-md font-bold tracking-tight text-primary leading-tight">CommuteConnect</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Operator Registration & Vetting Portal</span></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-secondary text-[16px]">verified</span><span class="font-label-sm text-label-sm text-on-surface-variant">NLTA & PRE Regulatory Alignment</span></div></div><nav class="hidden md:flex items-center gap-space-xs p-space-xs rounded-lg bg-surface-container" data-active-classes="bg-primary-container text-on-primary font-semibold"><a aria-current="page" class="px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-semibold" data-path="business-profile" href="#">1. Business Profile</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="operating-licenses" href="#">2. Operating Licenses</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="fleet-registration" href="#">3. Fleet & Vehicles</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="driver-vetting" href="#">4. Driver Vetting</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="compliance-review" href="#">5. Compliance Review</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" data-path="help-support" href="#"><span class="material-symbols-outlined text-[18px]">help_outline</span><span>Help & Support</span></a><button class="px-space-md py-space-sm rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md hover:bg-surface-variant hover:text-on-surface transition-colors flex items-center gap-space-xs" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span>Save & Exit</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Progress Header Bar -->
+<div class="w-full bg-surface-container-lowest py-space-lg px-margin shadow-sm">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Official Statutory Operator Onboarding • Step <span id="currentStepNum">1</span> of 3</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">Operator Vetting & Service Listing</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Accredited under the National Land Transport Act (Act No. 5 of 2009)</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="hidden lg:flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Need immediate assistance?</span>
+<a class="font-label-lg text-label-lg font-bold text-secondary hover:text-primary flex items-center justify-end gap-space-xs" href="tel:0800266688">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>0800 266 688 (Toll-Free)</span>
+</a>
+</div>
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container-high text-primary font-label-md text-label-md hover:bg-surface-variant flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+<span>Save Draft & Exit</span>
+</button>
+</div>
+</div>
+<!-- Stepper Indicator -->
+<div class="max-w-7xl mx-auto mt-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Step 1 Tab -->
+<button class="w-full text-left p-space-md rounded-xl transition-all flex items-center gap-space-md bg-primary-container text-on-primary shadow-sm cursor-pointer" id="stepTab-1" onclick="switchStep(1)" type="button">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold font-title-md shrink-0" id="stepIconContainer-1">
+<span id="stepIcon-1">1</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider opacity-80">Phase 1</span>
+<span class="font-title-md text-title-md font-bold truncate">Business Profile</span>
+<span class="font-body-sm text-body-sm text-surface-container opacity-90 truncate">Entity identification & depot</span>
+</div>
+</button>
+<!-- Step 2 Tab -->
+<button class="w-full text-left p-space-md rounded-xl transition-all flex items-center gap-space-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high cursor-pointer" id="stepTab-2" onclick="switchStep(2)" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-bold font-title-md shrink-0" id="stepIconContainer-2">
+<span id="stepIcon-2">2</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider opacity-80">Phase 2</span>
+<span class="font-title-md text-title-md font-bold truncate text-on-surface">Transit Services</span>
+<span class="font-body-sm text-body-sm truncate">Corridors, fleet & dispatch</span>
+</div>
+</button>
+<!-- Step 3 Tab -->
+<button class="w-full text-left p-space-md rounded-xl transition-all flex items-center gap-space-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high cursor-pointer" id="stepTab-3" onclick="switchStep(3)" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-bold font-title-md shrink-0" id="stepIconContainer-3">
+<span id="stepIcon-3">3</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider opacity-80">Phase 3</span>
+<span class="font-title-md text-title-md font-bold truncate text-on-surface">Review & Statutory Audit</span>
+<span class="font-body-sm text-body-sm truncate">Verification & PRE compliance</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Layout Area -->
+<div class="max-w-7xl mx-auto w-full px-margin py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Wizard Body Left / Primary (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- ============================================== -->
+<!-- STEP 1: BUSINESS DETAILS                       -->
+<!-- ============================================== -->
+<div class="flex flex-col gap-space-lg transition-all duration-300" id="stepContent-1">
+<!-- Section Banner -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+<span>Statutory Entity Vetting</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">Tell us about your transport business</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              CommuteConnect partners with licensed taxi associations, charter fleets, corporate shuttles, and scheduled municipal bus operators across South Africa.
+            </p>
+</div>
+<!-- Form Fields Container -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-lg">
+<!-- Legal Business Name -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary flex items-center justify-between" for="bizName">
+<span>Legal Business or Association Name <span class="text-error">*</span></span>
+<span class="text-secondary font-label-sm text-label-sm flex items-center gap-1 font-normal">
+<span class="material-symbols-outlined text-[14px]">shield</span> NLTA Registry match
+                </span>
+</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none transition-shadow shadow-sm focus:shadow-md focus:bg-surface-bright" id="bizName" type="text" value="Tembisa Minibus Taxi Association (TMCA) PTY LTD"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The exact enterprise name registered with CIPC or stated on your Association Constitution.</p>
+</div>
+<!-- CIPC & Association Type Dual Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- CIPC Number -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="cipcNumber">
+                  CIPC / Statutory Reg Number
+                </label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none transition-shadow shadow-sm focus:shadow-md" id="cipcNumber" type="text" value="K2018/492011/07"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant">e.g. K2018/492011/07 or PRE Association Ref Code.</p>
+</div>
+<!-- Entity Classification -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="entityType">
+                  Operating Classification <span class="text-error">*</span>
+</label>
+<select class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm cursor-pointer" id="entityType">
+<option selected="">Registered Minibus Taxi Association (NLTA Ch. 4)</option>
+<option>Commercial Private Company (Pty Ltd / CC)</option>
+<option>Scheduled Municipal Bus Concessionaire</option>
+<option>Charter / Tourism Passenger Fleet</option>
+</select>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Determines specific permit validation pathways.</p>
+</div>
+</div>
+<!-- Description Textarea -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="bizDescription">
+                  Business & Operations Profile <span class="text-error">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="charCounter">248 / 600</span>
+</div>
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:shadow-md resize-none" id="bizDescription" maxlength="600" oninput="updateCharCount(this)" rows="4">Serving the East Rand and northern Johannesburg employment corridors for over 28 years. TMCA coordinates over 140 licensed minibus passenger vehicles originating from Oakmoor Terminal, operating scheduled morning and afternoon peak transit links.</textarea>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Summarize passenger fleet operations, primary rank terminals, and operating experience.</p>
+</div>
+<!-- Contact Grid (Email & WhatsApp Hotline) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Primary Email -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="primaryEmail">
+                  Primary Contact Work Email <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-11 pl-space-md pr-10 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:shadow-md" id="primaryEmail" type="email" value="dispatch@tmca-transit.co.za"/>
+<span class="material-symbols-outlined text-secondary absolute right-3 top-3 text-[18px]">check_circle</span>
+</div>
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Corporate domain verified</span>
+</div>
+</div>
+<!-- Dispatch Hotline / Phone -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="primaryPhone">
+                  Dispatch Hotline / WhatsApp <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:shadow-md" id="primaryPhone" type="tel" value="+27 11 924 4500"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Used for terminal dispatch and live service coordination.</p>
+</div>
+</div>
+<!-- Operating Depot Address -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="depotAddress">
+                Main Operating Depot / Terminal Office <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:shadow-md" id="depotAddress" type="text" value="Bay 4 Administration Office, Oakmoor Terminal, Tembisa, Ekurhuleni, Gauteng, 1632"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Official physical depot address or transit interchange dispatch point.</p>
+</div>
+<!-- Trust / POPIA Callout Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[24px] shrink-0">lock</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">POPIA & Enterprise Data Safeguard</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  All commercial registration documentation, executive contacts, and route records are strictly protected under Section 14 of the Protection of Personal Information Act. Your files are accessible solely by accredited transport compliance examiners.
+                </p>
+</div>
+</div>
+<!-- Bottom Navigation Step 1 -->
+<div class="flex items-center justify-between pt-space-md">
+<button class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Exit & Resume Later</span>
+</button>
+<button class="px-space-xl py-space-sm rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg font-semibold flex items-center gap-space-xs shadow-md transition-all" onclick="switchStep(2)" type="button">
+<span>Save & Continue to Service Info</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- STEP 2: SERVICE INFORMATION                    -->
+<!-- ============================================== -->
+<div class="hidden flex-col gap-space-lg transition-all duration-300" id="stepContent-2">
+<!-- Section Banner -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">alt_route</span>
+<span>Corridor & Fleet Configuration</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">Define your operating transit services</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Specify your primary vehicle categories, municipal corridors, and commuter communication preferences.
+            </p>
+</div>
+<!-- Form Fields Container -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-lg">
+<!-- Service Type Cards -->
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-lg text-label-lg font-semibold text-primary">
+                Transport Service Mode <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Card 1 (Selected) -->
+<div class="p-space-md rounded-xl bg-surface-container-high shadow-sm cursor-pointer transition-all flex items-start gap-space-md relative overflow-hidden">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">directions_bus</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-primary">Minibus Taxi Association</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Scheduled Commuter Corridor</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">High-capacity rank-to-hub trunk networks and feeder lines.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-variant text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">airport_shuttle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">Corporate / Campus Shuttle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Contracted Transit Lines</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Fixed-route contracted commuter trips for commercial parks & universities.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-variant text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">Charter & Long-Distance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Inter-Provincial Express</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Cross-border and inter-city scheduled long-distance transport.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-variant text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">departure_board</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-primary">Scheduled Feeder Coach</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Municipal Link Services</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Heavy commuter buses and midibuses connecting rail interchanges.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Operating Municipalities Pills -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary">
+                Primary Operating Provinces & Districts <span class="text-error">*</span>
+</label>
+<div class="flex flex-wrap gap-space-sm pt-space-xs">
+<span class="px-space-md py-space-xs rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-space-xs">
+<span>Gauteng: City of Joburg</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="px-space-md py-space-xs rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-space-xs">
+<span>Gauteng: Ekurhuleni</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<span class="px-space-md py-space-xs rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-space-xs">
+<span>Gauteng: City of Tshwane</span>
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-colors" type="button">
+                  + Western Cape (Cape Town Metro)
+                </button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-colors" type="button">
+                  + KwaZulu-Natal (eThekwini)
+                </button>
+</div>
+</div>
+<!-- Key Corridors & Route Builder -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary flex items-center justify-between">
+<span>Key Operating Transit Corridors & Scheduled Routes <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Neighborhood-scale geofenced routes</span>
+</label>
+<!-- Route Items List -->
+<div class="flex flex-col gap-space-sm" id="corridorsList">
+<!-- Route 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[22px]">multiple_stop</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-title-md text-title-md font-bold text-primary">
+<span>Tembisa Oakmoor Hub</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_flat</span>
+<span>Midrand Grand Central Gautrain</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Morning Peak Express • 05:30 - 08:30 SAST • High Demand</span>
+</div>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">PRE Route Reg: R-841</span>
+</div>
+<!-- Route 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[22px]">multiple_stop</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-title-md text-title-md font-bold text-primary">
+<span>Tembisa Plaza zone</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_flat</span>
+<span>Waterfall City / Mall of Africa</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">All-day Shuttle Frequency • 06:00 - 18:30 SAST</span>
+</div>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">PRE Route Reg: R-842</span>
+</div>
+<!-- Route 3 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-secondary text-[22px]">multiple_stop</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-title-md text-title-md font-bold text-primary">
+<span>Kaalfontein Station zone</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_flat</span>
+<span>Sandton Central Gautrain hub</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Executive Feeder & Commuter Trunk • Direct Highway Corridor</span>
+</div>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">PRE Route Reg: R-849</span>
+</div>
+</div>
+<!-- Add Route Inline Input -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm pt-space-xs">
+<input class="w-full sm:flex-1 h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:shadow-md" id="newRouteInput" placeholder="e.g. Ivory Park Ext 2 ➔ Centurion CBD hub" type="text"/>
+<button class="w-full sm:w-auto px-space-md py-space-sm rounded-lg bg-surface-container text-primary hover:bg-surface-variant font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs transition-colors shrink-0" onclick="addNewRoute()" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Add Another Main Route</span>
+</button>
+</div>
+</div>
+<!-- Vehicle Fleet Profile -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="fleetCount">
+                  Passenger Fleet Size in Rotation <span class="text-error">*</span>
+</label>
+<select class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm cursor-pointer" id="fleetCount">
+<option>1 – 9 Vehicles (Small Fleet / Private Shuttle)</option>
+<option selected="">10 – 25 Vehicles (Mid Association / Regular)</option>
+<option>26 – 50 Vehicles (Major Corridor Operator)</option>
+<option>50+ Vehicles (Metropolitan Transit Network)</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary" for="fleetMix">
+                  Primary Vehicle Classes <span class="text-error">*</span>
+</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none shadow-sm focus:shadow-md" id="fleetMix" type="text" value="15-Seater Minibuses (Toyota Quantum) & 22-Seater Midibuses"/>
+</div>
+</div>
+<!-- Preferred Commuter Contact Mode -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg font-semibold text-primary">
+                Preferred Business & Commuter Contact Method <span class="text-error">*</span>
+</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm cursor-pointer hover:bg-surface-container transition-colors">
+<input class="mt-1 accent-primary" name="contactMethod" type="radio" value="dispatch"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-primary">Direct Dispatch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Phone & WhatsApp hotline at terminal rank.</span>
+</div>
+</label>
+<label class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm cursor-pointer hover:bg-surface-container transition-colors">
+<input class="mt-1 accent-primary" name="contactMethod" type="radio" value="inapp"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-primary">In-App CommuteConnect</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Digital passenger dispatch portal.</span>
+</div>
+</label>
+<label class="p-space-md rounded-lg bg-surface-container-high flex items-start gap-space-sm cursor-pointer transition-colors">
+<input checked="" class="mt-1 accent-primary" name="contactMethod" type="radio" value="both"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-primary">Both (Recommended)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Full digital & live rank dispatch routing.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Bottom Navigation Step 2 -->
+<div class="flex items-center justify-between pt-space-md">
+<button class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center gap-space-xs transition-colors" onclick="switchStep(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Business Details</span>
+</button>
+<button class="px-space-xl py-space-sm rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg font-semibold flex items-center gap-space-xs shadow-md transition-all" onclick="switchStep(3)" type="button">
+<span>Save & Continue to Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- STEP 3: REVIEW & VERIFICATION REQUIREMENTS     -->
+<!-- ============================================== -->
+<div class="hidden flex-col gap-space-lg transition-all duration-300" id="stepContent-3">
+<!-- Section Banner -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>Final Compliance Review</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">Review your application details</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Confirm your business profile and transit routes prior to statutory document vetting.
+            </p>
+</div>
+<!-- SUMMARY CARD 1: Business Profile Review -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">business</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-primary">1. Business Profile Summary</h3>
+</div>
+<button class="px-space-sm py-space-xs rounded-lg text-secondary hover:bg-surface-container font-label-md text-label-md flex items-center gap-space-xs transition-colors" onclick="switchStep(1)" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Profile</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Legal Entity</span>
+<p class="font-title-md text-title-md font-bold text-primary" id="reviewBizName">Tembisa Minibus Taxi Association (TMCA) PTY LTD</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="reviewCipc">CIPC: K2018/492011/07 • Registered Minibus Association</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Contact & Dispatch</span>
+<p class="font-body-md text-body-md font-semibold text-primary" id="reviewEmail">dispatch@tmca-transit.co.za</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="reviewPhone">+27 11 924 4500 (Hotline & WhatsApp)</p>
+</div>
+<div class="md:col-span-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Depot / Rank Office Address</span>
+<p class="font-body-md text-body-md text-on-surface" id="reviewAddress">Bay 4 Administration Office, Oakmoor Terminal, Tembisa, Ekurhuleni, Gauteng, 1632</p>
+</div>
+</div>
+</div>
+<!-- SUMMARY CARD 2: Transit Services Review -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">route</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-primary">2. Transit Services & Fleet Overview</h3>
+</div>
+<button class="px-space-sm py-space-xs rounded-lg text-secondary hover:bg-surface-container font-label-md text-label-md flex items-center gap-space-xs transition-colors" onclick="switchStep(2)" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Services</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Service Classification</span>
+<p class="font-title-md text-title-md font-bold text-primary">Minibus Taxi Association / Scheduled Corridor</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Districts: Ekurhuleni, City of Joburg, Tshwane</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Fleet Count</span>
+<p class="font-body-md text-body-md font-semibold text-primary">10–25 Commercial Minibuses</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Class: 15-Seater Minibuses & 22-Seater Midibuses</p>
+</div>
+<div class="md:col-span-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Scheduled Operating Corridors (3 Active)</span>
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_small</span>
+<span>Tembisa Oakmoor Hub ➔ Midrand Grand Central Gautrain (Peak Service)</span>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_small</span>
+<span>Tembisa Plaza zone ➔ Waterfall City / Mall of Africa</span>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_small</span>
+<span>Kaalfontein Station zone ➔ Sandton Central Gautrain hub</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CRITICAL STATUTORY SAFEGUARD & VERIFICATION DISCLOSURE NOTICE -->
+<div class="bg-surface-container-high p-space-xl rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px] text-tertiary-fixed-dim">gavel</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md font-bold text-primary">Important Statutory Verification Policy</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">Mandatory NLTA Disclosure</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-space-xs leading-relaxed">
+                  Submitting this application <strong>does not automatically grant verified operator status</strong> or publish live corridors to the CommuteConnect passenger marketplace. In accordance with the <strong>National Land Transport Act No. 5 of 2009 (NLTA)</strong> and <strong>Gauteng Provincial Regulatory Entity (PRE) regulations</strong>, our statutory vetting unit must review and authenticate your Operating Licences, Certificate of Fitness (COF) for every vehicle, and Driver Professional Driving Permits (PrDP) before any live route activation.
+                </p>
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md mt-space-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Statutory document audit turnaround: typically 2–3 business days after uploading your PRE files.</span>
+</div>
+</div>
+</div>
+<!-- Verification Stages Horizontal Roadmap -->
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-space-sm pt-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-secondary uppercase">Step 1 (Active)</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Entity Onboarding</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Profile & corridor routes submitted</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">Step 2 (Next)</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Upload Licences</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PRE Operating Permits & routes</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">Step 3</span>
+<span class="font-label-md text-label-md font-semibold text-primary">COF & PrDP Vetting</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Roadworthiness & driver clearance</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant uppercase">Step 4</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Live Publishing</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Commuters book & track rides</span>
+</div>
+</div>
+</div>
+<!-- Declarations and CTAs -->
+<div class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-lg">
+<!-- Declaration Checkbox -->
+<label class="flex items-start gap-space-md p-space-md rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="mt-1 w-5 h-5 rounded accent-primary cursor-pointer shrink-0" id="certDeclaration" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-primary">Statutory Applicant Authorization Declaration</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  I certify that I am a duly authorized executive representative of this commercial passenger enterprise or transport association. I declare under penalty of perjury and South African commercial transport law that all details provided herein reflect authentic operating reality and valid municipal permits.
+                </p>
+</div>
+</label>
+<!-- Bottom Actions Step 3 -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<button class="w-full sm:w-auto px-space-md py-space-sm rounded-lg text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors" onclick="switchStep(2)" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Service Information</span>
+</button>
+<div class="flex items-center gap-space-md w-full sm:w-auto">
+<button class="w-full sm:w-auto px-space-md py-space-sm rounded-lg bg-surface-container text-primary hover:bg-surface-variant font-label-md text-label-md font-semibold transition-colors" type="button">
+                  Save Draft
+                </button>
+<button class="w-full sm:w-auto px-space-xl py-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-lg transition-all" id="submitApplicationBtn" onclick="submitApplication()" type="button">
+<span>Submit Application & Proceed to Licences</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Submission Confirmation Popover / Alert (Hidden initially) -->
+<div class="hidden p-space-lg rounded-xl bg-surface-container-high text-primary flex items-start gap-space-md" id="submissionSuccessBanner">
+<span class="material-symbols-outlined text-secondary text-[28px] shrink-0">check_circle</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold">Application Successfully Logged!</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Reference: <strong>CC-ZA-2025-94812</strong>. Your commercial registration file has been opened. Please prepare your PRE Operating Licences and COF inspection sheets for step 2.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Informational Reassurance Sidebar (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Live Operator Benefits Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">hub</span>
+<h3 class="font-title-md text-title-md font-bold text-primary">Why onboard with CommuteConnect?</h3>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">event_seat</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">Fill Reverse-Peak Seats</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Connect with 120,000+ verified daily commuters travelling opposite trunk directions.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">contactless</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">Cashless QR & Gautrain Interlinks</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tap-and-ride contactless fare integration directly with commercial rank associations.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-primary">Institutional Trust Shield</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stand out with verified green checkmarks awarded by the statutory regulatory committee.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Documentation Checklist Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md font-bold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">checklist</span>
+<span>What you will need next</span>
+</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">Phase 2 Prep</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Have digital scans ready for the subsequent statutory document upload:
+          </p>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[18px]">description</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-primary">Valid PRE Operating Licences</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Certified route authority documents</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-primary">Certificate of Fitness (COF)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Current roadworthiness test disc scans</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[18px]">badge</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-primary">Driver PrDP Endorsements</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Category 'P' passenger driving permits</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[18px]">account_balance</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-primary">CIPC / Association Constitution</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Founding enterprise charter</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dedicated Support Hotline Widget -->
+<div class="bg-surface-container-high p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md font-bold">
+<span class="material-symbols-outlined text-secondary text-[22px]">support_agent</span>
+<span>Dedicated Operator Support</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Our municipal transit advisors assist associations and fleet directors with route digitisation and compliance alignment.
+          </p>
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<a class="flex items-center gap-space-sm text-primary font-label-md text-label-md font-semibold hover:text-secondary transition-colors" href="tel:0800266688">
+<span class="material-symbols-outlined text-secondary text-[18px]">call</span>
+<span>0800 266 688 (Toll Free RSA)</span>
+</a>
+<a class="flex items-center gap-space-sm text-primary font-label-md text-label-md font-semibold hover:text-secondary transition-colors" href="https://wa.me/27119244500" target="_blank">
+<span class="material-symbols-outlined text-secondary text-[18px]">chat</span>
+<span>+27 11 924 4500 (WhatsApp Dispatch Desk)</span>
+</a>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">schedule</span>
+<span>Mon – Fri: 06:00 – 19:00 SAST</span>
+</div>
+</div>
+</div>
+<!-- Security & Legal Alignment Badges -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Compliance Safeguards</span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield</span> NLTA Compliant
+            </span>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">security</span> PRE Recognized
+            </span>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> 256-Bit TLS
+            </span>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">policy</span> POPIA Act 4
+            </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Step Switcher -->
+<script>
+    let activeStep = 1;
+
+    function switchStep(targetStep) {
+      // Hide all step contents
+      for (let i = 1; i <= 3; i++) {
+        const content = document.getElementById('stepContent-' + i);
+        const tab = document.getElementById('stepTab-' + i);
+        const iconCont = document.getElementById('stepIconContainer-' + i);
+        const icon = document.getElementById('stepIcon-' + i);
+
+        if (content) {
+          if (i === targetStep) {
+            content.classList.remove('hidden');
+            content.classList.add('flex');
+          } else {
+            content.classList.add('hidden');
+            content.classList.remove('flex');
+          }
+        }
+
+        if (tab && iconCont && icon) {
+          if (i === targetStep) {
+            // Active state
+            tab.className = "w-full text-left p-space-md rounded-xl transition-all flex items-center gap-space-md bg-primary-container text-on-primary shadow-sm cursor-pointer";
+            iconCont.className = "w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold font-title-md shrink-0";
+            icon.innerText = i.toString();
+          } else if (i < targetStep) {
+            // Completed state
+            tab.className = "w-full text-left p-space-md rounded-xl transition-all flex items-center gap-space-md bg-surface-container-high text-primary hover:bg-surface-variant cursor-pointer";
+            iconCont.className = "w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold font-title-md shrink-0";
+            icon.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span>';
+          } else {
+            // Upcoming state
+            tab.className = "w-full text-left p-space-md rounded-xl transition-all flex items-center gap-space-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high cursor-pointer";
+            iconCont.className = "w-10 h-10 rounded-full bg-surface-variant text-on-surface flex items-center justify-center font-bold font-title-md shrink-0";
+            icon.innerText = i.toString();
+          }
+        }
+      }
+
+      activeStep = targetStep;
+      document.getElementById('currentStepNum').innerText = targetStep.toString();
+
+      // If switching to Step 3, refresh summary values from form inputs
+      if (targetStep === 3) {
+        syncSummaryFields();
+      }
+
+      // Smooth scroll to top of wizard content
+      window.scrollTo({ top: 100, behavior: 'smooth' });
+    }
+
+    function syncSummaryFields() {
+      const bizName = document.getElementById('bizName');
+      const cipcNumber = document.getElementById('cipcNumber');
+      const primaryEmail = document.getElementById('primaryEmail');
+      const primaryPhone = document.getElementById('primaryPhone');
+      const depotAddress = document.getElementById('depotAddress');
+
+      if (bizName && document.getElementById('reviewBizName')) {
+        document.getElementById('reviewBizName').innerText = bizName.value || 'TMCA Transit (Pty) Ltd';
+      }
+      if (cipcNumber && document.getElementById('reviewCipc')) {
+        document.getElementById('reviewCipc').innerText = 'CIPC: ' + (cipcNumber.value || 'Pending') + ' • Registered Operator';
+      }
+      if (primaryEmail && document.getElementById('reviewEmail')) {
+        document.getElementById('reviewEmail').innerText = primaryEmail.value || 'dispatch@tmca-transit.co.za';
+      }
+      if (primaryPhone && document.getElementById('reviewPhone')) {
+        document.getElementById('reviewPhone').innerText = (primaryPhone.value || '+27 11 924 4500') + ' (Hotline & WhatsApp)';
+      }
+      if (depotAddress && document.getElementById('reviewAddress')) {
+        document.getElementById('reviewAddress').innerText = depotAddress.value || 'Bay 4 Administration Office, Oakmoor Terminal';
+      }
+    }
+
+    function updateCharCount(textarea) {
+      const countSpan = document.getElementById('charCounter');
+      if (countSpan) {
+        countSpan.innerText = textarea.value.length + ' / ' + textarea.maxLength;
+      }
+    }
+
+    function addNewRoute() {
+      const input = document.getElementById('newRouteInput');
+      const list = document.getElementById('corridorsList');
+      if (input && input.value.trim() !== '' && list) {
+        const routeText = input.value.trim();
+        const newDiv = document.createElement('div');
+        newDiv.className = "p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md animate-fade-in";
+        newDiv.innerHTML = `
+          <div class="flex items-center gap-space-md">
+            <span class="material-symbols-outlined text-secondary text-[22px]">multiple_stop</span>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-space-xs font-title-md text-title-md font-bold text-primary">
+                <span>${routeText}</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Scheduled Transit Corridor • Verified Pending PRE Audit</span>
+            </div>
+          </div>
+          <span class="px-space-sm py-space-xs rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">New Corridor</span>
+        `;
+        list.appendChild(newDiv);
+        input.value = '';
+      }
+    }
+
+    function submitApplication() {
+      const btn = document.getElementById('submitApplicationBtn');
+      const banner = document.getElementById('submissionSuccessBanner');
+      if (btn && banner) {
+        btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span><span>Encrypting & Dispatching...</span>`;
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">done_all</span><span>Application Lodged</span>`;
+          btn.classList.remove('bg-primary-container');
+          btn.classList.add('bg-secondary');
+          banner.classList.remove('hidden');
+          banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 1200);
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low py-space-xl"><div class="w-full px-margin flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-wrap items-center gap-space-lg text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">gavel</span><span class="font-label-sm text-label-sm">National Land Transport Act (Act 5 of 2009) Aligned</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">lock</span><span class="font-label-sm text-label-sm">POPIA Compliant Secure Data Handling</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">security</span><span class="font-label-sm text-label-sm">256-Bit Encrypted Transport Dossier</span></div></div><div class="text-right"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 CommuteConnect South Africa. Department of Transport & Municipal Transit Compliant.</p></div></div></footer></body></html>
