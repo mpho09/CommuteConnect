@@ -9,7 +9,9 @@ import { OccurrencePage } from '../features/journeys/OccurrencePage'
 import { PublishJourneyPage } from '../features/journeys/PublishJourneyPage'
 import { LandingPage } from '../features/landing/LandingPage'
 import { MatchesPage } from '../features/matches/MatchesPage'
+import { OperatorDashboardPage } from '../features/operator/OperatorDashboardPage'
 import { OperatorSetupPage } from '../features/operator/OperatorSetupPage'
+import { RouteEditorPage } from '../features/operator/RouteEditorPage'
 import { VerificationPage } from '../features/operator/VerificationPage'
 import { JourneyListingPage } from '../features/listings/JourneyListingPage'
 import { RouteListingPage } from '../features/listings/RouteListingPage'
@@ -86,9 +88,9 @@ export const routes: RouteObject[] = [
         path: 'operator',
         element: <RequireAuth roles={['operator']} />,
         children: [
-          { index: true, element: <Placeholder screen="S13" title="Operator dashboard" /> },
-          page('routes/new', 'S14', 'New route'),
-          page('routes/:routeId/edit', 'S14', 'Edit route'),
+          { index: true, element: <OperatorDashboardPage /> },
+          { path: 'routes/new', element: <RouteEditorPage /> },
+          { path: 'routes/:routeId/edit', element: <RouteEditorPage /> },
         ],
       },
 
