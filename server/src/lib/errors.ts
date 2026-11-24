@@ -11,6 +11,7 @@ export const ERRORS = {
   invalid_credentials: { status: 401, message: 'That email and password don’t match.' },
   forbidden: { status: 403, message: "You don't have permission to do that." },
   email_not_verified: { status: 403, message: 'Verify your email address before doing this.' },
+  terms_required: { status: 403, message: 'Accept the Terms and Privacy Notice to continue.' },
   verification_pending: {
     status: 403,
     message: "Your details are being reviewed. We'll notify you when there's an update.",

@@ -7,10 +7,12 @@ import { errorHandler, notFound } from './middleware/errorHandler.ts'
 import { createRateLimiter } from './middleware/rateLimit.ts'
 import { requestId } from './middleware/requestId.ts'
 import { requestLogger } from './middleware/requestLogger.ts'
-import { apiRouter } from './routes/index.ts'
+import { apiRouter, type Services } from './routes/index.ts'
 
 export interface AppDeps {
   logger?: Logger
+  /** Database, token verifier and auth admin. Omitted: only /api/health is served. */
+  services?: Services
   /** Override the /api router (tests). */
   api?: Router
 }
@@ -18,7 +20,7 @@ export interface AppDeps {
 /** Builds the Express app. Kept free of side effects (no listen) so tests can use it directly. */
 export function createApp(
   config: Config,
-  { logger = createLogger(), api = apiRouter() }: AppDeps = {},
+  { logger = createLogger(), services, api = apiRouter(services) }: AppDeps = {},
 ): Express {
   const app = express()
   app.set('trust proxy', config.TRUST_PROXY)

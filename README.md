@@ -47,7 +47,9 @@ cp .env.example .env   # optional; defaults work locally
 npm run dev            # http://localhost:4000/api/health
 ```
 
-Environment variables are validated at startup; the server exits with a list of the invalid names if any are wrong. Scripts mirror the client (`build`, `start`, `lint`, `typecheck`, `test`, `format`).
+Environment variables are validated at startup; the server exits with a list of the invalid names if any are wrong. Without `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` and `DATABASE_URL` only `/api/health` is served.
+
+**Auth:** the browser signs up and signs in with Supabase Auth and sends its access token as `Authorization: Bearer <token>`. The API verifies the token against the project's signing keys and loads roles and status from the database on each request (token claims are never trusted for permissions). Route guards: `requireAuth` (signed in, not suspended, terms accepted), `requireVerifiedEmail`, `requireRole(...)`, `requireApprovedOperator`. Profile endpoints: `GET/PATCH/DELETE /api/me`, `POST /api/me/terms`. Scripts mirror the client (`build`, `start`, `lint`, `typecheck`, `test`, `format`).
 
 Errors always use one shape, with codes and messages from PRD §12.2:
 

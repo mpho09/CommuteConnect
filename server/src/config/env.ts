@@ -19,7 +19,8 @@ const csv = z
 
 /**
  * Environment variables (PRD §11.3), validated once at startup. Supabase,
- * email and maps keys are optional until the issues that use them (#21+).
+ * email and maps keys are optional in development; without SUPABASE_URL and
+ * DATABASE_URL the API serves only /api/health. Required in production.
  */
 const schema = z.object({
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
@@ -40,6 +41,8 @@ const schema = z.object({
     .optional()
     .or(z.literal('').transform(() => undefined)),
   SUPABASE_SERVICE_ROLE_KEY: optionalSecret,
+  /** Only for projects still on the legacy shared JWT secret (HS256). */
+  SUPABASE_JWT_SECRET: optionalSecret,
   DATABASE_URL: optionalSecret,
   RESEND_API_KEY: optionalSecret,
   MAPS_API_KEY: optionalSecret,
@@ -62,10 +65,17 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     throw new ConfigError(`Invalid environment configuration:\n${lines.join('\n')}`)
   }
   const config = result.data
-  if (config.NODE_ENV === 'production' && config.CORS_ORIGINS.length === 0) {
-    throw new ConfigError(
-      'Invalid environment configuration:\n  - CORS_ORIGINS: required in production',
-    )
+  if (config.NODE_ENV === 'production') {
+    const missing = [
+      config.CORS_ORIGINS.length === 0 && 'CORS_ORIGINS',
+      !config.SUPABASE_URL && 'SUPABASE_URL',
+      !config.SUPABASE_SERVICE_ROLE_KEY && 'SUPABASE_SERVICE_ROLE_KEY',
+      !config.DATABASE_URL && 'DATABASE_URL',
+    ].filter(Boolean)
+    if (missing.length) {
+      const lines = missing.map((name) => `  - ${name}: required in production`)
+      throw new ConfigError(`Invalid environment configuration:\n${lines.join('\n')}`)
+    }
   }
   return config
 }

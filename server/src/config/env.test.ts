@@ -40,9 +40,17 @@ describe('loadConfig', () => {
     expect(message).not.toContain('secret-looking-value')
   })
 
-  it('requires CORS origins in production', () => {
-    expect(() => loadConfig({ NODE_ENV: 'production' })).toThrow(/CORS_ORIGINS/)
-    const c = loadConfig({ NODE_ENV: 'production', CORS_ORIGINS: 'https://app.example.com' })
+  it('requires CORS, Supabase and database settings in production', () => {
+    expect(() => loadConfig({ NODE_ENV: 'production' })).toThrow(
+      /CORS_ORIGINS[\s\S]*SUPABASE_URL[\s\S]*SUPABASE_SERVICE_ROLE_KEY[\s\S]*DATABASE_URL/,
+    )
+    const c = loadConfig({
+      NODE_ENV: 'production',
+      CORS_ORIGINS: 'https://app.example.com',
+      SUPABASE_URL: 'https://abc.supabase.co',
+      SUPABASE_SERVICE_ROLE_KEY: 'service-key',
+      DATABASE_URL: 'postgres://user:pass@db.example.com:5432/postgres',
+    })
     expect(c.NODE_ENV).toBe('production')
   })
 })
