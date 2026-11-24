@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import { ArrowLeft, ArrowRight, Bus, CarFront, Pencil, ShieldCheck } from 'lucide-react'
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, useNavigate } from 'react-router'
@@ -17,6 +17,7 @@ import { homeFor } from '../auth/redirects'
 import { toFieldErrors } from '../auth/schemas'
 import { useSetSessionUser } from '../auth/useSetSessionUser'
 import { PlacePicker, type PlaceRef } from '../search/PlacePicker'
+import { usePlaceRef } from '../search/usePlaceRef'
 import {
   personalSchema,
   preferencesSchema,
@@ -58,19 +59,6 @@ export function ProfileSetupPage() {
   }
 
   return <Wizard user={user} origin={origin.place} destination={destination.place} />
-}
-
-function usePlaceRef(id: string | null): { place: PlaceRef | null; isLoading: boolean } {
-  const api = useApi()
-  const { data, isPending } = useQuery({
-    queryKey: ['place', id],
-    queryFn: () => api.getPlace(id!),
-    enabled: id !== null,
-    staleTime: Infinity,
-  })
-  if (id === null) return { place: null, isLoading: false }
-  // A place that no longer exists just starts empty.
-  return { place: data ? { id: data.id, label: data.label } : null, isLoading: isPending }
 }
 
 function Shell({ children }: { children: ReactNode }) {
