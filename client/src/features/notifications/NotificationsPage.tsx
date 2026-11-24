@@ -179,7 +179,11 @@ function NotificationItem({
               }}
               className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
             >
-              {!n.isRead && <span className="sr-only">Unread: </span>}
+              {!n.isRead && (
+                <>
+                  <span className="sr-only">Unread:</span>{' '}
+                </>
+              )}
               {n.title}
             </Link>
           </h2>

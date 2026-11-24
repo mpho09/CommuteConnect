@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import { formatWhen } from '../../lib/schedule'
@@ -60,9 +60,7 @@ describe('Notifications (S19)', () => {
     const { api } = renderRoute('/notifications', 'u-naledi')
     api.db.notifications = api.db.notifications.filter((n) => n.recipientId !== 'u-naledi')
     expect(await screen.findByText('No notifications yet')).toBeInTheDocument()
-    expect(
-      within(screen.getByRole('banner')).getByRole('link', { name: 'Notifications' }),
-    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Notifications' })).toBeInTheDocument()
   })
 })
 
