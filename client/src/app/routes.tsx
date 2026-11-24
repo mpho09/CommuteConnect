@@ -10,6 +10,7 @@ import { PublishJourneyPage } from '../features/journeys/PublishJourneyPage'
 import { LandingPage } from '../features/landing/LandingPage'
 import { MatchesPage } from '../features/matches/MatchesPage'
 import { MyRequestsPage } from '../features/requests/MyRequestsPage'
+import { NotificationsPage } from '../features/notifications/NotificationsPage'
 import { OperatorDashboardPage } from '../features/operator/OperatorDashboardPage'
 import { OperatorSetupPage } from '../features/operator/OperatorSetupPage'
 import { RouteEditorPage } from '../features/operator/RouteEditorPage'
@@ -64,7 +65,7 @@ export const routes: RouteObject[] = [
         children: [
           { path: 'setup', element: <ProfileSetupPage /> },
           { path: 'requests', element: <MyRequestsPage /> },
-          page('notifications', 'S19', 'Notifications'),
+          { path: 'notifications', element: <NotificationsPage /> },
           page('settings', 'S20', 'Profile & settings'),
           { path: 'operator/setup', element: <OperatorSetupPage /> },
           { path: 'operator/verification', element: <VerificationPage /> },

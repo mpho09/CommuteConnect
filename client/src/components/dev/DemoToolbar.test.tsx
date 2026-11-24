@@ -9,7 +9,7 @@ describe('DemoToolbar', () => {
     const { router } = renderRoute('/')
     await user.click(await screen.findByRole('button', { name: /Demo data/ }))
     await user.selectOptions(screen.getByRole('combobox', { name: 'Act as' }), 'u-admin')
-    expect(await screen.findByRole('link', { name: 'Notifications' })).toBeInTheDocument()
+    expect(await screen.findByRole('link', { name: /^Notifications/ })).toBeInTheDocument()
 
     await router.navigate('/admin')
     expect(await screen.findByRole('heading', { name: 'Admin dashboard' })).toBeInTheDocument()

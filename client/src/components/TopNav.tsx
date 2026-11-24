@@ -3,6 +3,7 @@ import { useEffect, useId, useRef, useState, type RefObject } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { cn } from '../lib/cn'
 import type { Me } from '../lib/api/types'
+import { useNotifications } from '../features/notifications/useNotifications'
 import { useSession, useSignOut, type Role } from '../lib/session/session'
 import { ButtonLink } from './ui/Button'
 
@@ -68,6 +69,7 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 export function TopNav() {
   const { user } = useSession()
   const signOut = useSignOut()
+  const { unread } = useNotifications()
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [accountOpen, setAccountOpen] = useState(false)
@@ -110,10 +112,18 @@ export function TopNav() {
               <>
                 <Link
                   to="/notifications"
-                  aria-label="Notifications"
-                  className="flex size-11 items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                  aria-label={unread ? `Notifications, ${unread} unread` : 'Notifications'}
+                  className="relative flex size-11 items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary"
                 >
                   <Bell aria-hidden className="size-5" />
+                  {unread > 0 && (
+                    <span
+                      aria-hidden
+                      className="absolute top-1 right-1 flex min-w-5 items-center justify-center rounded-full bg-error px-1 text-label-sm text-on-error"
+                    >
+                      {unread > 9 ? '9+' : unread}
+                    </span>
+                  )}
                 </Link>
                 <div ref={accountRef} className="relative hidden lg:block">
                   <button
