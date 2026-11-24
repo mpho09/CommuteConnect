@@ -37,7 +37,8 @@ describe('TopNav', () => {
   it('shows an account menu with links for the user’s roles', async () => {
     const user = userEvent.setup()
     renderRoute('/', 'u-lerato')
-    expect(await screen.findByRole('link', { name: 'Notifications' })).toBeInTheDocument()
+    // Lerato has one unread notification in the sample data.
+    expect(await screen.findByRole('link', { name: 'Notifications, 1 unread' })).toBeInTheDocument()
     expect(screen.queryByRole('link', { name: 'Log in' })).not.toBeInTheDocument()
 
     const account = screen.getByRole('button', { name: /account menu/ })

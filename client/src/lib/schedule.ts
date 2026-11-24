@@ -1,6 +1,6 @@
 import type { Journey } from './api/types'
 import { formatTime } from './format'
-import { describeDays } from './time'
+import { addDays, describeDays, isoToSastDate, sastToday } from './time'
 
 const weekdayDate = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'Africa/Johannesburg',
@@ -21,3 +21,19 @@ export function describeSchedule(j: Journey): string {
 export function formatTrip(iso: string): string {
   return `${weekdayDate.format(new Date(iso))} · ${formatTime(iso)}`
 }
+
+/** ISO UTC -> "Today, 08:10", "Yesterday, 18:20" or "21 Nov, 08:00" (SAST). */
+export function formatWhen(iso: string, now: Date = new Date()): string {
+  const day = isoToSastDate(iso)
+  const today = sastToday(now)
+  const time = formatTime(iso)
+  if (day === today) return `Today, ${time}`
+  if (day === addDays(today, -1)) return `Yesterday, ${time}`
+  return `${dayMonth.format(new Date(iso))}, ${time}`
+}
+
+const dayMonth = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Africa/Johannesburg',
+  day: 'numeric',
+  month: 'short',
+})
