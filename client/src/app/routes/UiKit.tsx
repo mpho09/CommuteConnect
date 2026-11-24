@@ -130,7 +130,7 @@ export function UiKit() {
             destinationZone="Midrand Gautrain zone"
             scheduleSummary="Mon–Fri · around 06:45"
             seatsAvailable={2}
-            matchReason="Departs within 15 min of your time, on all your travel days."
+            matchReasons={['Starts near your origin', 'Departs 15 min before your usual time']}
           />
           <JourneyCard
             href="#"
