@@ -18,7 +18,8 @@ describe('Search results (S7)', () => {
     expect(
       await screen.findByRole('heading', { level: 1, name: /Tembisa Plaza to Midrand Gautrain/ }),
     ).toBeInTheDocument()
-    expect(await within(operators()).findByText('Midrand Shuttle Demo')).toBeInTheDocument()
+    const ops = await screen.findByRole('region', { name: /Operator services/ })
+    expect(within(ops).getByText('Midrand Shuttle Demo')).toBeInTheDocument()
     expect(within(operators()).getByText('Verification pending')).toBeInTheDocument()
     expect(within(shared()).getByText('Shared by Kabelo M.')).toBeInTheDocument()
     expect(within(shared()).getByText(/not confirmed bookings/)).toBeInTheDocument()
@@ -116,7 +117,9 @@ describe('Search (S6)', () => {
     const user = userEvent.setup()
     const { router } = renderRoute(`${BASE.replace('/search/results', '/search')}&type=shuttle`)
     expect(await screen.findByRole('heading', { name: 'Edit your search' })).toBeInTheDocument()
-    expect(screen.getByRole('combobox', { name: 'Pickup area' })).toHaveValue('Tembisa Plaza')
+    expect(await screen.findByRole('combobox', { name: 'Pickup area' })).toHaveValue(
+      'Tembisa Plaza',
+    )
     expect(screen.getByLabelText('Transport type')).toHaveValue('shuttle')
     expect(screen.getByLabelText('Departure window')).toBeDisabled()
 
