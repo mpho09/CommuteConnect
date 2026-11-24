@@ -189,7 +189,10 @@ export interface JourneyInput {
   notes: string
 }
 
-export type JourneyUpdate = Partial<Pick<Journey, 'seatsAvailable' | 'notes' | 'status'>>
+export type JourneyUpdate = Partial<Pick<Journey, 'seatsAvailable' | 'notes' | 'status'>> & {
+  /** With status 'cancelled': shared with affected riders (M2). */
+  cancelReason?: string
+}
 
 export type OccurrenceStatus = 'scheduled' | 'cancelled' | 'completed'
 

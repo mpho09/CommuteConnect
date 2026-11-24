@@ -789,13 +789,14 @@ export function createMockApi(options: MockOptions = {}): MockApi {
               (x) => x.journeyId === j.id && (x.status === 'pending' || x.status === 'accepted'),
             )) {
               r.status = 'cancelled'
-              r.cancelReason = 'Journey cancelled by publisher'
+              const reason = update.cancelReason?.trim()
+              r.cancelReason = reason || 'Journey cancelled by publisher'
               r.respondedAt = nowIso()
               notify(
                 r.commuterId,
                 'journey_changed',
                 'Journey cancelled',
-                'A journey you requested has changed or been cancelled.',
+                `A journey you requested has been cancelled${reason ? `: ${reason}` : '.'}`,
                 '/requests',
               )
             }

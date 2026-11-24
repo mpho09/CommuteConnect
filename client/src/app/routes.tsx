@@ -4,6 +4,8 @@ import { LoginPage } from '../features/auth/LoginPage'
 import { ResetPasswordPage } from '../features/auth/ResetPasswordPage'
 import { SignUpPage } from '../features/auth/SignUpPage'
 import { CommuterDashboard } from '../features/commuter/CommuterDashboard'
+import { JourneyManagementPage } from '../features/journeys/JourneyManagementPage'
+import { OccurrencePage } from '../features/journeys/OccurrencePage'
 import { PublishJourneyPage } from '../features/journeys/PublishJourneyPage'
 import { LandingPage } from '../features/landing/LandingPage'
 import { JourneyListingPage } from '../features/listings/JourneyListingPage'
@@ -69,9 +71,9 @@ export const routes: RouteObject[] = [
         element: <RequireAuth roles={['commuter']} />,
         children: [
           { index: true, element: <CommuterDashboard /> },
-          page('journeys', 'S10', 'Journey management'),
+          { path: 'journeys', element: <JourneyManagementPage /> },
           { path: 'journeys/new', element: <PublishJourneyPage /> },
-          page('journeys/:journeyId/occurrences/:occurrenceId', 'S11', 'Journey occurrence'),
+          { path: 'journeys/:journeyId/occurrences/:occurrenceId', element: <OccurrencePage /> },
           page('matches', 'S12', 'Match suggestions'),
         ],
       },
