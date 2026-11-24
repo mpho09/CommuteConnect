@@ -57,7 +57,9 @@ const sameSearch = (a: SavedSearch['query'], b: SavedSearch['query']) =>
   a.origin.id === b.origin.id &&
   a.destination.id === b.destination.id &&
   a.frequency === b.frequency &&
-  (a.time ?? '') === (b.time ?? '')
+  (a.time ?? '') === (b.time ?? '') &&
+  (a.window ?? 0) === (b.window ?? 0) &&
+  (a.type ?? '') === (b.type ?? '')
 
 export function useSavedSearches(userId: string) {
   const searches = useSyncExternalStore(

@@ -1,21 +1,5 @@
 import type { Journey } from '../../lib/api/types'
-import { formatTime } from '../../lib/format'
-import { describeDays, sastToday } from '../../lib/time'
-
-const weekdayDate = new Intl.DateTimeFormat('en-GB', {
-  timeZone: 'Africa/Johannesburg',
-  weekday: 'short',
-  day: 'numeric',
-  month: 'short',
-})
-
-/** "Mon–Fri · 06:45" or "Sat 30 Nov · 07:00" (SAST). */
-export function describeSchedule(j: Journey): string {
-  if (j.schedule) return `${describeDays(j.schedule.daysOfWeek)} · ${j.schedule.departureTime}`
-  if (j.departureAt)
-    return `${weekdayDate.format(new Date(j.departureAt))} · ${formatTime(j.departureAt)}`
-  return 'Schedule to be confirmed'
-}
+import { sastToday } from '../../lib/time'
 
 const ACTIVE: Journey['status'][] = ['open', 'full', 'paused']
 

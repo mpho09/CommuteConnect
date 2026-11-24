@@ -2,7 +2,16 @@
  * Display formatting. Data is stored in UTC and ZAR cents; the UI always shows
  * Africa/Johannesburg time and rands (PRD BR17).
  */
+import type { TransportType } from './api/types'
+
 export const TIME_ZONE = 'Africa/Johannesburg'
+
+export const TRANSPORT_LABELS: Record<TransportType, string> = {
+  minibus_taxi: 'Minibus taxi',
+  shuttle: 'Shuttle',
+  bus: 'Bus',
+  coach: 'Coach',
+}
 
 const zar = new Intl.NumberFormat('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
