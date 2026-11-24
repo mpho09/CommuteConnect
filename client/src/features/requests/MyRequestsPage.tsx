@@ -120,7 +120,7 @@ export function MyRequestsPage() {
             ) : (
               <Inbox aria-hidden className="size-4" />
             )}
-            {t === 'sent' ? 'Sent' : 'Received'}
+            {t === 'sent' ? 'Sent' : 'Received'}{' '}
             <span className="text-on-surface-variant">({counts[t]})</span>
           </button>
         ))}
