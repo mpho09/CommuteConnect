@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   test: {
     environment: 'jsdom',
+    // Process-based workers crash intermittently on some Windows machines.
+    pool: 'threads',
     setupFiles: ['./src/test/setup.ts'],
     css: false,
   },

@@ -36,7 +36,7 @@ describe('TopNav', () => {
 
   it('shows an account menu with links for the user’s roles', async () => {
     const user = userEvent.setup()
-    renderRoute('/', ['commuter', 'operator'])
+    renderRoute('/', 'u-lerato')
     expect(await screen.findByRole('link', { name: 'Notifications' })).toBeInTheDocument()
     expect(screen.queryByRole('link', { name: 'Log in' })).not.toBeInTheDocument()
 
@@ -52,5 +52,16 @@ describe('TopNav', () => {
       expect(screen.getAllByRole('link', { name }).length).toBeGreaterThan(0)
     }
     expect(screen.queryByRole('link', { name: 'Admin' })).not.toBeInTheDocument()
+  })
+})
+
+describe('signing out', () => {
+  it('logs out from the account menu and returns to a guest view', async () => {
+    const user = userEvent.setup()
+    renderRoute('/notifications', 'u-thandi')
+    await user.click(await screen.findByRole('button', { name: /account menu/ }))
+    await user.click(screen.getByRole('button', { name: 'Log out' }))
+    expect(await screen.findByRole('heading', { name: 'Landing' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Log in' })).toBeInTheDocument()
   })
 })

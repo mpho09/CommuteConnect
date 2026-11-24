@@ -1,33 +1,40 @@
-import { createContext, useContext } from 'react'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useNavigate } from 'react-router'
+import { useApi } from '../api/apiContext'
+import type { Me } from '../api/types'
 
-/**
- * Temporary session stub. Real auth (Supabase) arrives with the API work;
- * the mock layer (#2) will add a dev role switcher. Until then the dev
- * session can be set with VITE_DEV_ROLE=commuter|operator|admin.
- */
-export type Role = 'commuter' | 'operator' | 'admin'
+export type { Role } from '../api/types'
 
-export interface SessionUser {
-  id: string
-  displayName: string
-  roles: Role[]
+export const sessionQueryKey = ['session'] as const
+
+export interface SessionState {
+  user: Me | null
+  /** True until the first session check finishes. */
+  isLoading: boolean
 }
 
-export interface Session {
-  user: SessionUser | null
+/** Current signed-in user, from the API (mock or Supabase Auth later). */
+export function useSession(): SessionState {
+  const api = useApi()
+  const { data, isPending } = useQuery({
+    queryKey: sessionQueryKey,
+    queryFn: () => api.getSession(),
+    staleTime: Infinity,
+  })
+  return { user: data?.user ?? null, isLoading: isPending }
 }
 
-export const SessionContext = createContext<Session>({ user: null })
-
-export function useSession(): Session {
-  return useContext(SessionContext)
-}
-
-const ROLES: readonly Role[] = ['commuter', 'operator', 'admin']
-
-export function devSessionFromEnv(role: string | undefined): Session {
-  if (!role || !ROLES.includes(role as Role)) return { user: null }
-  return {
-    user: { id: `dev-${role}`, displayName: `Dev ${role}`, roles: [role as Role] },
+/** Signs out, clears all cached data (so no previous user's data lingers) and goes home. */
+export function useSignOut() {
+  const api = useApi()
+  const queryClient = useQueryClient()
+  const navigate = useNavigate()
+  return async () => {
+    // Leave protected pages first, and render the new page synchronously;
+    // otherwise the old page's guard sees "signed out" and redirects to /login.
+    await navigate('/', { flushSync: true })
+    await api.signOut()
+    // Wipe the previous user's data; refetches the (now empty) session.
+    await queryClient.resetQueries()
   }
 }
