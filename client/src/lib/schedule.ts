@@ -16,3 +16,8 @@ export function describeSchedule(j: Journey): string {
     return `${weekdayDate.format(new Date(j.departureAt))} · ${formatTime(j.departureAt)}`
   return 'Schedule to be confirmed'
 }
+
+/** ISO UTC -> "Mon 1 Dec · 06:45" (SAST), for a single trip. */
+export function formatTrip(iso: string): string {
+  return `${weekdayDate.format(new Date(iso))} · ${formatTime(iso)}`
+}
