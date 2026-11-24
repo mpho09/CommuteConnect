@@ -8,6 +8,7 @@ import { JourneyManagementPage } from '../features/journeys/JourneyManagementPag
 import { OccurrencePage } from '../features/journeys/OccurrencePage'
 import { PublishJourneyPage } from '../features/journeys/PublishJourneyPage'
 import { LandingPage } from '../features/landing/LandingPage'
+import { MatchesPage } from '../features/matches/MatchesPage'
 import { JourneyListingPage } from '../features/listings/JourneyListingPage'
 import { RouteListingPage } from '../features/listings/RouteListingPage'
 import { SearchPage } from '../features/search/SearchPage'
@@ -74,7 +75,7 @@ export const routes: RouteObject[] = [
           { path: 'journeys', element: <JourneyManagementPage /> },
           { path: 'journeys/new', element: <PublishJourneyPage /> },
           { path: 'journeys/:journeyId/occurrences/:occurrenceId', element: <OccurrencePage /> },
-          page('matches', 'S12', 'Match suggestions'),
+          { path: 'matches', element: <MatchesPage /> },
         ],
       },
 

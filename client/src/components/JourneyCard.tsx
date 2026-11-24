@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarDays, MapPin, Users } from 'lucide-react'
+import { ArrowRight, CalendarDays, Check, MapPin, Users } from 'lucide-react'
 import { Link } from 'react-router'
 import { Chip, StatusChip, type RequestStatus } from './ui/Chip'
 
@@ -11,8 +11,11 @@ export interface JourneyCardProps {
   /** Pre-formatted, e.g. "Mon–Fri · around 06:45" or "Sat 30 Nov · 07:00" */
   scheduleSummary: string
   seatsAvailable: number
-  /** Plain-language reason shown on match suggestions, e.g. "Departs within 15 min of your time". */
-  matchReason?: string
+  /**
+   * Plain-language reasons on match suggestions, e.g. "Departs 15 min before
+   * your usual time". Marks the card as a "Possible match"; scores are never shown.
+   */
+  matchReasons?: string[]
   /** Viewer's request status for this journey, if any. */
   requestStatus?: RequestStatus
 }
@@ -25,7 +28,7 @@ export function JourneyCard({
   destinationZone,
   scheduleSummary,
   seatsAvailable,
-  matchReason,
+  matchReasons,
   requestStatus,
 }: JourneyCardProps) {
   const full = seatsAvailable <= 0
@@ -35,7 +38,7 @@ export function JourneyCard({
         <Chip tone="info" icon={Users}>
           Community shared journey
         </Chip>
-        {matchReason && <Chip tone="neutral">Possible match</Chip>}
+        {matchReasons && <Chip tone="neutral">Possible match</Chip>}
         {requestStatus && <StatusChip status={requestStatus} />}
       </div>
       <h3 className="flex flex-wrap items-center gap-x-space-xs text-title-md font-title-md text-on-surface">
@@ -53,7 +56,19 @@ export function JourneyCard({
         <CalendarDays aria-hidden className="size-4 shrink-0" />
         {scheduleSummary}
       </p>
-      {matchReason && <p className="text-body-md text-on-surface">{matchReason}</p>}
+      {matchReasons && matchReasons.length > 0 && (
+        <ul
+          aria-label="Why this may suit you"
+          className="flex flex-col gap-space-xs text-body-md text-on-surface"
+        >
+          {matchReasons.map((reason) => (
+            <li key={reason} className="flex items-start gap-space-xs">
+              <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-success" />
+              {reason}
+            </li>
+          ))}
+        </ul>
+      )}
       <div className="flex items-center justify-between gap-space-md text-body-md">
         <span className="text-on-surface-variant">Shared by {publisherName}</span>
         <span className={full ? 'font-label-lg text-error' : 'font-label-lg text-on-surface'}>
