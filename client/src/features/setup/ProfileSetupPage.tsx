@@ -2,6 +2,7 @@ import { useMutation } from '@tanstack/react-query'
 import { ArrowLeft, ArrowRight, Bus, CarFront, Pencil, ShieldCheck } from 'lucide-react'
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, useNavigate } from 'react-router'
+import { DayPicker } from '../../components/DayPicker'
 import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
 import { ErrorSummary } from '../../components/ui/ErrorSummary'
@@ -11,7 +12,6 @@ import { Stepper } from '../../components/ui/Stepper'
 import { useApi } from '../../lib/api/apiContext'
 import { ApiError, isApiError } from '../../lib/api/errors'
 import type { Me, MeUpdate } from '../../lib/api/types'
-import { cn } from '../../lib/cn'
 import { useSession } from '../../lib/session/session'
 import { homeFor } from '../auth/redirects'
 import { toFieldErrors } from '../auth/schemas'
@@ -299,42 +299,11 @@ function Wizard({
                       />
                     )}
                   </Field>
-                  <fieldset>
-                    <legend className="font-label-lg text-label-lg">Travel days</legend>
-                    <div className="mt-space-sm flex flex-wrap gap-space-sm">
-                      {WEEKDAYS.map(({ day, short, long }) => {
-                        const on = preferences.travelDays.includes(day)
-                        return (
-                          <label
-                            key={day}
-                            className={cn(
-                              'flex min-h-11 min-w-14 cursor-pointer items-center justify-center rounded-full border px-space-md text-label-lg',
-                              'has-focus-visible:ring-3 has-focus-visible:ring-secondary/30',
-                              on
-                                ? 'border-primary-container bg-primary-container text-on-primary'
-                                : 'border-border-strong bg-surface-container-lowest text-on-surface hover:border-primary-container',
-                            )}
-                          >
-                            <input
-                              type="checkbox"
-                              className="sr-only"
-                              checked={on}
-                              aria-label={long}
-                              onChange={(e) =>
-                                setPreferences((v) => ({
-                                  ...v,
-                                  travelDays: e.target.checked
-                                    ? [...v.travelDays, day]
-                                    : v.travelDays.filter((d) => d !== day),
-                                }))
-                              }
-                            />
-                            <span aria-hidden>{short}</span>
-                          </label>
-                        )
-                      })}
-                    </div>
-                  </fieldset>
+                  <DayPicker
+                    legend="Travel days"
+                    value={preferences.travelDays}
+                    onChange={(travelDays) => setPreferences((v) => ({ ...v, travelDays }))}
+                  />
                 </fieldset>
               )}
 
