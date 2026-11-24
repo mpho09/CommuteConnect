@@ -25,7 +25,8 @@ import { useSavedSearches } from '../search/savedSearches'
 import { SearchForm } from '../search/SearchForm'
 import { toSearchUrl } from '../search/searchQuery'
 import { usePlaceRef } from '../search/usePlaceRef'
-import { byNextDeparture, describeSchedule, isUpcoming } from './upcoming'
+import { describeSchedule } from '../../lib/schedule'
+import { byNextDeparture, isUpcoming } from './upcoming'
 
 const linkClass = 'font-label-lg text-secondary underline-offset-2 hover:underline'
 

@@ -2,11 +2,19 @@ import { ArrowDownUp, Search } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router'
 import { Button } from '../../components/ui/Button'
-import { Field, Input } from '../../components/ui/Field'
+import { Field, Input, Select } from '../../components/ui/Field'
 import { cn } from '../../lib/cn'
 import { sastToday } from '../../lib/time'
 import { PlacePicker, type PlaceRef } from './PlacePicker'
-import { toSearchUrl, type SearchQuery } from './searchQuery'
+import {
+  DEFAULT_WINDOW,
+  TYPE_FILTERS,
+  WINDOWS,
+  toSearchUrl,
+  typeLabel,
+  type SearchQuery,
+  type TypeFilter,
+} from './searchQuery'
 import { validateSearch, type SearchErrors } from './validateSearch'
 
 const FREQUENCIES: Array<{ value: SearchQuery['frequency']; label: string }> = [
@@ -21,10 +29,13 @@ const FREQUENCIES: Array<{ value: SearchQuery['frequency']; label: string }> = [
 export function SearchForm({
   initial,
   now = () => new Date(),
+  showFilters = false,
   className,
 }: {
   initial?: Partial<SearchQuery>
   now?: () => Date
+  /** Adds departure window and transport type (S6). */
+  showFilters?: boolean
   className?: string
 }) {
   const navigate = useNavigate()
@@ -32,6 +43,8 @@ export function SearchForm({
   const [destination, setDestination] = useState<PlaceRef | null>(initial?.destination ?? null)
   const [date, setDate] = useState(initial?.date ?? sastToday(now()))
   const [time, setTime] = useState(initial?.time ?? '')
+  const [window, setWindow] = useState(initial?.window ?? DEFAULT_WINDOW)
+  const [type, setType] = useState<TypeFilter | ''>(initial?.type ?? '')
   const [frequency, setFrequency] = useState<SearchQuery['frequency']>(
     initial?.frequency ?? 'once_off',
   )
@@ -48,7 +61,9 @@ export function SearchForm({
         destination,
         date,
         time: time || undefined,
+        window: time ? window : undefined,
         frequency,
+        type: type || undefined,
       }),
     )
   }
@@ -58,6 +73,13 @@ export function SearchForm({
     setDestination(origin)
     setErrors((prev) => ({ ...prev, origin: undefined, destination: undefined }))
   }
+
+  const submit = (
+    <Button type="submit" size="lg" className="md:mt-7">
+      <Search aria-hidden className="size-4" />
+      Search transport
+    </Button>
+  )
 
   return (
     <form onSubmit={onSubmit} noValidate aria-label="Search for transport" className={className}>
@@ -145,11 +167,49 @@ export function SearchForm({
             />
           )}
         </Field>
-        <Button type="submit" size="lg" className="md:mt-7">
-          <Search aria-hidden className="size-4" />
-          Search transport
-        </Button>
+        {!showFilters && submit}
       </div>
+
+      {showFilters && (
+        <div className="mt-space-md grid gap-space-md sm:grid-cols-2 md:grid-cols-[1fr_1fr_auto] md:items-start">
+          <Field
+            label="Departure window"
+            hint={time ? undefined : 'Set a departure time to use a window.'}
+          >
+            {(control) => (
+              <Select
+                {...control}
+                value={window}
+                disabled={!time}
+                onChange={(e) => setWindow(Number(e.target.value))}
+              >
+                {WINDOWS.map((w) => (
+                  <option key={w} value={w}>
+                    {w < 60 ? `± ${w} min` : `± ${w / 60} hour${w > 60 ? 's' : ''}`}
+                  </option>
+                ))}
+              </Select>
+            )}
+          </Field>
+          <Field label="Transport type">
+            {(control) => (
+              <Select
+                {...control}
+                value={type}
+                onChange={(e) => setType(e.target.value as TypeFilter | '')}
+              >
+                <option value="">All options</option>
+                {TYPE_FILTERS.map((t) => (
+                  <option key={t} value={t}>
+                    {typeLabel(t)}
+                  </option>
+                ))}
+              </Select>
+            )}
+          </Field>
+          {submit}
+        </div>
+      )}
     </form>
   )
 }

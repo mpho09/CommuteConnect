@@ -5,6 +5,8 @@ import { ResetPasswordPage } from '../features/auth/ResetPasswordPage'
 import { SignUpPage } from '../features/auth/SignUpPage'
 import { CommuterDashboard } from '../features/commuter/CommuterDashboard'
 import { LandingPage } from '../features/landing/LandingPage'
+import { SearchPage } from '../features/search/SearchPage'
+import { SearchResultsPage } from '../features/search/SearchResultsPage'
 import { ProfileSetupPage } from '../features/setup/ProfileSetupPage'
 import { AppLayout } from './AppLayout'
 import { RequireAuth } from './RequireAuth'
@@ -26,8 +28,8 @@ export const routes: RouteObject[] = [
       { path: 'login', element: <LoginPage /> },
       { path: 'forgot-password', element: <ForgotPasswordPage /> },
       { path: 'reset-password', element: <ResetPasswordPage /> },
-      page('search', 'S6', 'Search'),
-      page('search/results', 'S7', 'Search results'),
+      { path: 'search', element: <SearchPage /> },
+      { path: 'search/results', element: <SearchResultsPage /> },
       page('listings/:listingId', 'S8', 'Listing details'),
       page('help', 'Help', 'Help & safety'),
       page('terms', 'Legal', 'Terms of Service'),
