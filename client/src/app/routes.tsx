@@ -3,6 +3,7 @@ import { ForgotPasswordPage } from '../features/auth/ForgotPasswordPage'
 import { LoginPage } from '../features/auth/LoginPage'
 import { ResetPasswordPage } from '../features/auth/ResetPasswordPage'
 import { SignUpPage } from '../features/auth/SignUpPage'
+import { CommuterDashboard } from '../features/commuter/CommuterDashboard'
 import { LandingPage } from '../features/landing/LandingPage'
 import { ProfileSetupPage } from '../features/setup/ProfileSetupPage'
 import { AppLayout } from './AppLayout'
@@ -61,7 +62,7 @@ export const routes: RouteObject[] = [
         path: 'commuter',
         element: <RequireAuth roles={['commuter']} />,
         children: [
-          { index: true, element: <Placeholder screen="S5" title="Commuter dashboard" /> },
+          { index: true, element: <CommuterDashboard /> },
           page('journeys', 'S10', 'Journey management'),
           page('journeys/new', 'S9', 'Publish journey'),
           page('journeys/:journeyId/occurrences/:occurrenceId', 'S11', 'Journey occurrence'),

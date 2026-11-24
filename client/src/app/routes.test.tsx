@@ -22,7 +22,7 @@ describe('routing', () => {
   })
 
   it.each([
-    ['/commuter', 'u-thandi', 'Commuter dashboard'],
+    ['/commuter', 'u-thandi', /, Thandi$/],
     ['/operator', 'u-sipho', 'Operator dashboard'],
     ['/admin', 'u-admin', 'Admin dashboard'],
   ] as const)('lets the right persona into %s', async (path, persona, heading) => {
