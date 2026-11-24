@@ -44,6 +44,15 @@ describe('validateSearch', () => {
     ).toEqual({})
   })
 
+  it('allows an earlier time of day for a recurring commute starting today', () => {
+    expect(
+      validateSearch(
+        { origin: a, destination: b, date: '2026-12-01', time: '07:00', frequency: 'recurring' },
+        now,
+      ),
+    ).toEqual({})
+  })
+
   it('allows any time when none is given', () => {
     expect(
       validateSearch({ origin: a, destination: b, date: '2026-12-01', time: '' }, now),

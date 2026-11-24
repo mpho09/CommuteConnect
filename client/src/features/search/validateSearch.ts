@@ -3,9 +3,18 @@ import type { PlaceRef } from './PlacePicker'
 
 export type SearchErrors = Partial<Record<'origin' | 'destination' | 'date' | 'time', string>>
 
-/** Dates and times are SAST (BR17); past trips are not allowed (BR4). */
+/**
+ * Dates and times are SAST (BR17); past trips are not allowed (BR4). A
+ * recurring commute's time is a time of day, so it can't have "passed".
+ */
 export function validateSearch(
-  v: { origin: PlaceRef | null; destination: PlaceRef | null; date: string; time: string },
+  v: {
+    origin: PlaceRef | null
+    destination: PlaceRef | null
+    date: string
+    time: string
+    frequency?: 'once_off' | 'recurring'
+  },
   now: Date,
 ): SearchErrors {
   const errors: SearchErrors = {}
@@ -18,6 +27,7 @@ export function validateSearch(
   if (!v.date) errors.date = 'Choose a date.'
   else if (v.date < today) errors.date = 'Choose today or a future date.'
   else if (
+    v.frequency !== 'recurring' &&
     v.date === today &&
     v.time &&
     minutesOf(v.time) < minutesOf(isoToSastTime(now.toISOString()))

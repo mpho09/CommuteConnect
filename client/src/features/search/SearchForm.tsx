@@ -52,7 +52,7 @@ export function SearchForm({
 
   function onSubmit(e: FormEvent) {
     e.preventDefault()
-    const found = validateSearch({ origin, destination, date, time }, now())
+    const found = validateSearch({ origin, destination, date, time, frequency }, now())
     setErrors(found)
     if (Object.keys(found).length > 0 || !origin || !destination) return
     void navigate(
