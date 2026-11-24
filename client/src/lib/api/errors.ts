@@ -17,6 +17,7 @@ export type ApiErrorCode =
   | 'rate_limited'
   | 'invalid_credentials'
   | 'email_taken'
+  | 'reset_link_invalid'
 
 const MESSAGES: Record<ApiErrorCode, string> = {
   offline: "You're offline. Check your connection and try again.",
@@ -33,6 +34,7 @@ const MESSAGES: Record<ApiErrorCode, string> = {
   rate_limited: 'Too many attempts. Please wait and try again.',
   invalid_credentials: 'That email and password don’t match.',
   email_taken: 'An account with this email already exists.',
+  reset_link_invalid: 'This reset link has expired or was already used. Request a new one.',
 }
 
 export class ApiError extends Error {

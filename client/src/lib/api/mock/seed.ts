@@ -117,6 +117,8 @@ export interface MockDb {
   notifications: NotificationRecord[]
   reports: ReportRecord[]
   audit: AuditRecord[]
+  /** Outstanding password-reset tokens (single use, expire after RESET_TOKEN_MINUTES). */
+  resetTokens: Array<{ token: string; userId: string; expiresAt: string }>
   counters: { searches: number; searchesWithResults: number }
 }
 
@@ -698,6 +700,7 @@ export function createSeed(now: Date = new Date()): MockDb {
     notifications,
     reports,
     audit: [],
+    resetTokens: [],
     counters: { searches: 128, searchesWithResults: 97 },
   }
 }

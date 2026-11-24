@@ -41,7 +41,10 @@ export interface ApiClient {
   signIn(email: string, password: string): Promise<Me>
   signUp(input: SignUpInput): Promise<Me>
   signOut(): Promise<void>
+  /** Always resolves, so it never reveals whether the email has an account. */
   requestPasswordReset(email: string): Promise<void>
+  /** Sets a new password using the token from the reset email. */
+  resetPassword(token: string, password: string): Promise<void>
 
   // Profile
   /** GET /api/me */
