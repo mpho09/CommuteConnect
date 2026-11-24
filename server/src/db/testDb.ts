@@ -13,6 +13,20 @@ const SUPABASE_STUB = `
   create schema extensions;
   create extension pgcrypto with schema extensions;
 
+  -- Data API roles
+  create role anon nologin noinherit;
+  create role authenticated nologin noinherit;
+  create role service_role nologin noinherit bypassrls;
+  grant usage on schema public, auth, extensions to anon, authenticated, service_role;
+
+  -- As in Supabase: the user id from the request's JWT claims
+  create function auth.uid() returns uuid language sql stable as $$
+    select nullif(coalesce(
+      nullif(current_setting('request.jwt.claim.sub', true), ''),
+      nullif(current_setting('request.jwt.claims', true), '')::jsonb ->> 'sub'
+    ), '')::uuid
+  $$;
+
   create table auth.users (
     instance_id uuid,
     id uuid primary key,
@@ -48,10 +62,21 @@ export async function migrationFiles(): Promise<string[]> {
   return (await readdir(dir)).filter((f) => f.endsWith('.sql')).sort()
 }
 
+/** Older Supabase projects grant every new public table to the Data API roles; newer ones can opt out. */
+const AUTO_EXPOSE = `
+  alter default privileges in schema public grant all on tables to anon, authenticated, service_role;
+  alter default privileges in schema public grant all on sequences to anon, authenticated, service_role;
+  alter default privileges in schema public grant all on functions to anon, authenticated, service_role;
+`
+
 /** Fresh in-memory database with all migrations applied (and optionally the seed). */
-export async function createTestDb({ seed = false } = {}): Promise<PGlite> {
+export async function createTestDb({
+  seed = false,
+  autoExposeTables = true,
+} = {}): Promise<PGlite> {
   const db = await PGlite.create({ extensions: { pgcrypto } })
   await db.exec(SUPABASE_STUB)
+  if (autoExposeTables) await db.exec(AUTO_EXPOSE)
   for (const file of await migrationFiles()) {
     await db.exec(await readFile(new URL(`migrations/${file}`, SUPABASE_DIR), 'utf8'))
   }

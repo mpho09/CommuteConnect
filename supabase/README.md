@@ -80,14 +80,39 @@ Allowed transitions are listed in `private.status_transitions` and enforced by a
 | `enquiries.status` | new → responded/closed; responded → closed |
 | `reports.status` | open → investigating/actioned/dismissed/closed; investigating → actioned/dismissed/closed; actioned/dismissed → closed; closed → investigating (reopen) |
 
-## Security defaults
+## Access rules (row level security)
 
-- **Row level security is on for every table, with no policies yet.** The browser's anon and authenticated keys can read nothing until #23 adds policies. The API server uses the service role.
-- Helper functions use `set search_path = ''`, and `handle_new_user` is `security definer`, so sign-up can write profiles without opening the tables to users.
-- Seed data contains no real documents, licence or registration numbers, or phone numbers.
+Two ways in, with different trust:
+
+- **API server** (`server/`): connects with `DATABASE_URL` / the service role, bypasses RLS, and is the **only writer**. It enforces the business rules.
+- **Browser** (Supabase Data API with the publishable/anon key and the user's session): **read-only**, limited by RLS. No insert/update/delete privileges or policies exist for `anon`/`authenticated`.
+
+Privileges are granted explicitly (`20261124000400_rls_policies.sql`), so behaviour is the same whether or not a project auto-exposes new tables.
+
+| Table | Guest | Signed-in user | Admin |
+| --- | --- | --- | --- |
+| `journeys` (+ schedules, occurrences) | open/full listings | listings + all their own | all |
+| `operator_routes` (+ stops) | active routes of verified/pending operators | same + their own | all |
+| `operators` | verified/pending | same + their own | all |
+| `locations` | public landmarks | + their own private points | all |
+| `profiles`, `user_roles` | none | own | all |
+| `journey_requests` | none | sent by them or on their journeys | all |
+| `enquiries` | none | sent by them or on their routes | all |
+| `notifications` | none | own | own only |
+| `reports` | none | filed by them (targets never see reporters) | all |
+| `operator_documents`, `vehicles` | none | their operator's | all |
+| `audit_logs`, `moderation_actions`, `analytics_events` | none | none | all |
+
+**Columns never readable from the browser (BR3, BR12):** `locations.latitude/longitude/address_text` (use `display_latitude/longitude`, rounded to ~1 km for private points), `operators.registration_number`, `operators.reviewed_by`, `vehicles.registration_number`.
+
+Policy helpers (`private.is_admin()`, `private.owns_operator()` …) are `security definer` with `search_path = ''`, in the unexposed `private` schema.
+
+The service role key and `DATABASE_URL` are server-only; a test fails if the client app references them. Seed data contains no real documents, licence or registration numbers, or phone numbers.
+
+Tests: `server/src/db/rls.test.ts` checks these boundaries as a guest, commuter A (Thandi), commuter B (Kabelo), operators (Sipho, Lerato) and the admin.
 
 ## Not yet included
 
-- RLS policies and data-boundary tests (#23).
+- Storage bucket policies for verification documents (with uploads, #28).
 - Atomic seat acceptance (BR8), added with join requests (#27).
 - PostGIS geography columns for radius search. Coordinates are `numeric` for now; consider PostGIS when geographic search is built (PRD §10.5).
