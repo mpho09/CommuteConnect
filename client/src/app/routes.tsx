@@ -4,6 +4,7 @@ import { LoginPage } from '../features/auth/LoginPage'
 import { ResetPasswordPage } from '../features/auth/ResetPasswordPage'
 import { SignUpPage } from '../features/auth/SignUpPage'
 import { CommuterDashboard } from '../features/commuter/CommuterDashboard'
+import { PublishJourneyPage } from '../features/journeys/PublishJourneyPage'
 import { LandingPage } from '../features/landing/LandingPage'
 import { JourneyListingPage } from '../features/listings/JourneyListingPage'
 import { RouteListingPage } from '../features/listings/RouteListingPage'
@@ -69,7 +70,7 @@ export const routes: RouteObject[] = [
         children: [
           { index: true, element: <CommuterDashboard /> },
           page('journeys', 'S10', 'Journey management'),
-          page('journeys/new', 'S9', 'Publish journey'),
+          { path: 'journeys/new', element: <PublishJourneyPage /> },
           page('journeys/:journeyId/occurrences/:occurrenceId', 'S11', 'Journey occurrence'),
           page('matches', 'S12', 'Match suggestions'),
         ],
