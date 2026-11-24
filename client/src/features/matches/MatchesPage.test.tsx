@@ -9,7 +9,7 @@ describe('Match suggestions (S12)', () => {
   it('shows possible matches with plain reasons and the BR13 caveat, never a score', async () => {
     renderRoute(PATH, 'u-thandi')
     expect(
-      screen.getByText('A match is a suggestion, not a booking or a safety guarantee.'),
+      await screen.findByText('A match is a suggestion, not a booking or a safety guarantee.'),
     ).toBeInTheDocument()
 
     const cards = await screen.findAllByRole('article')
