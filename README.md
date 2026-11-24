@@ -4,6 +4,7 @@ A responsive web platform for commuters and transport providers in South Africa:
 
 - Product requirements: [docs/PRD.md](docs/PRD.md)
 - Screen designs: [docs/designs/](docs/designs/) (design system: [civic_transit_grid](docs/designs/civic_transit_grid/DESIGN.md))
+- Design source (Google Stitch): [CommuteConnect project](https://stitch.google.com/projects/12307431067623660499)
 
 ## Repository layout
 
