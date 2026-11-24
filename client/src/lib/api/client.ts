@@ -100,6 +100,8 @@ export interface ApiClient {
     documentType: DocumentType,
     file: File,
   ): Promise<OperatorDocument>
+  /** DELETE /api/operators/:id/documents/:documentId (not once under review or verified) */
+  removeOperatorDocument(operatorId: string, documentId: string): Promise<void>
   listMyRoutes(): Promise<OperatorRoute[]>
   /** POST /api/operators/:id/routes */
   createRoute(input: RouteInput): Promise<OperatorRoute>

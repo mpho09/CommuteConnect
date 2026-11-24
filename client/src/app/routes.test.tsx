@@ -39,7 +39,9 @@ describe('routing', () => {
 
   it('lets any signed-in user start operator setup', async () => {
     renderRoute('/operator/setup', 'u-kabelo')
-    expect(await screen.findByRole('heading', { name: 'Operator setup' })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', { name: 'List your transport service' }),
+    ).toBeInTheDocument()
   })
 
   it('shows not found for unknown paths', async () => {

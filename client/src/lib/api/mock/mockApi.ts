@@ -1025,6 +1025,19 @@ export function createMockApi(options: MockOptions = {}): MockApi {
         return doc
       }),
 
+    removeOperatorDocument: (operatorId, documentId) =>
+      run(() => {
+        const u = requireUser()
+        const op = operatorOf(operatorId)
+        if (op.ownerId !== u.id) throw new ApiError('forbidden')
+        if (op.verificationStatus === 'under_review' || op.verificationStatus === 'verified')
+          throw new ApiError('forbidden', {
+            message: 'Documents can’t be removed while under review or after verification.',
+          })
+        if (!op.documents.some((d) => d.id === documentId)) throw new ApiError('not_found')
+        op.documents = op.documents.filter((d) => d.id !== documentId)
+      }),
+
     listMyRoutes: () =>
       run(() => {
         const op = ownOperator(requireUser())

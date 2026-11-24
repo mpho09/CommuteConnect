@@ -9,6 +9,8 @@ import { OccurrencePage } from '../features/journeys/OccurrencePage'
 import { PublishJourneyPage } from '../features/journeys/PublishJourneyPage'
 import { LandingPage } from '../features/landing/LandingPage'
 import { MatchesPage } from '../features/matches/MatchesPage'
+import { OperatorSetupPage } from '../features/operator/OperatorSetupPage'
+import { VerificationPage } from '../features/operator/VerificationPage'
 import { JourneyListingPage } from '../features/listings/JourneyListingPage'
 import { RouteListingPage } from '../features/listings/RouteListingPage'
 import { SearchPage } from '../features/search/SearchPage'
@@ -61,8 +63,8 @@ export const routes: RouteObject[] = [
           page('requests', 'S18', 'My requests'),
           page('notifications', 'S19', 'Notifications'),
           page('settings', 'S20', 'Profile & settings'),
-          page('operator/setup', 'S15', 'Operator setup'),
-          page('operator/verification', 'S16', 'Verification submission'),
+          { path: 'operator/setup', element: <OperatorSetupPage /> },
+          { path: 'operator/verification', element: <VerificationPage /> },
         ],
       },
 
