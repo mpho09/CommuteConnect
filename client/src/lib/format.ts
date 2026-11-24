@@ -2,7 +2,7 @@
  * Display formatting. Data is stored in UTC and ZAR cents; the UI always shows
  * Africa/Johannesburg time and rands (PRD BR17).
  */
-import type { TransportType } from './api/types'
+import type { OperatorRoute, TransportType } from './api/types'
 
 export const TIME_ZONE = 'Africa/Johannesburg'
 
@@ -47,4 +47,10 @@ const date = new Intl.DateTimeFormat('en-GB', {
 /** ISO UTC timestamp -> "21 Nov 2026" in SAST. */
 export function formatDate(iso: string): string {
   return date.format(new Date(iso))
+}
+
+/** "R 35.00", "From R 35.00" or "Contact for fare" (BR10: never a made-up price). */
+export function describeFare(r: Pick<OperatorRoute, 'fareCents' | 'fareType'>): string {
+  if (r.fareType === 'contact' || r.fareCents === null) return 'Contact for fare'
+  return r.fareType === 'from' ? `From ${formatFare(r.fareCents)}` : formatFare(r.fareCents)
 }
