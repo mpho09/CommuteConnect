@@ -1,0 +1,26 @@
+# Supabase CLI project config. Values not listed use the CLI defaults.
+# Local stack: `supabase start`; reset + reapply migrations and seed: `supabase db reset`.
+project_id = "commuteconnect"
+
+[api]
+# Only `public` is exposed through the Data API; helpers live in `private`.
+schemas = ["public"]
+
+[db]
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+site_url = "http://localhost:5173"
+additional_redirect_urls = ["http://localhost:5173"]
+minimum_password_length = 8
+
+[auth.email]
+enable_confirmations = true
+
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true

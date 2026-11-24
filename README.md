@@ -11,9 +11,10 @@ A responsive web platform for commuters and transport providers in South Africa:
 | --------- | --------------------------------------------------------------------- |
 | `client/` | React + Vite + TypeScript web app (Tailwind, React Router, TanStack Query) |
 | `server/` | Express + TypeScript REST API (Zod validation, helmet, rate limiting) |
+| `supabase/` | Database migrations, SAMPLE seed data and schema docs ([README](supabase/README.md)) |
 | `docs/`   | PRD, business notes, designs                                          |
 
-The database (`supabase/`) and the API's feature endpoints come next; see the "Backend API" milestone.
+The API's feature endpoints come next; see the "Backend API" milestone.
 
 ## Run the client
 
