@@ -20,6 +20,7 @@ import { EmptyState, ErrorState, LoadingList } from '../../components/ui/States'
 import { useApi } from '../../lib/api/apiContext'
 import { isApiError } from '../../lib/api/errors'
 import { TRANSPORT_LABELS } from '../../lib/format'
+import { journeyListingPath, routeListingPath } from '../../lib/paths'
 import { describeSchedule } from '../../lib/schedule'
 import { useSession } from '../../lib/session/session'
 import { applyView } from './applyView'
@@ -225,7 +226,7 @@ function Results({ query, view }: { query: SearchQuery; view: ResultsView }) {
                     {filtered.routes.map((r) => (
                       <li key={r.id}>
                         <TransportResultCard
-                          href={`/listings/${r.id}`}
+                          href={routeListingPath(r.id)}
                           operatorName={r.operator.businessName}
                           verification={r.operator.verificationStatus}
                           transportType={TRANSPORT_LABELS[r.transportType]}
@@ -250,7 +251,7 @@ function Results({ query, view }: { query: SearchQuery; view: ResultsView }) {
                     {filtered.journeys.map((j) => (
                       <li key={j.id}>
                         <JourneyCard
-                          href={`/listings/${j.id}`}
+                          href={journeyListingPath(j.id)}
                           publisherName={j.publisher.displayName}
                           originZone={j.originZone}
                           destinationZone={j.destinationZone}

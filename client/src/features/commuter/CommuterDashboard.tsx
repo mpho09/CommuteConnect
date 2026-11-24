@@ -25,6 +25,7 @@ import { useSavedSearches } from '../search/savedSearches'
 import { SearchForm } from '../search/SearchForm'
 import { toSearchUrl } from '../search/searchQuery'
 import { usePlaceRef } from '../search/usePlaceRef'
+import { journeyListingPath } from '../../lib/paths'
 import { describeSchedule } from '../../lib/schedule'
 import { byNextDeparture, isUpcoming } from './upcoming'
 
@@ -239,7 +240,7 @@ function UpcomingJourneys({ now }: { now: Date }) {
                     : `${j.seatsAvailable} of ${j.vehicleCapacity} seats open`}
                 </p>
                 <Link
-                  to={role === 'riding' ? `/listings/${j.id}` : '/commuter/journeys'}
+                  to={role === 'riding' ? journeyListingPath(j.id) : '/commuter/journeys'}
                   className={`mt-auto inline-flex items-center gap-space-xs ${linkClass}`}
                 >
                   {role === 'riding' ? 'View journey' : 'Manage journey'}
