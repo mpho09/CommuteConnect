@@ -55,6 +55,8 @@ export interface ApiClient {
 
   // Places (geocoding provider behind the API)
   searchPlaces(query: string): Promise<Place[]>
+  /** GET /api/places/:id (e.g. to show a saved usual place) */
+  getPlace(id: string): Promise<Place>
 
   // Search & matching
   /** GET /api/search */
