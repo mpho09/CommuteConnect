@@ -1,4 +1,5 @@
 import type { RouteObject } from 'react-router'
+import { LandingPage } from '../features/landing/LandingPage'
 import { AppLayout } from './AppLayout'
 import { RequireAuth } from './RequireAuth'
 import { Placeholder } from './routes/Placeholder'
@@ -14,7 +15,7 @@ export const routes: RouteObject[] = [
     element: <AppLayout />,
     children: [
       // Public (guest and all users)
-      { index: true, element: <Placeholder screen="S1" title="Landing" /> },
+      { index: true, element: <LandingPage /> },
       page('signup', 'S2', 'Sign up'),
       page('login', 'S3', 'Log in'),
       page('search', 'S6', 'Search'),
