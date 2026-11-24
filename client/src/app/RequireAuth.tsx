@@ -1,4 +1,5 @@
 import { Navigate, Outlet, useLocation } from 'react-router'
+import { LoadingList } from '../components/ui/States'
 import { useSession, type Role } from '../lib/session/session'
 
 /**
@@ -7,8 +8,16 @@ import { useSession, type Role } from '../lib/session/session'
  * With no `roles`, any signed-in user is allowed.
  */
 export function RequireAuth({ roles }: { roles?: Role[] }) {
-  const { user } = useSession()
+  const { user, isLoading } = useSession()
   const location = useLocation()
+
+  if (isLoading) {
+    return (
+      <div className="mx-auto max-w-7xl px-margin-mobile py-space-xl md:px-margin">
+        <LoadingList count={2} label="Checking your session…" />
+      </div>
+    )
+  }
 
   if (!user) {
     const next = location.pathname + location.search

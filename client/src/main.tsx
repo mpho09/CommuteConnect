@@ -4,14 +4,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import './index.css'
 import { Providers } from './app/Providers'
 import { routes } from './app/routes'
-import { devSessionFromEnv } from './lib/session/session'
+import { createApi } from './lib/api/createApi'
 
 const router = createBrowserRouter(routes)
-const session = devSessionFromEnv(import.meta.env.VITE_DEV_ROLE)
+const api = createApi()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Providers session={session}>
+    <Providers api={api}>
       <RouterProvider router={router} />
     </Providers>
   </StrictMode>,

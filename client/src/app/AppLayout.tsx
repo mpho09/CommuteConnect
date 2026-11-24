@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router'
+import { DemoToolbar } from '../components/dev/DemoToolbar'
 import { TopNav } from '../components/TopNav'
 
 export function AppLayout() {
@@ -14,6 +15,7 @@ export function AppLayout() {
       <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
         <Outlet />
       </main>
+      <DemoToolbar />
     </div>
   )
 }

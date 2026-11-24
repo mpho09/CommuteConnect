@@ -1,8 +1,9 @@
-import { Bell, ChevronDown, CircleUser, Menu, Route, X } from 'lucide-react'
+import { Bell, ChevronDown, CircleUser, LogOut, Menu, Route, X } from 'lucide-react'
 import { useEffect, useId, useRef, useState, type RefObject } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { cn } from '../lib/cn'
-import { useSession, type Role, type SessionUser } from '../lib/session/session'
+import type { Me } from '../lib/api/types'
+import { useSession, useSignOut, type Role } from '../lib/session/session'
 import { ButtonLink } from './ui/Button'
 
 const PRIMARY_LINKS = [
@@ -17,7 +18,7 @@ const DASHBOARDS: Record<Role, { to: string; label: string }> = {
   admin: { to: '/admin', label: 'Admin' },
 }
 
-function accountLinks(user: SessionUser) {
+function accountLinks(user: Me) {
   return [
     ...user.roles.map((r) => DASHBOARDS[r]),
     { to: '/requests', label: 'My requests' },
@@ -66,6 +67,7 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 export function TopNav() {
   const { user } = useSession()
+  const signOut = useSignOut()
   const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [accountOpen, setAccountOpen] = useState(false)
@@ -122,7 +124,7 @@ export function TopNav() {
                     className="flex min-h-11 items-center gap-space-xs rounded-lg px-space-sm text-label-lg font-label-lg text-on-surface hover:bg-surface-container"
                   >
                     <CircleUser aria-hidden className="size-6 text-primary-container" />
-                    <span className="max-w-40 truncate">{user.displayName}</span>
+                    <span className="max-w-40 truncate">{user.fullName}</span>
                     <ChevronDown aria-hidden className="size-4" />
                     <span className="sr-only">account menu</span>
                   </button>
@@ -141,6 +143,16 @@ export function TopNav() {
                           </Link>
                         </li>
                       ))}
+                      <li className="mt-space-xs border-t border-border-default pt-space-xs">
+                        <button
+                          type="button"
+                          onClick={signOut}
+                          className="flex min-h-11 w-full items-center gap-space-sm rounded-lg px-space-sm text-body-md text-on-surface hover:bg-surface-container"
+                        >
+                          <LogOut aria-hidden className="size-4" />
+                          Log out
+                        </button>
+                      </li>
                     </ul>
                   )}
                 </div>
@@ -196,6 +208,16 @@ export function TopNav() {
                 </li>
               ))}
             </ul>
+            {user && (
+              <button
+                type="button"
+                onClick={signOut}
+                className="flex min-h-12 w-full items-center gap-space-sm rounded-lg px-space-sm text-body-lg text-on-surface hover:bg-surface-container"
+              >
+                <LogOut aria-hidden className="size-5" />
+                Log out
+              </button>
+            )}
             {!user && (
               <div className="flex flex-col gap-space-sm">
                 <ButtonLink to="/signup" fullWidth size="lg">

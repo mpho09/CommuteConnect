@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  /** Dev-only: sign in as this role until real auth exists (commuter | operator | admin). */
-  readonly VITE_DEV_ROLE?: string
+  /** "false" switches to the real API client (not built yet, see #34). Defaults to mocks. */
+  readonly VITE_USE_MOCKS?: string
 }
 
 interface ImportMeta {

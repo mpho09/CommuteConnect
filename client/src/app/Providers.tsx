@@ -1,17 +1,25 @@
-import { QueryClientProvider } from '@tanstack/react-query'
+import { QueryClientProvider, type QueryClient } from '@tanstack/react-query'
 import { useState, type ReactNode } from 'react'
 import { ToastProvider } from '../components/ui/toast/ToastProvider'
+import { ApiProvider } from '../lib/api/ApiProvider'
+import type { ApiClient } from '../lib/api/client'
 import { createQueryClient } from '../lib/queryClient'
-import type { Session } from '../lib/session/session'
-import { SessionProvider } from '../lib/session/SessionProvider'
 
-export function Providers({ session, children }: { session: Session; children: ReactNode }) {
-  const [queryClient] = useState(createQueryClient)
+export function Providers({
+  api,
+  queryClient: providedClient,
+  children,
+}: {
+  api: ApiClient
+  queryClient?: QueryClient
+  children: ReactNode
+}) {
+  const [queryClient] = useState(() => providedClient ?? createQueryClient())
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionProvider value={session}>
+      <ApiProvider api={api}>
         <ToastProvider>{children}</ToastProvider>
-      </SessionProvider>
+      </ApiProvider>
     </QueryClientProvider>
   )
 }
