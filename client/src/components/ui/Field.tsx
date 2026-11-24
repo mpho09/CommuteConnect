@@ -21,6 +21,7 @@ export interface FieldControlProps {
 }
 
 export function Field({
+  id: providedId,
   label,
   hint,
   error,
@@ -29,6 +30,8 @@ export function Field({
   className,
   children,
 }: {
+  /** Control id; set it when something links to the field (e.g. an error summary). */
+  id?: string
   label: ReactNode
   hint?: ReactNode
   error?: ReactNode
@@ -38,7 +41,8 @@ export function Field({
   className?: string
   children: (control: FieldControlProps) => ReactNode
 }) {
-  const id = useId()
+  const autoId = useId()
+  const id = providedId ?? autoId
   const hintId = hint ? `${id}-hint` : undefined
   const errorId = error ? `${id}-error` : undefined
   const describedBy = [hintId, errorId].filter(Boolean).join(' ') || undefined

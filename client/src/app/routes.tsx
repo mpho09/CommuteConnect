@@ -1,4 +1,8 @@
 import type { RouteObject } from 'react-router'
+import { ForgotPasswordPage } from '../features/auth/ForgotPasswordPage'
+import { LoginPage } from '../features/auth/LoginPage'
+import { ResetPasswordPage } from '../features/auth/ResetPasswordPage'
+import { SignUpPage } from '../features/auth/SignUpPage'
 import { LandingPage } from '../features/landing/LandingPage'
 import { AppLayout } from './AppLayout'
 import { RequireAuth } from './RequireAuth'
@@ -16,12 +20,16 @@ export const routes: RouteObject[] = [
     children: [
       // Public (guest and all users)
       { index: true, element: <LandingPage /> },
-      page('signup', 'S2', 'Sign up'),
-      page('login', 'S3', 'Log in'),
+      { path: 'signup', element: <SignUpPage /> },
+      { path: 'login', element: <LoginPage /> },
+      { path: 'forgot-password', element: <ForgotPasswordPage /> },
+      { path: 'reset-password', element: <ResetPasswordPage /> },
       page('search', 'S6', 'Search'),
       page('search/results', 'S7', 'Search results'),
       page('listings/:listingId', 'S8', 'Listing details'),
       page('help', 'Help', 'Help & safety'),
+      page('terms', 'Legal', 'Terms of Service'),
+      page('privacy', 'Legal', 'Privacy Notice'),
       page('forbidden', '403', "You don't have access to this page"),
 
       // Dev-only component gallery; excluded from production builds.

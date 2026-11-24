@@ -59,6 +59,8 @@ export interface MockOptions {
 }
 
 const SESSION_KEY = 'cc.mock.userId'
+/** Lifetime of a password-reset link (US2). */
+export const RESET_TOKEN_MINUTES = 60
 /** Listings not reconfirmed within this many days "need confirmation" (BR11). */
 export const FRESHNESS_DAYS = 60
 const SEARCH_RADIUS_KM = 3
@@ -441,7 +443,34 @@ export function createMockApi(options: MockOptions = {}): MockApi {
     signOut: () => run(() => setCurrentUser(null)),
 
     // Always succeeds so it doesn't reveal which emails have accounts.
-    requestPasswordReset: () => run(() => undefined),
+    requestPasswordReset: (email) =>
+      run(() => {
+        const u = db.users.find((x) => x.email.toLowerCase() === email.trim().toLowerCase())
+        if (!u || u.accountStatus === 'deleted') return
+        const token = newId('reset')
+        db.resetTokens.push({
+          token,
+          userId: u.id,
+          expiresAt: new Date(now().getTime() + RESET_TOKEN_MINUTES * 60_000).toISOString(),
+        })
+        // No email in mock mode: the reset link goes to the console instead.
+        if (import.meta.env.DEV && import.meta.env.MODE !== 'test') {
+          console.info(`[mock] Password reset link: /reset-password?token=${token}`)
+        }
+      }),
+
+    resetPassword: (token, password) =>
+      run(() => {
+        const i = db.resetTokens.findIndex((t) => t.token === token)
+        const entry = db.resetTokens[i]
+        if (!entry || entry.expiresAt <= nowIso()) throw new ApiError('reset_link_invalid')
+        validate([[password.length < 8, 'password', 'Use at least 8 characters.']])
+        const u = db.users.find((x) => x.id === entry.userId)
+        if (!u) throw new ApiError('reset_link_invalid')
+        u.password = password
+        // Single use: drop this and any other outstanding links for the user.
+        db.resetTokens = db.resetTokens.filter((t) => t.userId !== u.id)
+      }),
 
     // ---- profile
     getMe: () => run(() => toMe(requireUser())),
