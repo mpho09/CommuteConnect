@@ -5,7 +5,12 @@ import { renderRoute } from '../test/renderRoute'
 describe('routing', () => {
   it('renders the public landing page for guests', async () => {
     renderRoute('/')
-    expect(await screen.findByRole('heading', { name: 'Landing' })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', {
+        level: 1,
+        name: 'Your journey. More options. Less hassle.',
+      }),
+    ).toBeInTheDocument()
   })
 
   it('sends guests to login and remembers where they were going', async () => {

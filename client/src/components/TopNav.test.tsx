@@ -61,7 +61,12 @@ describe('signing out', () => {
     renderRoute('/notifications', 'u-thandi')
     await user.click(await screen.findByRole('button', { name: /account menu/ }))
     await user.click(screen.getByRole('button', { name: 'Log out' }))
-    expect(await screen.findByRole('heading', { name: 'Landing' })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', {
+        level: 1,
+        name: 'Your journey. More options. Less hassle.',
+      }),
+    ).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Log in' })).toBeInTheDocument()
   })
 })
