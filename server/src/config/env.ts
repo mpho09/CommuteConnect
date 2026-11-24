@@ -35,6 +35,8 @@ const schema = z.object({
     .positive()
     .default(15 * 60_000),
   RATE_LIMIT_MAX: z.coerce.number().int().positive().default(300),
+  /** Routes not reconfirmed within this many days are flagged "Needs confirmation" (BR11). */
+  LISTING_FRESHNESS_DAYS: z.coerce.number().int().min(1).max(365).default(60),
 
   SUPABASE_URL: z
     .url()

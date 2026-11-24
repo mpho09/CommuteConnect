@@ -20,7 +20,11 @@ export interface AppDeps {
 /** Builds the Express app. Kept free of side effects (no listen) so tests can use it directly. */
 export function createApp(
   config: Config,
-  { logger = createLogger(), services, api = apiRouter(services) }: AppDeps = {},
+  {
+    logger = createLogger(),
+    services,
+    api = apiRouter(services, { logger, freshnessDays: config.LISTING_FRESHNESS_DAYS }),
+  }: AppDeps = {},
 ): Express {
   const app = express()
   app.set('trust proxy', config.TRUST_PROXY)
