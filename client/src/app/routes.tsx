@@ -4,6 +4,7 @@ import { LoginPage } from '../features/auth/LoginPage'
 import { ResetPasswordPage } from '../features/auth/ResetPasswordPage'
 import { SignUpPage } from '../features/auth/SignUpPage'
 import { LandingPage } from '../features/landing/LandingPage'
+import { ProfileSetupPage } from '../features/setup/ProfileSetupPage'
 import { AppLayout } from './AppLayout'
 import { RequireAuth } from './RequireAuth'
 import { Placeholder } from './routes/Placeholder'
@@ -46,7 +47,7 @@ export const routes: RouteObject[] = [
       {
         element: <RequireAuth />,
         children: [
-          page('setup', 'S4', 'Profile setup'),
+          { path: 'setup', element: <ProfileSetupPage /> },
           page('requests', 'S18', 'My requests'),
           page('notifications', 'S19', 'Notifications'),
           page('settings', 'S20', 'Profile & settings'),

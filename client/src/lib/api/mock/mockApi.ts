@@ -526,6 +526,8 @@ export function createMockApi(options: MockOptions = {}): MockApi {
         return PLACES.filter((p) => `${p.label} ${p.area}`.toLowerCase().includes(q)).slice(0, 8)
       }),
 
+    getPlace: (id) => run(() => place(id)),
+
     // ---- search & matching
     search: (params) =>
       run(() => {
