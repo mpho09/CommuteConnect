@@ -15,7 +15,9 @@ describe('routing', () => {
 
   it('sends guests to login and remembers where they were going', async () => {
     const { router } = renderRoute('/commuter/matches?day=mon')
-    expect(await screen.findByRole('heading', { name: 'Log in' })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', { name: 'Log in to CommuteConnect' }),
+    ).toBeInTheDocument()
     expect(router.state.location.search).toBe('?next=%2Fcommuter%2Fmatches%3Fday%3Dmon')
   })
 

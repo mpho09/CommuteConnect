@@ -98,8 +98,12 @@ describe('Sign up (S2)', () => {
     expect(
       await screen.findByRole('link', { name: 'An account with this email already exists.' }),
     ).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Log in' })).toHaveAttribute('href', '/login')
-    expect(screen.getByRole('link', { name: 'reset your password' })).toHaveAttribute(
+    const form = screen.getByRole('form', { name: 'Sign up' })
+    expect(within(form).getAllByRole('link', { name: 'Log in' })[0]).toHaveAttribute(
+      'href',
+      '/login',
+    )
+    expect(within(form).getByRole('link', { name: 'reset your password' })).toHaveAttribute(
       'href',
       '/forgot-password',
     )
