@@ -39,6 +39,16 @@ The client runs on an in-memory mock API with SAMPLE data (`VITE_USE_MOCKS=true`
 | `npm test`             | Run tests (Vitest + Testing Library) |
 | `npm run format`       | Format with Prettier          |
 
+## Deploy the client (Vercel)
+
+The client deploys to Vercel as a static Vite app:
+
+- **Root directory:** `client` (Vercel auto-detects Vite; settings live in [client/vercel.json](client/vercel.json))
+- **Node.js:** 22.x
+- **Environment:** `VITE_USE_MOCKS=true` until the real API is connected (#34)
+
+`client/vercel.json` rewrites every path to `index.html` so deep links like `/commuter/journeys` work on reload. With mocks on, the deployed app is a self-contained demo: SAMPLE data, the **Demo data** persona switcher, and data that resets on reload.
+
 ## Run the server
 
 ```bash
