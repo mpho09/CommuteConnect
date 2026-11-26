@@ -11,6 +11,7 @@ import { LandingPage } from '../features/landing/LandingPage'
 import { MatchesPage } from '../features/matches/MatchesPage'
 import { MyRequestsPage } from '../features/requests/MyRequestsPage'
 import { NotificationsPage } from '../features/notifications/NotificationsPage'
+import { SettingsPage } from '../features/settings/SettingsPage'
 import { OperatorDashboardPage } from '../features/operator/OperatorDashboardPage'
 import { OperatorSetupPage } from '../features/operator/OperatorSetupPage'
 import { RouteEditorPage } from '../features/operator/RouteEditorPage'
@@ -66,7 +67,7 @@ export const routes: RouteObject[] = [
           { path: 'setup', element: <ProfileSetupPage /> },
           { path: 'requests', element: <MyRequestsPage /> },
           { path: 'notifications', element: <NotificationsPage /> },
-          page('settings', 'S20', 'Profile & settings'),
+          { path: 'settings', element: <SettingsPage /> },
           { path: 'operator/setup', element: <OperatorSetupPage /> },
           { path: 'operator/verification', element: <VerificationPage /> },
         ],
