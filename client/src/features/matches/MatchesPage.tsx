@@ -94,7 +94,10 @@ function Matches({ user }: { user: Me }) {
         <div>
           <p className="text-body-sm text-on-surface-variant">Based on your usual commute</p>
           <p className="text-title-md font-title-md">{basis}</p>
-          <Link to="/setup" className="text-body-md font-label-lg text-secondary hover:underline">
+          <Link
+            to="/settings"
+            className="text-body-md font-label-lg text-secondary hover:underline"
+          >
             Change usual commute
           </Link>
         </div>

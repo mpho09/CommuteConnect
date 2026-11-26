@@ -141,6 +141,7 @@ export function createMockApi(options: MockOptions = {}): MockApi {
   function toPublicUser(id: string): PublicUser {
     const u = db.users.find((x) => x.id === id)
     if (!u) return { id, displayName: 'Former member' }
+    if (u.accountStatus === 'deleted') return { id, displayName: 'Deleted user' }
     const [first, ...rest] = u.fullName.split(' ')
     const last = rest.at(-1)
     return { id, displayName: last ? `${first} ${last[0]}.` : first }
@@ -506,15 +507,54 @@ export function createMockApi(options: MockOptions = {}): MockApi {
     deleteAccount: () =>
       run(() => {
         const u = requireUser()
-        // Anonymise: keep records others depend on, drop personal details (PRD §12.4).
+        // Mirrors the server (profileService.deleteAccount, PRD §12.4): end open
+        // activity, keep records others depend on, drop personal details.
+        const mine = new Set(db.journeys.filter((j) => j.publisherId === u.id).map((j) => j.id))
+        for (const r of db.requests) {
+          const active = r.status === 'pending' || r.status === 'accepted'
+          if (active && mine.has(r.journeyId)) {
+            notify(
+              r.commuterId,
+              'journey_changed',
+              'Journey cancelled',
+              'A journey you requested has been cancelled.',
+              '/requests',
+            )
+            r.status = 'cancelled'
+            r.cancelReason = 'Journey cancelled: publisher’s account closed'
+            r.respondedAt = nowIso()
+          } else if (active && r.commuterId === u.id) {
+            if (r.status === 'accepted') {
+              const j = findJourney(r.journeyId)
+              j.seatsAvailable = Math.min(j.vehicleCapacity, j.seatsAvailable + 1)
+              setJourneyStatusAfterSeatChange(j)
+            }
+            r.status = 'cancelled'
+            r.cancelReason = 'Rider’s account closed'
+            r.respondedAt = nowIso()
+          }
+        }
+        for (const j of db.journeys)
+          if (mine.has(j.id) && ['draft', 'open', 'full', 'paused'].includes(j.status))
+            j.status = 'cancelled'
+        const op = ownOperator(u)
+        if (op)
+          for (const r of db.routes)
+            if (r.operatorId === op.id && (r.status === 'draft' || r.status === 'active'))
+              r.status = 'inactive'
+        db.notifications = db.notifications.filter((n) => n.recipientId !== u.id)
         u.accountStatus = 'deleted'
-        u.fullName = 'Former member'
+        u.fullName = 'Deleted user'
         u.email = `deleted-${u.id}@invalid`
         u.phone = null
-        for (const j of db.journeys)
-          if (j.publisherId === u.id && j.status !== 'completed') j.status = 'cancelled'
-        for (const r of db.requests)
-          if (r.commuterId === u.id && r.status === 'pending') r.status = 'cancelled'
+        u.preferences = {
+          usualOriginId: null,
+          usualDestinationId: null,
+          usualDepartureTime: null,
+          travelDays: [],
+          notifyByEmail: false,
+        }
+        u.roles = []
         setCurrentUser(null)
       }),
 
